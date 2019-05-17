@@ -1,2 +1,6 @@
 goodevening
+<<<<<<< HEAD
 ‚¨‚Í‚æ‚¤‚²‚´‚¢‚Ü‚·B
+=======
+goodnight
+>>>>>>> d8744f22cf729ddd3fedd63d214cf4be15c789eb
