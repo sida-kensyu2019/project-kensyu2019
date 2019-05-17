@@ -1,4 +1,9 @@
 goodevening
 goodnight
 goodnightgoodnightgoodnight
+<<<<<<< HEAD
 goodafternoon
+=======
+narubekuhayakukaeritai.jp
+mazimeniyondawatasigabakadatta
+>>>>>>> edc1c7779ce261b5ae265f63e7844edd47e64046
