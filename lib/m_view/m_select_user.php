@@ -32,7 +32,7 @@ while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <td><?php ph($row["user_id"]); ?></td>
     <td><?php ph($row["user_name"]); ?></td>
     <td><?php ph($row["mail_address"]); ?></td>
-    <td><a href="">削除</td> <!-- 削除完了画面リンク -->
+    <td><a href="m_delete_exec_user.php">削除</td> <!-- 削除完了画面リンク -->
   </tr>
 </table>
 
