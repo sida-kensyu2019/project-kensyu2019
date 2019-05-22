@@ -30,7 +30,7 @@
 
     
     //データベースにデータを追加する
-    //$input: 入力値、$_POST[]
+    //$input: 入力値、$_POST
     // $date: 追加する日付、function.php/convert_date()の戻り値を代入
     function insert_closed($dbh, $input)
     {

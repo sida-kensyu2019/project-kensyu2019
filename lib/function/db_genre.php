@@ -19,7 +19,7 @@
     }
 
     //データベースにデータを追加する
-    //$input: 入力値、$_POST[]
+    //$input: 入力値、$_POST
     function insert_genre($dbh, $input)
     {
         try {

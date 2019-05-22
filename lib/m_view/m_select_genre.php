@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>管理トップページ</title>
-    <link rel="stylesheet" href="m_top.css">
+    <link rel="stylesheet" href="m_select_genre.css">
 </head>
 <body>
   <h1>美術品ジャンル一覧</h1>
-  <form action="db_genre.php" method="post">
+  <form action="m_insert_exec_genre.php" method="post">
     <input type="text" size="50" name="genre_name">
     <input type="submit" value="新規追加">
   </form>
