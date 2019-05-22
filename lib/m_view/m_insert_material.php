@@ -31,7 +31,7 @@
       //     exit("SQL発行エラー：{$e->getMessage()}");
       // }
   ?>
-
+<h2>管理美術品登録画面</h2>
 <form action="m_insert_exec_material.php" method="post">
 <table>
 <tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
@@ -48,6 +48,8 @@
 <tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
 </table>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
+
+<!-- 美術品一覧画面に戻る -->
 <input type="button" value="登録中止" onclick="location.href='m_select_material.php'">
 
 </form>
