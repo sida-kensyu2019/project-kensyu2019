@@ -19,7 +19,6 @@
         <tr><th>作者名読み</th><th><input type="text" size="30" name ="author_kana"></th></tr>
         <tr><th>ジャンル</th>
           <th>
-            <!-- ジャンルテーブルのジャンルネームとジャンルIDを出力してジャンルを表示する（未実装） -->
           <select name="genre_id">
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
               <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
