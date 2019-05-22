@@ -33,21 +33,20 @@
   ?>
 
 <form action="m_insert_exec_material.php" method="post">
-
-美術品名 <input type="text" name="material_name"><br>
-美術品読み <input type="text" name="material_kana"><br>
-作者名 <input type="text" name="author_name"><br>
-作者名読み <input type="text" name="author_kana"><br>
-ジャンル <select name="jenre_id">
+<table>
+<tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
+<tr><td>美術品読み</td><td><input type="text" name="material_kana"></td></tr>
+<tr><td>作者名</td><td><input type="text" name="author_name"></td></tr>
+<tr><td>作者名読み</td><td><input type="text" name="author_kana"></td></tr>
+<tr><td>ジャンル</td><td><select name="jenre_id">
         <?php //while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {?>
           <option value="<?php //ph($row["jenre_id"]);?>"><?php //ph($row["jenre_name"]);?></option>
         <?php //} ?>
-        </select><br>
-制作年 <input type="text" name="mateial_year"><br>
-写真 <input type="text" name="picture"><br>
-説明<br>
-<textarea cols="100" rows="10" name="caption"></textarea><br>
-
+      </select></td></tr>
+<tr><td>制作年</td><td><input type="text" name="mateial_year"></td></tr>
+<tr><td>写真</td><td><input type="text" name="picture"></td></tr>
+<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
+</table>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
 <input type="button" value="登録中止" onclick="location.href='m_select_material.php'">
 
