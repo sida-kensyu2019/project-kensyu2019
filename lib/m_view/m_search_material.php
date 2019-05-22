@@ -12,7 +12,7 @@
      ?>
     <h1>美術品検索画面</h1>
     <table>
-      <form action="m_select_material.php" method="post">
+      <form action="m_control/m_search_material.php" method="post">
         <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>
         <tr><th>美術品名読み</th><th><input type="text" size="30" name ="material_kana"></th></tr>
         <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"></th></tr>
