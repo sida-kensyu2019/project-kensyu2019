@@ -21,7 +21,7 @@
 <?php require_once("../init.php");
 while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
 
-<table border="1">
+<table>
   <tr>
     <th>ユーザID</th>
     <th><ユーザ名</th>
@@ -35,6 +35,8 @@ while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <td><a href="m_delete_exec_user.php">削除</td> <!-- 削除完了画面リンク -->
   </tr>
 </table>
+
+<?php } ?>
 
 <input type="button" value="新規追加" onclick="location.href='m_insert_user.php'">
 <!-- 新規管理者登録画面に遷移 -->
