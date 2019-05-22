@@ -49,7 +49,7 @@ CREATE TABLE
   material_year VARCHAR(20) NOT NULL,
   picture VARCHAR(500) DEFAULT 'not_found.jpg',
   caption VARCHAR(2000) NOT NULL,
-  FOREIGN KEY m_material(genre_id) REFERENCES m_genre(genre_id)
+  FOREIGN KEY (genre_id) REFERENCES m_genre(genre_id)
 );
 
 /* 美術品テーブルINSERT */
@@ -89,8 +89,8 @@ CREATE TABLE
    grade_date DATE NOT NULL,
    star INT NOT NULL,
    comment VARCHAR(5000) NOT NULL,
-   FOREIGN KEY t_grade(material_id) REFERENCES m_material(material_id),
-   FOREIGN KEY t_grade(user_id) REFERENCES m_user(user_id)
+   FOREIGN KEY (material_id) REFERENCES m_material(material_id),
+   FOREIGN KEY (user_id) REFERENCES m_user(user_id)
  );
 
  /* 評価テーブルINSERT */
@@ -108,8 +108,8 @@ CREATE TABLE
    good_id INT PRIMARY KEY AUTO_INCREMENT,
    grade_id INT NOT NULL,
    user_id INT NOT NULL,
-   FOREIGN KEY t_good(grade_id) REFERENCES t_grade(grade_id),
-   FOREIGN KEY t_good(user_id) REFERENCES m_user(user_id)
+   FOREIGN KEY (grade_id) REFERENCES t_grade(grade_id),
+   FOREIGN KEY (user_id) REFERENCES m_user(user_id)
   );
 
  /* いいねテーブルINSERT */
