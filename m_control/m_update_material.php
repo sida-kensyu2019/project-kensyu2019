@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
- * 管理美術品登録画面
+ * 管理美術品編集画面
  *
  * システム名：愛パワー美術品評価管理システム
  * 作成者：佐藤瑠菜
@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>管理美術品登録画面</title>
+<title>管理美術品編集画面</title>
 </head>
 <body>
 
@@ -32,6 +32,7 @@
       // }
   ?>
 
+<h2>管理美術品編集画面</h2>
 <form action="m_update_exec_material.php" method="post">
 <table>
 <tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
