@@ -17,9 +17,11 @@
 </head>
 <body>
 <h2>管理者一覧画面</h2>
-<table>
-<?php require_once("../init.php");
-while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+
+<?php //require_once("../init.php");
+//while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+
+<table border="1">
 
   <tr>
     <th>ユーザID</th>
@@ -33,6 +35,7 @@ while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <td><?php ph($row["mail_address"]); ?></td>
     <td><a href="">削除</td> <!-- 削除完了画面リンク -->
   </tr>
+
 </table>
 </body>
 </html>
