@@ -47,8 +47,8 @@
   {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv, profile) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 2, :profile)";
+        $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 2)";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
