@@ -21,7 +21,7 @@
   }
 
   //データベースに管理ユーザのデータを追加する
-  function m_insert_user()
+  function m_insert_user($dbh, $input)
   {
     try {
         // プレースホルダ付きSQLを構築
@@ -50,7 +50,7 @@
 
 
   //データベースに一般ユーザのデータを追加する
-  function insert_user()
+  function insert_user($dbh, $input)
   {
     try {
         // プレースホルダ付きSQLを構築
@@ -74,4 +74,25 @@
         } catch (PDOException $e) {
             exit("SQL発行エラー：{$e->getMessage()}");
         }
+  }
+
+
+  // データベースのユーザのデータを削除する
+  // $id: 削除するデータのid
+  function delete_user($dbh, $id)
+  {
+      try {
+          // プレースホルダ付きSQLを構築
+          $sql = "DELETE FROM m_user ";
+          $sql .= "WHERE user_id=:user_id";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // プレースホルダに値をバインド
+          $sth->bindValue(":user_id", (int) $id);
+
+          // SQLを発行
+          $sth->execute();
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
   }
