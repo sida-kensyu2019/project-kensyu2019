@@ -6,8 +6,6 @@
   <link rel="stylesheet" href="m_select_closed.css">
 </head>
 <body>
-	<?php require_once("../function/function.php");
-	 			require_once("../init.php"); ?>
   <h1>休館日一覧</h1>
   <form action="m_insert_exec_closed.php" method="post">
     <select name="year"> <!--選択肢に年を3年分表示-->
