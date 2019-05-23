@@ -1,21 +1,21 @@
 <?php
-//制作者村上：2019.5.22：Ver1.0
-//ジョブ削除SQL発行プログラム（該当ID変数は$_GET["job_id"]）
- ?>
-<?php
-    require_once("../lib/init.php");
+/**
+ * このファイルの概要説明
+ * 職種削除
+ * このファイルの詳細説明
+ * 職種削除
+ * システム名：愛パワー美術品評価管理システム
+ * 作成者：山田美波
+ * 作成日：2019/05/23
+ * 最終更新日：2019/05/23
+ * レビュー担当者：
+ * レビュー日：
+ * バージョン：0.1
+ */
 
-    try {
-        // プレースホルダ付きSQLを構築
-        $sql = "DELETE FROM eye_power_db.m_job ";
-        $sql .= "WHERE job_id=:id;";
-        $sth = $dbh->prepare($sql); // SQLを準備
+require_once("../lib/init.php");
 
-        // プレースホルダに値をバインド
-        $sth->bindValue(":id", $_GET["job_id"]);
+require_once("../lib/function/db_job.php");
+$sth=delete_job($dbh, $_GET["job_id"]);
 
-        // SQLを発行
-        $sth->execute();
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+header("Location:http://localhost/project-kensyu2019/m_control/m_select_job.php");
