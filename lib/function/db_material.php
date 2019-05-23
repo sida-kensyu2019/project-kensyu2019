@@ -101,19 +101,7 @@ function serch_material($dbh)
             $sth->execute();
         
         } else {
-            if (!empty($_POST["keyword"])) {
-                //セレクトボックス入力済み、検索フォーム入力済み
-
-                $sql .= "AND (m_material.material_name_kanji LIKE :keyword ";
-                $sql .= "OR m_material.material_name_kana LIKE :keyword) ";
-                $sth = $dbh->prepare($sql); // SQLを準備
-                $sth->bindValue(":key_taste_id", $_POST["key_taste_id"]);
-                $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
-                // SQLを発行
-                $sth->execute();
-    
-            
-            } elseif (!empty($_POST["keyword"])) {
+                if (!empty($_POST["keyword"])) {
                 //セレクトボックス未入力、検索フォーム入力済み
 
                 $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
