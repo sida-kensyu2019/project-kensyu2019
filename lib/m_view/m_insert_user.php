@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="m_insert_user.css">
   </head>
   <body>
-    <?php
-    require_once("../init.php");
-     ?>
+
     <h1>新規管理者登録画面</h1>
     <table>
       <form action="m_comtrol/m_insert_user.php" method="post">
