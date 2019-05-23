@@ -18,4 +18,4 @@ require_once("../lib/init.php");
 require_once("../lib/function/db_job.php");
 $sth=delete_job($dbh, $_GET["job_id"]);
 
-header("Location:http://localhost/project-kensyu2019/m_control/m_select_job.php");
+header("Location:http://localhost/GitHub/project-kensyu2019/m_control/m_select_job.php");

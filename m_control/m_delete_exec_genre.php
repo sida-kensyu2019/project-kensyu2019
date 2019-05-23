@@ -18,4 +18,4 @@ require_once("../lib/init.php");
 require_once("../lib/function/db_genre.php");
 $sth=delete_genre($dbh, $_GET["genre_id"]);
 
-header("Location:http://localhost/project-kensyu2019/m_control/m_select_genre.php");
+header("Location:http://localhost/GitHub/project-kensyu2019/m_control/m_select_genre.php");
