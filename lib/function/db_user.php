@@ -1,12 +1,48 @@
 <?php
-
-  function login_user()
+  //入力されたメールアドレスのユーザ情報をセレクトする
+  //$input: $_POST
+  function get_user_by_mail($dbh, $input)
   {
-    session
+      try {
+          // プレースホルダ付きSQLを構築
+          $sql = "SELECT * FROM m_user WHERE mail_address = :mail_address";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // プレースホルダに値をバインド
+          $sth->bindValue(":mail_address", $input["mail_address"]);
+          // SQLを発行
+          $sth->execute();
+          // データを戻す
+          return $sth;
+
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
+  }
+
+  function get_m_user($dbh)
+  {
+      try {
+          // SQLを構築
+          $sql = "SELECT * FROM m_user ";
+          $sql .= "INNER JOIN m_job ";
+          $sql .= "ON m_user.job_id = m_job.job_id ";
+          $sql .= "WHERE m_user.user_id";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // SQLを発行
+          $sth->execute();
+
+          // データを戻す
+          return $sth;
+
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
   }
 
   //データベースに管理ユーザのデータを追加する
-  function m_insert_user()
+  function insert_m_user($dbh, $input)
   {
     try {
         // プレースホルダ付きSQLを構築
@@ -24,23 +60,18 @@
         // SQLを発行
         $sth->execute();
 
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+        // データを戻す
+        return $sth;
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
         }
-
-    // データを戻す
-    return $sth;
-
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
   }
 
 
 
   //データベースに一般ユーザのデータを追加する
-  function m_insert_user()
+  function insert_user($dbh, $input)
   {
     try {
         // プレースホルダ付きSQLを構築
@@ -58,15 +89,31 @@
         // SQLを発行
         $sth->execute();
 
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+        // データを戻す
+        return $sth;
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
         }
+  }
 
-    // データを戻す
-    return $sth;
 
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+  // データベースのユーザのデータを削除する
+  // $id: 削除するデータのid
+  function delete_user($dbh, $id)
+  {
+      try {
+          // プレースホルダ付きSQLを構築
+          $sql = "DELETE FROM m_user ";
+          $sql .= "WHERE user_id=:user_id";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // プレースホルダに値をバインド
+          $sth->bindValue(":user_id", (int) $id);
+
+          // SQLを発行
+          $sth->execute();
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
   }

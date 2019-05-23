@@ -1,11 +1,11 @@
 <?php
 /**
  * このファイルの概要説明
- * ジャンル削除
+ * 管理者一覧画面
  * このファイルの詳細説明
- * ジャンル削除
+ * ジャンル一覧
  * システム名：愛パワー美術品評価管理システム
- * 作成者：山田美波
+ * 作成者：佐藤瑠菜
  * 作成日：2019/05/23
  * 最終更新日：2019/05/23
  * レビュー担当者：
@@ -13,9 +13,9 @@
  * バージョン：0.1
  */
 
+
 require_once("../lib/init.php");
 
-require_once("../lib/function/db_genre.php");
-$sth=delete_genre($dbh, $_GET["genre_id"]);
-
-header("Location:http://localhost/GitHub/project-kensyu2019/m_control/m_select_genre.php");
+require_once("../lib/function/db_user.php");
+$sth=get_m_user($dbh);
+require_once("../lib/m_view/m_select_user.php");

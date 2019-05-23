@@ -55,6 +55,8 @@
             // SQLを発行
             $sth->execute();
         } catch (PDOException $e) {
+            print "この職種はすでに使用されているので、削除できません。<br>";
+            print "<a href=\"m_select_job.php\">職種一覧</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
     }
