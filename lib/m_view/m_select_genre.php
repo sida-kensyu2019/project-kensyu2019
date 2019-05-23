@@ -8,7 +8,7 @@
 <body>
   <h1>美術品ジャンル一覧</h1>
   <form action="m_insert_exec_genre.php" method="post">
-    <input type="text" size="50" name="genre_name">
+    <input type="text" size="30" name="genre_name">
     <input type="submit" value="新規追加">
   </form>
   <table border=1>
