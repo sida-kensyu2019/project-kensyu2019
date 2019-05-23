@@ -7,7 +7,7 @@ require_once("../init.php");
 if ($_SESSION["login"]) {
 // ログイン時
   // ユーザレベル判定
-  if($_SESSION["user_name"]) {
+  if($_SESSION["user_lv"] == 2) {
     // 管理者のとき
     // 検索画面ビュー出力
     require_once("../lib/m_view/m_search_material.php");
@@ -28,5 +28,5 @@ if ($_SESSION["login"]) {
   }
 } else { // ログインしていない場合
   // 美術館トップページビュー表示
-  require_once("../lib/view/top.php"); 
+  require_once("../lib/view/top.php");
 }
