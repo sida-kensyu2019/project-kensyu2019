@@ -8,7 +8,7 @@
 	require_once("lib/function/db_user.php");
 
 	//ユーザデータをデータベースから取得する
-	$sth =get_m_user($dbh); //美術品すべてを取得する関数
+	$sth =get_user($dbh,$_GET["user_id"]);
 
-	//美術品一覧画面ビュー出力
+	//マイページビュー出力
 	require_once("lib/view/user.php");
