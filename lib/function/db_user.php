@@ -41,6 +41,7 @@
       }
   }
 
+
   //データベースに管理ユーザのデータを追加する
   function insert_m_user($dbh, $input)
   {

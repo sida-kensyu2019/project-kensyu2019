@@ -1,23 +1,22 @@
 <?php
-//制作者村上：2019.5.22：Ver1.0
-//管理者ユーザ削除SQL発行プログラム（該当ID変数は$_GET["user_id"]）
- ?>
-<?php
-    require_once("../lib/init.php");
+// 制作者:増井 2019/05/23：ver1.0
+// 管理ユーザ削除完了画面コントローラ
 
-    try {
-        // プレースホルダ付きSQLを構築
-        $sql = "DELETE FROM eye_power_db.m_user ";
-        $sql .= "WHERE user_id=:id;";
-        $sth = $dbh->prepare($sql); // SQLを準備
+	require_once("../lib/init.php");
 
-        // プレースホルダに値をバインド
-        $sth->bindValue(":id", $_GET["user_id"]);
+	//ユーザテーブルの処理関数呼び出し
+	require_once("../lib/function/db_user.php");
 
-        // SQLを発行
-        $sth->execute();
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+	//ユーザのいいねをデータベースから削除する
+	require_once("../lib/function/db_good.php");
+	$sth=delete_good_by_user($dbh, $_GET["user_id"]);
 
-    require_once("../lib/m_view/m_delete_exev_user.php");
+	//ユーザの評価をデータベースから削除する
+	require_once("../lib/function/db_grade.php");
+	$sth=delete_grade_by_user($dbh, $_GET["user_id"]);
+
+	//ユーザのデータをデータベースから削除する
+	$sth = delete_user($dbh, $_GET["user_id"]); //ユーザデータを削除する関数
+
+	//管理ユーザ削除完了画面ビュー出力
+	require_once("../lib/m_view/m_delete_exec_user.php");

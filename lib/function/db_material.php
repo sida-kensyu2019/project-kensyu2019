@@ -90,26 +90,33 @@ function get_material($dbh)
     }
 }
 
+
+
 // データベースのデータを更新する
 // $input: array 入力値 主に$_POST
-function insert($input)
+function insert_material($dbh, $input)
 {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "INSERT INTO m_material (material_name_kanji, material_name_kana, taste_id) ";
-        $sql .= "VALUES (:material_name_kanji, :material_name_kana, :taste_id)";
-        $sth = $this->dbh->prepare($sql); // SQLを準備
+        $sql = "INSERT INTO m_material ";
+        $sql .= "(material_name, material_kana, author_name, author_kana, genre_id, material_year, picture, caption) ";
+        $sql .= "VALUES (:material_name, :material_kana, :author_name, :author_kana, :genre_id, :material_year, :picture, :caption)";
+        $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":material_name_kanji",     $input["material_name_kanji"]);
-        $sth->bindValue(":material_name_kana",     $input["material_name_kana"]);
-        $sth->bindValue(":taste_id",   $input["taste_id"]);
+        $sth->bindValue(":material_name", $input["material_name"]);
+        $sth->bindValue(":material_kana", $input["material_kana"]);
+        $sth->bindValue(":author_name", $input["author_name"]);
+        $sth->bindValue(":author_kana", $input["author_kana"]);
+        $sth->bindValue(":genre_id", $input["genre_id"]);
+        $sth->bindValue(":material_year", $input["material_year"]);
+        $sth->bindValue(":picture", $input["picture"]);
+        $sth->bindValue(":caption", $input["caption"]);
+        $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行
         $sth->execute();
 
-        // データを戻す
-        return $sth;
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }
@@ -138,20 +145,25 @@ function delete_material($dbh, $id)
 
 // データベースのデータを更新する
 // $input: array 入力値
-function update($input)
+function update_material($dbh, $input)
 {
     try {
         // プレースホルダ付きSQLを構築
         $sql = "UPDATE m_material ";
         $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, "; 
-        $sql .= "genre_id=:genre_id, material_yaer ";
+        $sql .= "genre_id=:genre_id, material_yaer=:material_year, picture=:picture, caption=:caption ";
         $sql .= "WHERE material_id=:material_id";
-        $sth = $this->dbh->prepare($sql); // SQLを準備
+        $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":material_name_kanji", $input["material_name_kanji"]);
-        $sth->bindValue(":material_name_kana", $input["material_name_kana"]);
-        $sth->bindValue(":taste_id", $input["taste_id"]);
+        $sth->bindValue(":material_name", $input["material_name"]);
+        $sth->bindValue(":material_kana", $input["material_kana"]);
+        $sth->bindValue(":author_name", $input["author_name"]);
+        $sth->bindValue(":author_kana", $input["author_kana"]);
+        $sth->bindValue(":genre_id", $input["genre_id"]);
+        $sth->bindValue(":material_year", $input["material_year"]);
+        $sth->bindValue(":picture", $input["picture"]);
+        $sth->bindValue(":caption", $input["caption"]);
         $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行

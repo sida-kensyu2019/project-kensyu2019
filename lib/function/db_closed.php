@@ -6,14 +6,16 @@
             // SQLを構築
             $sql = "SELECT * FROM m_closed;";
             $sth = $dbh->prepare($sql); // SQLを準備
-    
+
             // SQLを発行
             $sth->execute();
 
             // データを戻す
             return $sth;
-            
+
         } catch (PDOException $e) {
+            print "指定された日付はすでに休館日として登録されています。<br>";
+            print "<a href=\"m_select_closed.php\">ジャンル一覧</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
     }
@@ -28,24 +30,24 @@
         return $date;
     }
 
-    
+
     //データベースにデータを追加する
     //$input: 入力値、$_POST
     // $date: 追加する日付、function.php/convert_date()の戻り値を代入
     function insert_closed($dbh, $input)
     {
         $ary_date = create_date($input);
-        $date = implode($ary_date);
+        $date = implode("-", $ary_date);
 
         try {
             // プレースホルダ付きSQLを構築
             $sql = "INSERT INTO m_closed (closed) ";
             $sql .= "VALUES (:closed)";
             $sth = $dbh->prepare($sql); // SQLを準備
-    
+
             // プレースホルダに値をバインド
             $sth->bindValue(":closed", $date);
-    
+
             // SQLを発行
             $sth->execute();
 
@@ -63,10 +65,10 @@
             $sql = "DELETE FROM m_closed ";
             $sql .= "WHERE closed=:closed";
             $sth = $dbh->prepare($sql); // SQLを準備
-    
+
             // プレースホルダに値をバインド
-            $sth->bindValue(":closed", (int) $closed);
-    
+            $sth->bindValue(":closed", $closed);
+
             // SQLを発行
             $sth->execute();
         } catch (PDOException $e) {
