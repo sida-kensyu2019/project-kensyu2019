@@ -39,17 +39,12 @@
         // SQLを発行
         $sth->execute();
 
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+        // データを戻す
+        return $sth;
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
         }
-
-    // データを戻す
-    return $sth;
-
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
   }
 
 
@@ -73,15 +68,10 @@
         // SQLを発行
         $sth->execute();
 
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
+        // データを戻す
+        return $sth;
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
         }
-
-    // データを戻す
-    return $sth;
-
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
   }
