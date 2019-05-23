@@ -1,8 +1,5 @@
 <?php
 
-    //共通に必要な関数は呼び出される
-    require_once("function/function.php");
-
 
     //データベースに接続
     $dbh = connectDb();  //ここでPDOインスタンスを変数に持っておく
@@ -28,3 +25,7 @@
 
     //文字コード設定
     mb_internal_encoding("UTF-8");
+
+     //共通に必要な関数は呼び出される
+     require_once("function/function.php");
+
