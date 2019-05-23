@@ -1,5 +1,5 @@
 <?php
-
+  //入力されたメールアドレスのユーザ情報をセレクトする
   //$input: $_POST
   function get_user_by_mail($dbh, $input)
   {
@@ -20,8 +20,32 @@
       }
   }
 
+  function get_m_user($dbh)
+  {
+      try {
+          // SQLを構築
+          $sql = "SELECT * FROM m_user ";
+          $sql .= "INNER JOIN m_job ";
+          $sql .= "ON m_user.job_id = m_job.job_id ";
+          $sql .= "WHERE m_material.material_id=:material_id ";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // プレースホルダに値をバインド
+          $sth->bindValue(":job_id", $id);
+
+          // SQLを発行
+          $sth->execute();
+
+          // データを戻す
+          return $sth;
+
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
+  }
+
   //データベースに管理ユーザのデータを追加する
-  function m_insert_user($dbh, $input)
+  function insert_m_user($dbh, $input)
   {
     try {
         // プレースホルダ付きSQLを構築
