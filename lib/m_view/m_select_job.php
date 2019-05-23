@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="m_select_job.css">
   </head>
   <body>
-    <form action="m_control/m_insert_exec_job.php" method="post">
+    <form action="m_insert_exec_job.php" method="post">
       <input type="text" name="job_name">
       <input type="submit" value="新規追加">
     </form>
