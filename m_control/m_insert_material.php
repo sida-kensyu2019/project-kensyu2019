@@ -15,8 +15,10 @@ if ($_SESSION["login"]) {
     require_once("../lib/m_view/m_insert_material.php");
    } else {
     // 内容漏れチェック
-    if (isset($_POST["mail_address"]) && isset($_POST["password"])
-     && isset($_POST["user_name"]) && isset($_POST["job_id"])) {
+    if (isset($_POST["material_name"]) && isset($_POST["material_kana"])
+     && isset($_POST["author_name"]) && isset($_POST["author_kana"])
+     && isset($_POST["genre_id"]) && isset($_POST["material_year"])
+     && && isset($_POST["caption"])) {
 
        // 入力OK
        require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
