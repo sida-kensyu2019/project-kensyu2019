@@ -15,7 +15,7 @@
         <body>
           　<!--ヘッダメニュー（タイトルロゴとログイン／マイページリンク）-->
             <div id="header">
-              <img src="ロゴ画像とかあるといいなぁ" name="logo">
+              <img src="" name="logo">
               <?php if(empty($_SESSION)){ ?>
                   <a href="login.php" id="loginOrMypage">ログイン</a>
               } else { ?>
@@ -25,8 +25,51 @@
             <div id="titleCalender">
             <!--なんかいい感じの画像-->
               <img src="なんかいい感じの画像" name="title">
-            <!--カレンダーをうまく表示したい-->
-              <?php require_once("calender.php"); ?>
+            <!--カレンダーを表示したい-->
+              <table>
+                  <caption>
+                     休館日カレンダー
+                  </caption>
+                  <tr>
+                     <th>日</th>
+                     <th>月</th>
+                     <th>火</th>
+                     <th>水</th>
+                     <th>木</th>
+                     <th>金</th>
+                     <th>土</th>
+                  </tr>
+                  <tr>
+                     <?php
+                         //二次元配列$calender,$closed_listの値を取り出し照合する繰り返し
+                         $cnt = 0;
+
+                         foreach($calender as $value_day){
+                            foreach($closed_list as $value_closed){
+                                 $date = explode("-", $value_closed["closed"]);
+                                 if ((int)$date[2] == $value_day["day"] AND (int)$date[0] == $year AND (int)$date[1] == $month) { ?>
+                                   <td>
+                                     <?php $cnt++; ?>
+                                     <?php print $value_day["day"]."<br>休館日";
+                                       break; ?>
+                                   </td>
+                               <?php }
+                            } ?>
+                                <?php if ((int)$date[2] != $value_day["day"]){ ?>
+                                  <td>
+                                     <?php $cnt++; ?>
+                                     <?php print $value_day["day"]; ?>
+                                  </td>
+                                <?php } ?>
+
+                           <?php if ($cnt == 7) { ?>
+                                 </tr>
+                                 <tr>
+                                 <?php $cnt = 0;
+                                 }
+                         }  ?>
+                  </tr>
+              </table>
             </div>
             <!--検索ボックス-->
             <table id="search">
@@ -48,23 +91,17 @@
               </form>
             </table>
             <!-- 美術品TOP20 -->
-            <?php require_once("../init.php");
+            <?php
                 //平均評価の降順で20件ほどSELECT表示
             	    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
                     <table>
                         <tr>
-                          <th>画像</th>
-                          <th>美術品名</th>
-                          <th>作者名</th>
-                          <th>ジャンル</th>
-                          <th>制作年</th>
-                        </tr>
-                        <tr>
-                    			<td><?php ph($row["picture"]); ?></td>
-                    			<td><?php ph($row["material_name"]); ?></td>
-                    			<td><?php ph($row["author_name"]); ?></td>
-                    			<td><?php ph($row["genre_name"]); ?></td>
-                    			<td><?php ph($row["material_year"]); ?></td>
+                    			<td>
+                            <img src="<?php ph($row["picture"]); ?>">
+                          </td>
+                          <td><?php ph($row["AVG(star)"]); ?></td>
+                    			<td><?php ph($row["material_name"]); ?>
+                    			<br><?php ph($row["author_name"]); ?></td>
                     		</tr>
                     </table>
             <?php } ?>
