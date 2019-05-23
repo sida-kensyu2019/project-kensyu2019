@@ -1,7 +1,8 @@
 <?php
 
 
-//ユーザマイページでの評価一覧表示
+//美術品詳細画面表示用の処理
+//$id: GET["id"]
 // データベースのデータを取得する
 function get_material_by_id($dbh, $id)
 {
