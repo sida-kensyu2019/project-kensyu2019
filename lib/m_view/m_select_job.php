@@ -22,7 +22,7 @@
         <td><?php ph($row["job_name"]);?></td>
         <td><a href="m_delete_exec_job.php?job_id=<?php ph($row["job_id"]);?>">削除</a></td>
       </tr>
+      <?php } ?>
     </table>
-    <?php } ?>
   </body>
 </html>

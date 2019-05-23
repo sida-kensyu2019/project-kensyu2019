@@ -23,7 +23,7 @@
         <td><?php ph($row["genre_name"]); ?></td>
         <td><a href="m_delete_exec_genre.php?genre_id=<?php ph($row["genre_id"]);?>">削除</a></td>
       <tr>
+      <?php } ?>
     </table>
-  <?php } ?>
 </body>
 </html>
