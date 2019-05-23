@@ -27,7 +27,7 @@ require_once("../lib/init.php");
         // 入力OK
         //データベースに管理ユーザを追加
         require_once("../lib/function/db_user.php");
-        $sth=insert_m_user($dbh, $input);
+        $sth=insert_m_user($dbh, $_POST);
         require_once("../lib/m_view/m_insert_exec_user.php");
       }
     }
