@@ -17,16 +17,14 @@
 </head>
 <body>
 
-<?php require_once("../init.php"); ?>
-
 <!-- ユーザ名表示 -->
-<h2><?php ph($POST_["user_name"]); ?></h2>
+<h2><?php ph($_POST["user_name"]); ?></h2>
 
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
 <table border="1">
   <tr>
     <td>アイコン</td>
-    <td rowspan="3"><?php ph($POST_["comment"]); ?></td>
+    <td rowspan="3"><?php ph($_POST["comment"]); ?></td>
   </tr>
   <tr>
     <td>コメント数<br>
@@ -41,7 +39,7 @@
 過去の評価コメント<br>
 
 <!-- 管理者がアクセスした場合のみ表示 -->
-<a href="m_delete_exec_user.php">ユーザ削除</a><br>
+<a href="m_delete_exec_user.php?user_id=<?php ph($row["user_id"]);?>">ユーザ削除</a><br>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
 <a href="delete_user.php">退会する</a>
