@@ -20,13 +20,13 @@
 <?php require_once("../init.php"); ?>
 
 <!-- ユーザ名表示 -->
-<h2><?php ph($_["user_name"]); ?></h2>
+<h2><?php ph($POST_["user_name"]); ?></h2>
 
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
 <table border="1">
   <tr>
     <td>アイコン</td>
-    <td rowspan="3"><?php ph($_["comment"]); ?></td>
+    <td rowspan="3"><?php ph($POST_["comment"]); ?></td>
   </tr>
   <tr>
     <td>コメント数<br>
