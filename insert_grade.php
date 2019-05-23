@@ -6,7 +6,7 @@ require_once("../init.php");
 // ユーザログイン判定
 if ($_SESSION["login"]) { // ログインユーザ
   // 評価書込画面コントローラ遷移 -> 評価書込画面ビュー出力
-  if (!isset($_POST["star"] || $_POST["comment"]) { // 書き込みない場合
+  if (!isset($_POST["star"] || !isset($_POST["comment"])) { // 書き込みない場合
     // 評価書込画面ビュー出力
     require_once("../view/insert_grade.php");
   } else {  // ある場合

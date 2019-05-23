@@ -10,20 +10,19 @@
       <input type="text" name="job_name">
       <input type="submit" value="新規追加">
     </form>
-    <?php require_once("../init.php");
-    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
     <table>
       <tr>
         <th>職種ID</th>
         <th>職種名</th>
         <th>削除</th>
       </tr>
+      <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
       <tr>
         <td><?php ph($row["job_id"]);?></td>
         <td><?php ph($row["job_name"]);?></td>
-        <td><a href="m_control/m_delete_exec_job.php">削除</a></td>
+        <td><a href="m_delete_exec_job.php?job_id=<?php ph($row["job_id"]);?>">削除</a></td>
       </tr>
+      <?php } ?>
     </table>
-    <?php } ?>
   </body>
 </html>

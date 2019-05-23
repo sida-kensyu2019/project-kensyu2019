@@ -1,9 +1,9 @@
 <?php
 /**
  * このファイルの概要説明
- * 職種削除
+ * ジャンル新規追加
  * このファイルの詳細説明
- * 職種削除
+ * ジャンル新規追加
  * システム名：愛パワー美術品評価管理システム
  * 作成者：山田美波
  * 作成日：2019/05/23
@@ -15,7 +15,7 @@
 
 require_once("../lib/init.php");
 
-require_once("../lib/function/db_job.php");
-$sth=delete_job($dbh, $_GET["job_id"]);
+require_once("../lib/function/db_genre.php");
+$sth=insert_genre($dbh, $_POST);
 
-header("Location:http://localhost/project-kensyu2019/m_control/m_select_job.php");
+require_once("m_select_genre.php");

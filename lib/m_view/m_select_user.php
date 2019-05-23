@@ -18,25 +18,22 @@
 <body>
 <h2>管理者一覧画面</h2>
 
-<?php require_once("../init.php");
-while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
-
-<table>
+<table border="1">
   <tr>
     <th>ユーザID</th>
-    <th><ユーザ名</th>
+    <th>ユーザ名</th>
     <th>メールアドレス</th>
     <th>削除</th>
   </tr>
+  <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
   <tr>
     <td><?php ph($row["user_id"]); ?></td>
     <td><?php ph($row["user_name"]); ?></td>
     <td><?php ph($row["mail_address"]); ?></td>
     <td><a href="m_delete_exec_user.php">削除</td> <!-- 削除完了画面リンク -->
   </tr>
+  <?php } ?>
 </table>
-
-<?php } ?>
 
 <input type="button" value="新規追加" onclick="location.href='m_insert_user.php'">
 <!-- 新規管理者登録画面に遷移 -->

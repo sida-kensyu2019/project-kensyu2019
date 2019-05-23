@@ -5,7 +5,7 @@
   {
       try {
           // プレースホルダ付きSQLを構築
-          sql = "SELECT * FROM m_user WHERE mail_address = :mail_address";
+          $sql = "SELECT * FROM m_user WHERE mail_address = :mail_address";
           $sth = $dbh->prepare($sql); // SQLを準備
 
           // プレースホルダに値をバインド
@@ -27,11 +27,8 @@
           $sql = "SELECT * FROM m_user ";
           $sql .= "INNER JOIN m_job ";
           $sql .= "ON m_user.job_id = m_job.job_id ";
-          $sql .= "WHERE m_material.material_id=:material_id ";
+          $sql .= "WHERE m_user.user_id";
           $sth = $dbh->prepare($sql); // SQLを準備
-
-          // プレースホルダに値をバインド
-          $sth->bindValue(":job_id", $id);
 
           // SQLを発行
           $sth->execute();
