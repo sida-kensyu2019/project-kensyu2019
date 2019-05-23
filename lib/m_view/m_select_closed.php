@@ -30,7 +30,7 @@
   <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <tr>
       <td><?php ph($row["closed"]); ?></td>
-      <td><a href="m_delete_exec_closed.php">削除</a></td>
+      <td><a href="m_delete_exec_closed.php?closed=<?php ph($row["closed"]);?>">削除</a></td>
     <tr>
   <?php } ?>
 </table>
