@@ -9,7 +9,7 @@
 
     <h1>新規管理者登録画面</h1>
     <table>
-      <form action="../m_control/m_insert_exec_user.php" method="post">
+      <form action="../m_control/m_insert_user.php" method="post">
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
         <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
         <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
@@ -23,8 +23,9 @@
           </th>
         </tr>
         <br>
-        <tr><th><input type="submit" name="登録">
-        <input type="reset" name="クリア">
+        <tr><th>
+          <input type="submit" name="登録">
+          <input type="reset" name="クリア">
       </th></tr>
       </form>
     </table>
