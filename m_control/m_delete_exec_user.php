@@ -5,11 +5,18 @@
 	require_once("../lib/init.php");
 
 	//ユーザテーブルの処理関数呼び出し
-	require_once("../lib/funtion/db_user.php");
+	require_once("../lib/function/db_user.php");
+
+	//ユーザのいいねをデータベースから削除する
+	require_once("../lib/function/db_good.php");
+	$sth=delete_good_by_user($dbh, $_GET["user_id"]);
+
+	//ユーザの評価をデータベースから削除する
+	require_once("../lib/function/db_grade.php");
+	$sth=delete_grade_by_user($dbh, $_GET["user_id"]);
 
 	//ユーザのデータをデータベースから削除する
-	$sth = delete_user($dbh, $id); //ユーザデータを削除する関数
+	$sth = delete_user($dbh, $_GET["user_id"]); //ユーザデータを削除する関数
 
 	//管理ユーザ削除完了画面ビュー出力
 	require_once("../lib/m_view/m_delete_exec_user.php");
-	

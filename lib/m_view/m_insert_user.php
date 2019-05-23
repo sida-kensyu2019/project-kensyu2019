@@ -6,12 +6,10 @@
     <link rel="stylesheet" href="m_insert_user.css">
   </head>
   <body>
-    <?php
-    require_once("../init.php");
-     ?>
+
     <h1>新規管理者登録画面</h1>
     <table>
-      <form action="m_comtrol/m_insert_user.php" method="post">
+      <form action="../m_control/m_insert_exec_user.php" method="post">
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
         <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
         <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
@@ -19,16 +17,17 @@
           <th>
           <select name="job_id">
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
-              <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
+              <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]); ?></option>
             <?php } ?>
           </select>
           </th>
         </tr>
-        <input type="submit" name="登録">
-        <input type="reset" name="クリア">
         <br>
-        <a href="m_select_user.php">管理者一覧画面に戻る</a>
+        <tr><th><input type="submit" name="登録">
+        <input type="reset" name="クリア">
+      </th></tr>
       </form>
     </table>
+    <a href="m_select_user.php">管理者一覧画面に戻る</a>
   </body>
 </html>
