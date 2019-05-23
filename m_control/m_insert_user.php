@@ -10,8 +10,15 @@ require_once("../lib/init.php");
   // ユーザレベル判定
   //  if($_SESSION["user_lv"] == 2) { // 管理者のとき
 
+    require_once("../lib/function/db_job.php");
+    $sth=get_job($dbh);
+
     // 管理ユーザ登録画面ビュー出力
     require_once("../lib/m_view/m_insert_user.php");
+
+    //データベースに管理ユーザを追加
+    require_once("../lib/function/db_user.php");
+    $sth=insert_m_user($dbh, $input);
 
 //  } else {  // 管理者でないとき
 
