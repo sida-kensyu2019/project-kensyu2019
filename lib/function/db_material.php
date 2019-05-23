@@ -138,13 +138,13 @@ function delete_material($dbh, $id)
 
 // データベースのデータを更新する
 // $input: array 入力値
-function update($input)
+function update_material($input)
 {
     try {
         // プレースホルダ付きSQLを構築
         $sql = "UPDATE m_material ";
         $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, "; 
-        $sql .= "genre_id=:genre_id, material_yaer ";
+        $sql .= "genre_id=:genre_id, material_yaer=:material_year, picture=:picture, caption=:caption ";
         $sql .= "WHERE material_id=:material_id";
         $sth = $this->dbh->prepare($sql); // SQLを準備
 

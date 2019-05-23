@@ -14,6 +14,8 @@
             return $sth;
 
         } catch (PDOException $e) {
+            print "指定された日付はすでに休館日として登録されています。<br>";
+            print "<a href=\"m_select_closed.php\">ジャンル一覧</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
     }
