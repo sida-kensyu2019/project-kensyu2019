@@ -117,16 +117,16 @@ function insert($input)
 
 // データベースのデータを削除する
 // $id: 削除するデータのid
-function delete($id)
+function delete_material($id)
 {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "DELETE FROM m_ramen ";
-        $sql .= "WHERE ramen_id=:ramen_id";
+        $sql = "DELETE FROM m_material ";
+        $sql .= "WHERE material_id=:material_id";
         $sth = $this->dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":ramen_id", (int) $id);
+        $sth->bindValue(":material_id", (int) $id);
 
         // SQLを発行
         $sth->execute();
@@ -144,14 +144,14 @@ function update($input)
         // プレースホルダ付きSQLを構築
         $sql = "UPDATE m_ramen ";
         $sql .= "SET ramen_name_kanji=:ramen_name_kanji, ramen_name_kana=:ramen_name_kana, taste_id=:taste_id ";
-        $sql .= "WHERE ramen_id=:ramen_id";
+        $sql .= "WHERE material_id=:material_id";
         $sth = $this->dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
         $sth->bindValue(":ramen_name_kanji", $input["ramen_name_kanji"]);
         $sth->bindValue(":ramen_name_kana", $input["ramen_name_kana"]);
         $sth->bindValue(":taste_id", $input["taste_id"]);
-        $sth->bindValue(":ramen_id", $input["ramen_id"]);
+        $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行
         $sth->execute();
