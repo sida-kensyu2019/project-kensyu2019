@@ -44,13 +44,13 @@ function get_material($dbh)
         if (empty($_POST)) {
 
 
-            $sql .= "WHERE m_ramen.taste_id = :key_taste_id ";
+            $sql .= "WHERE m_material.taste_id = :key_taste_id ";
 
             if (!empty($_POST["keyword"])) {
                 //セレクトボックス入力済み、検索フォーム入力済み
 
-                $sql .= "AND (m_ramen.ramen_name_kanji LIKE :keyword ";
-                $sql .= "OR m_ramen.ramen_name_kana LIKE :keyword) ";
+                $sql .= "AND (m_material.material_name_kanji LIKE :keyword ";
+                $sql .= "OR m_material.material_name_kana LIKE :keyword) ";
                 $sth = $dbh->prepare($sql); // SQLを準備
                 $sth->bindValue(":key_taste_id", $_POST["key_taste_id"]);
                 $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
@@ -68,8 +68,8 @@ function get_material($dbh)
         } elseif (!empty($_POST["keyword"])) {
             //セレクトボックス未入力、検索フォーム入力済み
 
-            $sql .= "WHERE m_ramen.ramen_name_kanji LIKE :keyword ";
-            $sql .= "OR m_ramen.ramen_name_kana LIKE :keyword ";
+            $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
+            $sql .= "OR m_material.material_name_kana LIKE :keyword ";
             $sth = $dbh->prepare($sql); // SQLを準備
             $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
             // SQLを発行
@@ -96,13 +96,13 @@ function insert($input)
 {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "INSERT INTO m_ramen (ramen_name_kanji, ramen_name_kana, taste_id) ";
-        $sql .= "VALUES (:ramen_name_kanji, :ramen_name_kana, :taste_id)";
+        $sql = "INSERT INTO m_material (material_name_kanji, material_name_kana, taste_id) ";
+        $sql .= "VALUES (:material_name_kanji, :material_name_kana, :taste_id)";
         $sth = $this->dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":ramen_name_kanji",     $input["ramen_name_kanji"]);
-        $sth->bindValue(":ramen_name_kana",     $input["ramen_name_kana"]);
+        $sth->bindValue(":material_name_kanji",     $input["material_name_kanji"]);
+        $sth->bindValue(":material_name_kana",     $input["material_name_kana"]);
         $sth->bindValue(":taste_id",   $input["taste_id"]);
 
         // SQLを発行
@@ -117,16 +117,16 @@ function insert($input)
 
 // データベースのデータを削除する
 // $id: 削除するデータのid
-function delete($id)
+function delete_material($dbh, $id)
 {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "DELETE FROM m_ramen ";
-        $sql .= "WHERE ramen_id=:ramen_id";
-        $sth = $this->dbh->prepare($sql); // SQLを準備
+        $sql = "DELETE FROM m_material ";
+        $sql .= "WHERE material_id=:material_id";
+        $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":ramen_id", (int) $id);
+        $sth->bindValue(":material_id", (int) $id);
 
         // SQLを発行
         $sth->execute();
@@ -142,16 +142,17 @@ function update($input)
 {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "UPDATE m_ramen ";
-        $sql .= "SET ramen_name_kanji=:ramen_name_kanji, ramen_name_kana=:ramen_name_kana, taste_id=:taste_id ";
-        $sql .= "WHERE ramen_id=:ramen_id";
+        $sql = "UPDATE m_material ";
+        $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, "; 
+        $sql .= "genre_id=:genre_id, material_yaer ";
+        $sql .= "WHERE material_id=:material_id";
         $sth = $this->dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":ramen_name_kanji", $input["ramen_name_kanji"]);
-        $sth->bindValue(":ramen_name_kana", $input["ramen_name_kana"]);
+        $sth->bindValue(":material_name_kanji", $input["material_name_kanji"]);
+        $sth->bindValue(":material_name_kana", $input["material_name_kana"]);
         $sth->bindValue(":taste_id", $input["taste_id"]);
-        $sth->bindValue(":ramen_id", $input["ramen_id"]);
+        $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行
         $sth->execute();
