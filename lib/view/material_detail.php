@@ -21,7 +21,7 @@
             <h2>美術品詳細</h2>
 
             <?php require_once("../init.php");
-            $row1=$sth->fetch(PDO::FETCH_ASSOC){ //該当美術品データを配列にして取得
+            $row1=$sth->fetch(PDO::FETCH_ASSOC){ // 該当美術品データを配列にして取得
             ?>
 
             <div id="material_name">

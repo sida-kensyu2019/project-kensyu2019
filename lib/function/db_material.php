@@ -143,8 +143,8 @@ function update($input)
     try {
         // プレースホルダ付きSQLを構築
         $sql = "UPDATE m_material ";
-        $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, "; genre_id=:genre_id ";
-        $sql .= "SET material_name=:material_name, material_kana=:material_kana, material_name=:material_name, material_kana=:material_kana, genre_id=:genre_id ";
+        $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, "; 
+        $sql .= "genre_id=:genre_id, material_yaer ";
         $sql .= "WHERE material_id=:material_id";
         $sth = $this->dbh->prepare($sql); // SQLを準備
 
