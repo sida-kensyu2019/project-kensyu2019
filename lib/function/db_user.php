@@ -42,6 +42,31 @@
   }
 
 
+  function get_user_by_id($dbh, $id)
+  {
+      try {
+          // SQLを構築
+          $sql = "SELECT * FROM m_user ";
+          $sql .= "INNER JOIN m_job ";
+          $sql .= "ON m_user.job_id = m_job.job_id ";
+          $sql .= "WHERE m_user.user_id=:user_id";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // プレースホルダに値をバインド
+          $sth->bindValue(":user_id", (int) $id);
+
+          // SQLを発行
+          $sth->execute();
+
+          // データを戻す
+          return $sth;
+
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
+  }
+
+
   //データベースに管理ユーザのデータを追加する
   function insert_m_user($dbh, $input)
   {
