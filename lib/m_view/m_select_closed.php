@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <title>管理トップページ</title>
-  <!--  <link rel="stylesheet" href="m_select_closed.css"> -->
+  <meta charset="utf-8">
+  <title>休館日一覧画面</title>
+  <link rel="stylesheet" href="m_select_closed.css">
 </head>
 <body>
-	<?php require_once("../lib/function/function.php");
-	 			require_once("../lib/init.php"); ?>
+	<?php require_once("../function/function.php");
+	 			require_once("../init.php"); ?>
   <h1>休館日一覧</h1>
   <form action="m_insert_exec_closed.php" method="post">
     <select name="year"> <!--選択肢に年を3年分表示-->
@@ -32,7 +32,7 @@
   <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <tr>
       <td><?php ph($row["closed"]); ?></td>
-      <td><a href="m_delete_exec_closed.php?closed=<?php ph($row["closed"]);?>">削除</a></td>
+      <td><a href="m_delete_exec_closed.php">削除</a></td>
     <tr>
   <?php } ?>
 </table>
