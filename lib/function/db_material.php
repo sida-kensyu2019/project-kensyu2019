@@ -75,14 +75,6 @@ function get_material($dbh)
             $sth->execute();
         
         } else {
-                
-
-
-
-        }
-
-
-
             if (!empty($_POST["keyword"])) {
                 //セレクトボックス入力済み、検索フォーム入力済み
 
@@ -93,14 +85,7 @@ function get_material($dbh)
                 $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
                 // SQLを発行
                 $sth->execute();
-            } else {
-                //セレクトボックス入力済み、検索フォーム未入力
-
-                $sth = $dbh->prepare($sql); // SQLを準備
-                $sth->bindValue(":key_taste_id", $_POST["key_taste_id"]);
-                // SQLを発行
-                $sth->execute();
-            }
+    
             
             } elseif (!empty($_POST["keyword"])) {
                 //セレクトボックス未入力、検索フォーム入力済み
@@ -111,7 +96,12 @@ function get_material($dbh)
                 $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
                 // SQLを発行
                 $sth->execute();
-            } 
+            }
+
+
+
+        }
+
     
     // データを戻す
     return $sth;
