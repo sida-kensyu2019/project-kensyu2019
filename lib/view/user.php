@@ -18,13 +18,13 @@
 <body>
 
 <!-- ユーザ名表示 -->
-<h2><?php ph($input["user_name"]); ?></h2>
+<h2><?php ph($row["user_name"]); ?></h2>
 
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
 <table border="1">
   <tr>
     <td>アイコン</td>
-    <td rowspan="3"><?php ph($input["comment"]); ?></td>
+    <td rowspan="3"><?php ph($row["profile"]); ?></td>
   </tr>
   <tr>
     <td>コメント数<br>
