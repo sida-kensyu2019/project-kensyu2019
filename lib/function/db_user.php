@@ -2,7 +2,7 @@
 
   function login_user()
   {
-    session
+
   }
 
   //データベースに管理ユーザのデータを追加する
@@ -15,11 +15,11 @@
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":mail_address", $input["mail_address"]);
-        $sth->bindValue(":password", $input["password"]);
-        $sth->bindValue(":user_name", $input["user_name"]);
-        $sth->bindValue(":job_id", $input["job_id"]);
-        $sth->bindValue(":profile", $input["profile"]);
+        $sth->bindValue(":mail_address", $_POST["mail_address"]);
+        $sth->bindValue(":password", $_POST["password"]);
+        $sth->bindValue(":user_name", $_POST["user_name"]);
+        $sth->bindValue(":job_id", $_POST["job_id"]);
+        $sth->bindValue(":profile", $_POST["profile"]);
 
         // SQLを発行
         $sth->execute();
@@ -40,7 +40,7 @@
 
 
   //データベースに一般ユーザのデータを追加する
-  function m_insert_user()
+  function insert_user()
   {
     try {
         // プレースホルダ付きSQLを構築
@@ -49,11 +49,11 @@
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":mail_address", $input["mail_address"]);
-        $sth->bindValue(":password", $input["password"]);
-        $sth->bindValue(":user_name", $input["user_name"]);
-        $sth->bindValue(":job_id", $input["job_id"]);
-        $sth->bindValue(":profile", $input["profile"]);
+        $sth->bindValue(":mail_address", $_POST["mail_address"]);
+        $sth->bindValue(":password", $_POST["password"]);
+        $sth->bindValue(":user_name", $_POST["user_name"]);
+        $sth->bindValue(":job_id", $_POST["job_id"]);
+        $sth->bindValue(":profile", $_POST["profile"]);
 
         // SQLを発行
         $sth->execute();
