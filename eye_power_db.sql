@@ -86,7 +86,7 @@ CREATE TABLE
    grade_id INT PRIMARY KEY AUTO_INCREMENT,
    material_id INT NOT NULL,
    user_id INT NOT NULL,
-   grade_date DATE NOT NULL,
+   grade_date DATETIME NOT NULL,
    star INT NOT NULL,
    comment VARCHAR(5000) NOT NULL,
    FOREIGN KEY (material_id) REFERENCES m_material(material_id),
@@ -95,11 +95,11 @@ CREATE TABLE
 
  /* ï]âøÉeÅ[ÉuÉãINSERT */
  INSERT INTO eye_power_db.t_grade(material_id, user_id, grade_date, star, comment)
-  VALUES (1, 1, '2019-05-21', 3, 'Ç±ÇﬂÇÒÇ∆ÇƒÇ∑Ç∆');
+  VALUES (1, 1, '2019-05-21 00:00:00', 3, 'Ç±ÇﬂÇÒÇ∆ÇƒÇ∑Ç∆');
  INSERT INTO eye_power_db.t_grade(material_id, user_id, grade_date, star, comment)
-  VALUES (2, 2, '2019-05-22', 1, 'Ç±ÇﬂÇÒÇ∆ÇƒÇ∑Ç∆');
+  VALUES (2, 2, '2019-05-22 05:00:00', 1, 'Ç±ÇﬂÇÒÇ∆ÇƒÇ∑Ç∆');
  INSERT INTO eye_power_db.t_grade(material_id, user_id, grade_date, star, comment)
-  VALUES (3, 3, '2019-05-22', 5, 'Ç±ÇﬂÇÒÇ∆ÇƒÇ∑Ç∆');
+  VALUES (3, 3, '2019-05-22 07:00:00', 5, 'Ç±ÇﬂÇÒÇ∆ÇƒÇ∑Ç∆');
 
 
  /* t_goodçÏê¨ */
