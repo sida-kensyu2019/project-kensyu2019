@@ -1,8 +1,23 @@
 <?php
 
-  function login_user()
+  //$input: $_POST
+  function get_user_by_mail($dbh, $input)
   {
+      try {
+          // プレースホルダ付きSQLを構築
+          sql = "SELECT * FROM m_user WHERE mail_address = :mail_address";
+          $sth = $dbh->prepare($sql); // SQLを準備
 
+          // プレースホルダに値をバインド
+          $sth->bindValue(":mail_address", $input["mail_address"]);
+          // SQLを発行
+          $sth->execute();
+          // データを戻す
+          return $sth;
+
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
   }
 
   //データベースに管理ユーザのデータを追加する
