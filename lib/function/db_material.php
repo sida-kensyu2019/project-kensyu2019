@@ -2,8 +2,8 @@
 
 
 //美術品詳細画面表示用の処理
+// データベースのデータをIDを指定して1件取得する
 //$id: GET["id"]
-// データベースのデータを取得する
 function get_material_by_id($dbh, $id)
 {
     try {
@@ -92,7 +92,7 @@ function get_material($dbh)
 
 // データベースのデータを更新する
 // $input: array 入力値 主に$_POST
-public function insert($input)
+function insert($input)
 {
     try {
         // プレースホルダ付きSQLを構築
@@ -117,7 +117,7 @@ public function insert($input)
 
 // データベースのデータを削除する
 // $id: 削除するデータのid
-public function delete($id)
+function delete($id)
 {
     try {
         // プレースホルダ付きSQLを構築
@@ -135,29 +135,6 @@ public function delete($id)
     }
 }
 
-// データベースのデータをIDを指定して1件取得する
-// $id:idを指定
-function getDataById($id)
-{
-    try {
-        // SQLを構築
-        $sql = "SELECT * FROM m_ramen ";
-        $sql .= "WHERE ramen_id = :ramen_id";
-
-        $sth = $this->dbh->prepare($sql); // SQLを準備
-
-        // プレースホルダに値をバインド
-        $sth->bindValue(":ramen_id", (int) $id);
-
-        // SQLを発行
-        $sth->execute();
-
-        // データを戻す
-        return $sth->fetch(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
-}
 
 // データベースのデータを更新する
 // $input: array 入力値
