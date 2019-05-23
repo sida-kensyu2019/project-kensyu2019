@@ -11,19 +11,19 @@
     <input type="text" size="30" name="genre_name">
     <input type="submit" value="新規追加">
   </form>
-  <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <table border=1>
       <tr>
         <th>ジャンルID</th>
         <th>ジャンル名</th>
         <th>削除</th>
       </tr>
+      <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
       <tr>
         <td><?php ph($row["genre_id"]); ?></td>
         <td><?php ph($row["genre_name"]); ?></td>
         <td><a href="m_delete_exec_genre.php?genre_id=<?php ph($row["genre_id"]);?>">削除</a></td>
       <tr>
+      <?php } ?>
     </table>
-  <?php } ?>
 </body>
 </html>
