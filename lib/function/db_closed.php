@@ -35,7 +35,7 @@
     function insert_closed($dbh, $input)
     {
         $ary_date = create_date($input);
-        $date = implode($ary_date);
+        $date = implode("-", $ary_date);
 
         try {
             // プレースホルダ付きSQLを構築
