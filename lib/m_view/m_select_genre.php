@@ -11,8 +11,7 @@
     <input type="text" size="30" name="genre_name">
     <input type="submit" value="新規追加">
   </form>
-  <?php require_once("../init.php");
-    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+  <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <table border=1>
       <tr>
         <th>ジャンルID</th>

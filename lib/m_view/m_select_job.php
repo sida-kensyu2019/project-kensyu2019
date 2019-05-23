@@ -10,8 +10,7 @@
       <input type="text" name="job_name">
       <input type="submit" value="新規追加">
     </form>
-    <?php require_once("../init.php");
-    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
+    <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
     <table>
       <tr>
         <th>職種ID</th>
