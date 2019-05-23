@@ -56,7 +56,6 @@
         $sth->bindValue(":password", $_POST["password"]);
         $sth->bindValue(":user_name", $_POST["user_name"]);
         $sth->bindValue(":job_id", $_POST["job_id"]);
-        $sth->bindValue(":profile", $_POST["profile"]);
 
         // SQLを発行
         $sth->execute();
