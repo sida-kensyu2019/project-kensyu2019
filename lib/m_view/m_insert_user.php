@@ -24,8 +24,8 @@
         </tr>
         <br>
         <tr><th>
-          <input type="submit" name="登録">
-          <input type="reset" name="クリア">
+          <input type="submit" value="登録">
+          <input type="reset" value="クリア">
       </th></tr>
       </form>
     </table>
