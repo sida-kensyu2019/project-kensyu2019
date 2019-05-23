@@ -1,6 +1,6 @@
 <?php /*ユーザ美術館トップページ：村上：2019/05/23：Ver1.0
         最終更新日：
-        レビュー： 
+        レビュー：
         */
 ?>
 
@@ -22,10 +22,12 @@
                   <a href="user.php" id="loginOrMypage">マイページ</a>
               <?php } ?>
             </div>
+            <div id="titleCalender">
             <!--なんかいい感じの画像-->
-            <img src="なんかいい感じの画像" name="title">
-            <!--カレンダー-->
-
+              <img src="なんかいい感じの画像" name="title">
+            <!--カレンダーをうまく表示したい-->
+              <?php require_once("calender.php"); ?>
+            </div>
             <!--検索ボックス-->
             <table id="search">
               <form action="select_material.php" method="post">
@@ -46,7 +48,6 @@
               </form>
             </table>
             <!-- 美術品TOP20 -->
-            <h2>美術品検索結果</h2>
             <?php require_once("../init.php");
                 //平均評価の降順で20件ほどSELECT表示
             	    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
