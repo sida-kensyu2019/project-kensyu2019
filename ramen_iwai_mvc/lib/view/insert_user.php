@@ -1,3 +1,4 @@
+<?php //作成者：山田 ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +26,14 @@
     </tr>
   </form>
 </table>
+<br>
+<br>
+<br>
 <a href="insert_check_user.php">
 <input type="button" value="登録">
 </a>　
 <input type="reset" value="クリア">
-
+<br>
 <a href="login.php">
 <input type="button" value="ログイン画面">
 </a>
