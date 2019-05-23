@@ -1,5 +1,30 @@
 <?php
 
+//ユーザトップページ表示SQL実行プログラム
+//平均評価の降順ですべて取得
+//ビュープログラムで繰り返し20回までで表示件数制御
+function get_material_top($dbh)
+{
+    try {
+        // SQLを構築
+        $sql = "SELECT m_material.material_id, m_material.material_name, ";
+        $sql .= "m_material.author_name, m_material.picture, AVG(star) ";
+        $sql .= "FROM t_grade INNER JOIN m_material ";
+        $sql .= "ON m_material.material_id = t_grade.material_id ";
+        $sql .= "GROUP BY material_id ORDER BY AVG(star) DESC;";
+        $sth = $dbh->prepare($sql); // SQLを準備
+
+        // SQLを発行
+        $sth->execute();
+
+        // データを戻す
+        return $sth;
+
+    } catch (PDOException $e) {
+        exit("SQL発行エラー：{$e->getMessage()}");
+    }
+}
+
 
 //美術品詳細画面表示用の処理
 // データベースのデータをIDを指定して1件取得する
@@ -42,9 +67,21 @@ function get_material($dbh)
         $sql .= "ON m_material.material_id = m_genre.genre_id ";
 
         if (empty($_POST)) {
+            //検索なしのアクセス、もしくは
+            //セレクトボックス、検索フォーム共に未入力
+
+            $sth = $dbh->prepare($sql); // SQLを準備
+            // SQLを発行
+            $sth->execute();
+        
+        } else {
+                
 
 
-            $sql .= "WHERE m_material.taste_id = :key_taste_id ";
+
+        }
+
+
 
             if (!empty($_POST["keyword"])) {
                 //セレクトボックス入力済み、検索フォーム入力済み
@@ -65,22 +102,16 @@ function get_material($dbh)
                 $sth->execute();
             }
             
-        } elseif (!empty($_POST["keyword"])) {
-            //セレクトボックス未入力、検索フォーム入力済み
+            } elseif (!empty($_POST["keyword"])) {
+                //セレクトボックス未入力、検索フォーム入力済み
 
-            $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
-            $sql .= "OR m_material.material_name_kana LIKE :keyword ";
-            $sth = $dbh->prepare($sql); // SQLを準備
-            $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
-            // SQLを発行
-            $sth->execute();
-        } else {
-            //セレクトボックス、検索フォーム共に未入力
-
-            $sth = $dbh->prepare($sql); // SQLを準備
-            // SQLを発行
-            $sth->execute();
-        }
+                $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
+                $sql .= "OR m_material.material_name_kana LIKE :keyword ";
+                $sth = $dbh->prepare($sql); // SQLを準備
+                $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
+                // SQLを発行
+                $sth->execute();
+            } 
     
     // データを戻す
     return $sth;
