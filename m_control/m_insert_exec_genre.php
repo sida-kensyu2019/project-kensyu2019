@@ -16,6 +16,6 @@
 require_once("../lib/init.php");
 
 require_once("../lib/function/db_genre.php");
-$sth=insert_genre($dbh, $_POST["genre_name"]);
+$sth=insert_genre($dbh, $_POST);
 
-header("Location:http://localhost/project-kensyu2019/m_control/m_select_genre.php");
+require_once("m_select_genre.php");
