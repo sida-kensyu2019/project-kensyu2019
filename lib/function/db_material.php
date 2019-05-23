@@ -1,5 +1,33 @@
 <?php
 
+
+//ユーザマイページでの評価一覧表示
+// データベースのデータを取得する
+function get_material_by_id($dbh, $id)
+{
+    try {
+        // SQLを構築
+        $sql = "SELECT * FROM m_material ";
+        $sql .= "INNER JOIN m_genre ";
+        $sql .= "ON m_material.material_id = m_genre.genre_id ";
+        $sql .= "WHERE m_material.material_id=:material_id ";
+        $sth = $dbh->prepare($sql); // SQLを準備
+
+        // プレースホルダに値をバインド
+        $sth->bindValue(":material_id", $id);
+
+        // SQLを発行
+        $sth->execute();
+
+        // データを戻す
+        return $sth;
+        
+    } catch (PDOException $e) {
+        exit("SQL発行エラー：{$e->getMessage()}");
+    }
+}
+
+
 /*
     データベースのデータを取得する
     検索結果も反映
@@ -12,7 +40,9 @@ function get_material($dbh)
         $sql .= "INNER JOIN m_genre ";
         $sql .= "ON m_material.material_id = m_genre.genre_id ";
 
-        if (!empty($_POST["key_taste_id"])) {
+        if (empty($_POST)) {
+
+
             $sql .= "WHERE m_ramen.taste_id = :key_taste_id ";
 
             if (!empty($_POST["keyword"])) {
