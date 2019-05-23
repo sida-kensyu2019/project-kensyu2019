@@ -66,6 +66,32 @@ function get_material($dbh)
         $sql .= "INNER JOIN m_genre ";
         $sql .= "ON m_material.material_id = m_genre.genre_id ";
 
+
+        //検索なしのアクセス、もしくは
+        //セレクトボックス、検索フォーム共に未入力
+
+        $sth = $dbh->prepare($sql); // SQLを準備
+        // SQLを発行
+        $sth->execute();
+        
+
+        // データを戻す
+        return $sth;
+
+    } catch (PDOException $e) {
+        exit("SQL発行エラー：{$e->getMessage()}");
+    }
+}
+
+//偽物
+function serch_material($dbh)
+{
+    try {
+        // SQLを構築
+        $sql = "SELECT * FROM m_material ";
+        $sql .= "INNER JOIN m_genre ";
+        $sql .= "ON m_material.material_id = m_genre.genre_id ";
+
         if (empty($_POST)) {
             //検索なしのアクセス、もしくは
             //セレクトボックス、検索フォーム共に未入力
@@ -110,7 +136,6 @@ function get_material($dbh)
         exit("SQL発行エラー：{$e->getMessage()}");
     }
 }
-
 
 
 // データベースのデータを更新する
