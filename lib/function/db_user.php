@@ -72,16 +72,15 @@
   {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv, profile) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 2, :profile)";
+        $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 2)";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":mail_address", $input["mail_address"]);
-        $sth->bindValue(":password", $input["password"]);
-        $sth->bindValue(":user_name", $input["user_name"]);
-        $sth->bindValue(":job_id", $input["job_id"]);
-        $sth->bindValue(":profile", $input["profile"]);
+        $sth->bindValue(":mail_address", $_POST["mail_address"]);
+        $sth->bindValue(":password", $_POST["password"]);
+        $sth->bindValue(":user_name", $_POST["user_name"]);
+        $sth->bindValue(":job_id", $_POST["job_id"]);
 
         // SQLを発行
         $sth->execute();
