@@ -8,9 +8,9 @@ function get_material($dbh)
 {
     try {
         // SQLを構築
-        $sql = "SELECT * FROM m_ramen ";
-        $sql .= "INNER JOIN m_taste ";
-        $sql .= "ON m_ramen.taste_id = m_taste.taste_id ";
+        $sql = "SELECT * FROM m_material ";
+        $sql .= "INNER JOIN m_genre ";
+        $sql .= "ON m_material.material_id = m_genre.genre_id ";
 
         if (!empty($_POST["key_taste_id"])) {
             $sql .= "WHERE m_ramen.taste_id = :key_taste_id ";
@@ -20,7 +20,7 @@ function get_material($dbh)
 
                 $sql .= "AND (m_ramen.ramen_name_kanji LIKE :keyword ";
                 $sql .= "OR m_ramen.ramen_name_kana LIKE :keyword) ";
-                $sth = $this->dbh->prepare($sql); // SQLを準備
+                $sth = $dbh->prepare($sql); // SQLを準備
                 $sth->bindValue(":key_taste_id", $_POST["key_taste_id"]);
                 $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
                 // SQLを発行
@@ -28,7 +28,7 @@ function get_material($dbh)
             } else {
                 //セレクトボックス入力済み、検索フォーム未入力
 
-                $sth = $this->dbh->prepare($sql); // SQLを準備
+                $sth = $dbh->prepare($sql); // SQLを準備
                 $sth->bindValue(":key_taste_id", $_POST["key_taste_id"]);
                 // SQLを発行
                 $sth->execute();
@@ -39,14 +39,14 @@ function get_material($dbh)
 
             $sql .= "WHERE m_ramen.ramen_name_kanji LIKE :keyword ";
             $sql .= "OR m_ramen.ramen_name_kana LIKE :keyword ";
-            $sth = $this->dbh->prepare($sql); // SQLを準備
+            $sth = $dbh->prepare($sql); // SQLを準備
             $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
             // SQLを発行
             $sth->execute();
         } else {
             //セレクトボックス、検索フォーム共に未入力
 
-            $sth = $this->dbh->prepare($sql); // SQLを準備
+            $sth = $dbh->prepare($sql); // SQLを準備
             // SQLを発行
             $sth->execute();
         }

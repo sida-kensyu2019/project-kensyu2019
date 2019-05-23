@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="m_select_job.css">
   </head>
   <body>
-    <?php
-    require_once("../init.php");
-     ?>
     <form action="m_control/m_insert_exec_job.php" method="post">
       <input type="text" name="job_name">
       <input type="submit" value="新規追加">
