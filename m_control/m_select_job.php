@@ -17,5 +17,5 @@
 require_once("../lib/init.php");
 
 require_once("../lib/function/db_job.php");
-$row=get_job($dbh);
+$sth=get_job($dbh);
 require_once("../lib/m_view/m_select_job.php");
