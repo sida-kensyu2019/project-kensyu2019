@@ -17,8 +17,8 @@
 			$errorMessage="メールアドレスまたはパスワードが未入力です";
 			require_once("lib/view/login.php"); //ログイン画面をもう一度表示
 		}else{ //入力された時データベースに問い合わせる
-			$sth=get_user_by_mail($dbh, $_POST);
-			$row=$sth->fetch(PDO::FETCH_ASSOC); //入力されたメールアドレスのユーザデータを配列にして取得
+			$row=get_user_by_mail($dbh, $_POST);
+			//$row=$sth->fetch(PDO::FETCH_ASSOC); //入力されたメールアドレスのユーザデータを配列にして取得
 			if(empty($row)){ //メールアドレスがデータベースに無い時
 				$errorMessage="メールアドレスまたはパスワードが違います";
 				require_once("lib/view/login.php"); //ログイン画面をもう一度表示
