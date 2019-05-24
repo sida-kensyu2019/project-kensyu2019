@@ -8,7 +8,7 @@ require_once("../lib/init.php");
 // ログイン時
 
   // ユーザレベル判定
-  //  if($_SESSION["user_lv"] == 2) { // 管理者のとき
+  //  if($_SESSION["user_lv"] == 1) { // 管理者のとき
 
     // 最初にアクセスした場合
     if (empty($_POST)) {
