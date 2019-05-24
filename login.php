@@ -26,7 +26,7 @@
 				$_SESSION["user_id"]=$row["user_id"]; //$_SESSIONにユーザIDを持たせる
 				$_SESSION["user_lv"]=$row["user_lv"]; //$_SESSIONにユーザLVを持たせる
 				$_SESSION["login"]=true; //$_SESSIONのログイン状態を切り替え
-				require_once("index.php"); //トップ画面に遷移
+				header("Location:../project-kensyu2019/"); //トップ画面に遷移
 			}else{
 				$errorMessage="メールアドレスまたはパスワードが違います";
 				require_once("lib/view/login.php"); //ログイン画面をもう一度表示
