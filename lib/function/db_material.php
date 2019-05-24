@@ -18,22 +18,19 @@ function get_material_top($dbh)
 
         // SQLを発行
         $sth->execute();
-
-        //
         $idx = 0;
-        while($rowTop = $sth->fetchAll(PDO::FETCH_ASSOC)){
+        $rowTop = $sth->fetchAll(PDO::FETCH_ASSOC);
+        foreach($rowTop as $rowTop_idx){
             try {
                   // プレースホルダ付きSQLを構築
                   $sql = "SELECT t_grade.grade_id, t_grade.comment, COUNT(*) ";
                   $sql .= "FROM t_good INNER JOIN t_grade ";
                   $sql .= "ON t_good.grade_id = t_grade.grade_id ";
-                  $sql .= "WHERE material_id = {$rowTop[$idx]["material_id"]} ";
+                  $sql .= "WHERE material_id = ";
+                  $sql .= "{$rowTop_idx["material_id"]} ";
                   $sql .= "GROUP BY t_good.grade_id ";
                   $sql .= "ORDER BY COUNT(*) DESC; ";
                   $sth2 = $dbh->prepare($sql); // SQLを準備
-
-                  // プレースホルダに値をバインド
-                  $sth2->bindValue(":user_id", (int) $id);
 
                   // SQLを発行
                   $sth2->execute();
@@ -42,7 +39,8 @@ function get_material_top($dbh)
             }
 
             while($row_Comment = $sth2->fetch(PDO::FETCH_ASSOC)){
-              $rowTop[$idx]["comment"] = $sth["comment"];
+              $rowTop[$idx]["comment"] = $row_Comment["comment"];
+              $idx++;
               break;
             }
         }
@@ -51,6 +49,7 @@ function get_material_top($dbh)
         exit("SQL発行エラー：{$e->getMessage()}");
     }
     return $rowTop;
+
 }
 
 

@@ -18,7 +18,7 @@
               <img src="" name="logo">
               <?php if(empty($_SESSION)){ ?>
                   <a href="login.php" id="loginOrMypage">ログイン</a>
-              } else { ?>
+              <?php } else { ?>
                   <a href="user.php" id="loginOrMypage">マイページ</a>
               <?php } ?>
             </div>
@@ -43,7 +43,8 @@
                      <?php
                          //二次元配列$calender,$closed_listの値を取り出し照合する繰り返し
                          $cnt = 0;
-
+                        $year = date("Y");
+                        $month = date("n");
                          foreach($calender as $value_day){
                             foreach($closed_list as $value_closed){
                                  $date = explode("-", $value_closed["closed"]);
@@ -51,14 +52,16 @@
                                    <td>
                                      <?php $cnt++; ?>
                                      <?php print $value_day["day"]."<br>休館日";
+                                       $closed_judge = true;
                                        break; ?>
                                    </td>
                                <?php }
-                            } ?>
-                                <?php if ((int)$date[2] != $value_day["day"]){ ?>
+                            }
+                                 if($closed_judge = true){ ?>
                                   <td>
                                      <?php $cnt++; ?>
                                      <?php print $value_day["day"]; ?>
+                                     <?php $closed_judge = false; ?>
                                   </td>
                                 <?php } ?>
 
@@ -86,10 +89,10 @@
                   </th>
                 </tr>
                 <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
-                <input type="submit" name="検索">
-                <input type="reset" name="クリア">
-              </form>
             </table>
+            <input type="submit" value="検索">
+            <input type="reset" value="クリア">
+          </form>
             <!-- 美術品TOP20 -->
             <?php
                 //平均評価の降順で20件ほどSELECT表示

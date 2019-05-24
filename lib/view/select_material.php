@@ -39,8 +39,7 @@
 
 <!-- 検索結果 -->
 <h2>美術品検索結果</h2>
-<?php require_once("../init.php");
-	    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+<?php	    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
 <table>
     <tr>
       <th>画像</th>
