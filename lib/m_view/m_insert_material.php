@@ -63,6 +63,7 @@
 <tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
 </table>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
+<input type="hidden" name="genre_name">
 
 <!-- 美術品一覧画面に戻る -->
 <input type="button" value="登録中止" onclick="location.href='m_select_material.php'">

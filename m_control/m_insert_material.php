@@ -9,7 +9,6 @@ require_once("../lib/init.php");
 
   // ユーザレベル判定
   // if($_SESSION["user_lv"] == 2) { // 管理者のとき
-var_dump($_POST);
    if (empty($_POST)) {
     // 美術品登録画面ビュー出力
     require_once("../lib/function/db_genre.php");
@@ -30,8 +29,9 @@ var_dump($_POST);
      } else {
 
        // 入力OK
+       require_once("../lib/function/db_genre.php");
+       $sth=get_genre($dbh);
        require_once("../lib/function/db_material.php");
-       $sth=get_material($dbh);
        insert_material($dbh, $_POST);
        require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
      }
