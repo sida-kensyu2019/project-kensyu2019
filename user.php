@@ -8,7 +8,7 @@
 	require_once("lib/function/db_user.php");
 
 	//ユーザデータをデータベースから取得する
-	$sth =get_user($dbh,$_GET["user_id"]);
+	$row=get_user_by_id($dbh,$_GET["user_id"]);
 
 	//マイページビュー出力
 	require_once("lib/view/user.php");

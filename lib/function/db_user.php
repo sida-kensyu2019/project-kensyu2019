@@ -1,6 +1,7 @@
 <?php
   //入力されたメールアドレスのユーザ情報をセレクトする
   //$input: $_POST
+  //return $row 連想配列  関数内でfetch
   function get_user_by_mail($dbh, $input)
   {
       try {
@@ -12,8 +13,11 @@
           $sth->bindValue(":mail_address", $input["mail_address"]);
           // SQLを発行
           $sth->execute();
+
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
+
           // データを戻す
-          return $sth;
+          return $row;
 
       } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
@@ -41,7 +45,7 @@
       }
   }
 
-
+    //return $row 連想配列  関数内でfetch
   function get_user_by_id($dbh, $id)
   {
       try {
@@ -58,8 +62,10 @@
           // SQLを発行
           $sth->execute();
 
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
+
           // データを戻す
-          return $sth;
+          return $row;
 
       } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");

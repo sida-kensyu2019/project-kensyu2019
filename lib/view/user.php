@@ -18,13 +18,13 @@
 <body>
 
 <!-- ユーザ名表示 -->
-<h2><?php ph($input["user_name"]); ?></h2>
+<h2><?php ph($row["user_name"]); ?></h2>
 
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
 <table border="1">
   <tr>
     <td>アイコン</td>
-    <td rowspan="3"><?php ph($input["comment"]); ?></td>
+    <td rowspan="3"><?php ph($row["profile"]); ?></td>
   </tr>
   <tr>
     <td>コメント数<br>
@@ -32,17 +32,27 @@
   </tr>
 </table>
 
+<?php if ($row["user_lv"] == 2) { ?>
+
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
 <a href="update_user.php">ユーザ情報を変更する</a><br>
 
+<?php } ?>
+
 <!-- 過去の評価コメント一覧 -->
-過去の評価コメント<br>
+<div>過去の評価コメント</div>
+
+<?php if ($row["user_lv"] == 1) { ?>
 
 <!-- 管理者がアクセスした場合のみ表示 -->
-<input type="button" value="ユーザ削除" onclick="location.href='m_delete_exec_user.php'"><br>
+<input type="button" value="ユーザ削除" onclick="location.href='m_control/m_delete_exec_user.php'"><br>
+
+<?php } else { ?>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
 <a href="delete_user.php">退会する</a>
+
+<?php } ?>
 
 </body>
 </html>
