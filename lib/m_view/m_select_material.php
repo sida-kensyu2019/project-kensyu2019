@@ -34,6 +34,7 @@
 				<th>制作年</th>
 				<th>編集</th>
 				<th>削除</th>
+				<th>詳細</th>
 			</tr>
 			<?php
 			while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
@@ -45,6 +46,7 @@
 				<td><?php ph($row["material_year"]); ?></td>
 				<td><a href="m_update_material.php?material_id=<?php ph($row["material_id"]);?>">編集</a></td> <!-- 美術品編集画面リンク -->
 				<td><a href="m_delete_exec_material.php?material_id=<?php ph($row["material_id"]);?>">削除</a></td> <!-- 削除完了画面リンク -->
+				<td><a href="../material_detail.php?material_id=<?php ph($row["material_id"]);?>" target="_blank">詳細</a></td> <!-- 削除完了画面リンク -->
 			</tr>
 		<?php } ?>
 		</table>
