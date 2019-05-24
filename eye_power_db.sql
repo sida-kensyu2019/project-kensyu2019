@@ -17,7 +17,7 @@ GRANT ALL PRIVILEGES ON eye_power_db.* TO 'administrator'@'localhost';
 GRANT SELECT ON eye_power_db.* TO 'user'@'localhost';
 
 /* AUTOCOMMIT–³Œø */
-SET AUTOCOMMIT=0;
+SET AUTOCOMMIT=1;
 
 /* DB‘I‘ð */
 USE eye_power_db;
