@@ -16,12 +16,13 @@
             <title>美術品詳細</title>
             <link rel="stylesheet" src="pass">
             <script href="pass"></script>
-            </head>
+        </head>
         <body>
             <h2>美術品詳細</h2>
 
             <?php
-            $row1 = $sth_material->fetch(PDO::FETCH_ASSOC);// 該当美術品データを配列にして取得
+            $row1 = $sth_material->fetch(PDO::FETCH_ASSOC);
+            // 該当美術品データを配列にして取得
             ?>
 
             <div id="material_name">
@@ -53,8 +54,8 @@
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
                   <span class="user_name">
-                    <a href="../../user.php?user_id=<?php ph($row["user_id"]); ?>}"</a>
-                    <?php ph($row2["user_name"]); ?>さんの評価
+                    <a href="../../user.php?user_id=<?php ph($row["user_id"]); ?>}">
+                    <?php ph($row2["user_name"]); ?></a>さんの評価
                   </span>
                   <?php //五段階評価それぞれで表示する画像変更
                       switch($row2["star"]){
@@ -89,10 +90,12 @@
                   </form>
                   <?php ph($row2["cnt"]); ?>
                   <?php
-                  if ($_SESSION["user_id"]) {
+                  if (empty($_SESSION["user_id"])) {
+
+                  } else {
                     if($row2["user_id"] == $_SESSION["user_id"]){ ?>
-                      <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
-                    <?php } ?>
+                        <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                      <?php } ?>
                   <?php } ?>
 
               </div>
