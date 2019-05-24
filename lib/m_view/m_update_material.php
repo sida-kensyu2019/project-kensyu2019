@@ -50,19 +50,20 @@
 <h2>管理美術品編集画面</h2>
 <form action="m_update_exec_material.php" method="post">
 <table>
-<tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
-<tr><td>美術品読み</td><td><input type="text" name="material_kana"></td></tr>
-<tr><td>作者名</td><td><input type="text" name="author_name"></td></tr>
-<tr><td>作者名読み</td><td><input type="text" name="author_kana"></td></tr>
-<tr><td>ジャンル</td><td><select name="jenre_id">
-        <?php //while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {?>
-          <option value="<?php //ph($row["jenre_id"]);?>"><?php //ph($row["jenre_name"]);?></option>
-        <?php //} ?>
-      </select></td></tr>
-<tr><td>制作年</td><td><input type="text" name="mateial_year"></td></tr>
-<tr><td>写真</td><td><input type="text" name="picture"></td></tr>
-<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
+<tr><td>美術品名</td><td><input type="text" name="material_name" value="<?php ph($row["material_name"]);?>"></td></tr>
+<tr><td>美術品読み</td><td><input type="text" name="material_kana" value="<?php ph($row["material_kana"]);?>"></td></tr>
+<tr><td>作者名</td><td><input type="text" name="author_name" value="<?php ph($row["author_name"]);?>"></td></tr>
+<tr><td>作者名読み</td><td><input type="text" name="author_kana" value="<?php ph($row["author_kana"]);?>"></td></tr>
+<tr><td>ジャンル</td><td><select name="genre_id">
+  <?php while ($row_genre = $sth->fetch(PDO::FETCH_ASSOC)) {?>
+    <option value="<?php ph($row_genre["genre_id"]);?>" selected="<?php ph($row_genre["genre_id"]);?>"><?php ph($row["genre_name"]);?></option>
+  <?php } ?>
+</select></td></tr>
+<tr><td>制作年</td><td><input type="text" name="mateial_year" value="<?php ph($row["material_year"]);?>"></td></tr>
+<tr><td>写真</td><td><input type="text" name="picture" value="<?php ph($row["picture"]);?>"></td></tr>
+<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"><?php ph($row["caption"]);?></textarea></td></tr>
 </table>
+<br>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
 
 <!-- 美術品一覧画面に戻る -->
