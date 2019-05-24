@@ -18,7 +18,7 @@
 <body>
 
 <!-- ユーザ名表示 -->
-<h2><?php ph($row["user_name"]); ?></h2>
+<h1><?php ph($row["user_name"]); ?></h1>
 
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
 <table border="1">
@@ -38,9 +38,25 @@
 <a href="update_user.php">ユーザ情報を変更する</a><br>
 
 <?php } ?>
+<br>
 
 <!-- 過去の評価コメント一覧 -->
-<div>過去の評価コメント</div>
+<h1>過去の評価コメント</h2>
+  <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+  <table>
+      <tr>
+        <th>美術品名</th>
+        <th>作者名</th>
+        <th>評価コメント</th>
+      </tr>
+      <tr>
+  			<td><?php ph($row["material_name"]); ?></td>
+  			<td><?php ph($row["author_name"]); ?></td>
+  			<td><?php ph($row["comment"]); ?></td>
+  		</tr>
+  </table>
+<?php } ?>
+
 
 <?php if ($row["user_lv"] == 1) { ?>
 
