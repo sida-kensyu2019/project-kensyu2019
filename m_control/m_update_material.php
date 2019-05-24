@@ -25,11 +25,13 @@
 
 	} else {
 		// 内容漏れチェック
+
 		if (empty($_POST["material_name"]) || empty($_POST["material_kana"])
 			|| empty($_POST["author_name"]) || empty($_POST["author_kana"])
 			|| empty($_POST["genre_id"]) || empty($_POST["material_year"])
 			|| empty($_POST["picture"]) || empty($_POST["caption"])) {
 			// require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
+	
 			$msg = "すべての項目を入力してください";
 			require_once("../lib/m_view/m_update_material.php");
 		} else {
