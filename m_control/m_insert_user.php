@@ -21,6 +21,8 @@ require_once("../lib/init.php");
       if (empty($_POST["mail_address"]) || empty($_POST["password"])
         || empty($_POST["user_name"]) || empty($_POST["job_id"])) {
         // require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
+        require_once("../lib/function/db_job.php");
+        $sth=get_job($dbh);
         require_once("../lib/m_view/m_insert_user.php");
       } else {
 
