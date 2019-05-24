@@ -17,12 +17,38 @@ function get_material_top($dbh)
         // SQLを発行
         $sth->execute();
 
-        // データを戻す
-        return $sth;
+        //
+        $idx = 0;
+        while($rowTop = $sth->fetchAll(PDO::FETCH_ASSOC)){
+            try {
+                  // プレースホルダ付きSQLを構築
+                  $sql = "SELECT t_grade.grade_id, t_grade.comment, COUNT(*) ";
+                  $sql .= "FROM t_good INNER JOIN t_grade ";
+                  $sql .= "ON t_good.grade_id = t_grade.grade_id ";
+                  $sql .= "WHERE material_id = {$rowTop[$idx]["material_id"]} ";
+                  $sql .= "GROUP BY t_good.grade_id ";
+                  $sql .= "ORDER BY COUNT(*) DESC; ";
+                  $sth2 = $dbh->prepare($sql); // SQLを準備
+
+                  // プレースホルダに値をバインド
+                  $sth2->bindValue(":user_id", (int) $id);
+
+                  // SQLを発行
+                  $sth2->execute();
+            } catch (PDOException $e) {
+                  exit("SQL発行エラー：{$e->getMessage()}");
+            }
+
+            while($row_Comment = $sth2->fetch(PDO::FETCH_ASSOC)){
+              $rowTop[$idx]["comment"] = $sth["comment"];
+              break;
+            }
+        }
 
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }
+    return $rowTop;
 }
 
 
@@ -47,7 +73,7 @@ function get_material_by_id($dbh, $id)
 
         // データを戻す
         return $sth;
-        
+
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }
@@ -73,7 +99,7 @@ function get_material($dbh)
             $sth = $dbh->prepare($sql); // SQLを準備
             // SQLを発行
             $sth->execute();
-        
+
         } else {
             if (!empty($_POST["keyword"])) {
                 //セレクトボックス入力済み、検索フォーム入力済み
@@ -85,8 +111,8 @@ function get_material($dbh)
                 $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
                 // SQLを発行
                 $sth->execute();
-    
-            
+
+
             } elseif (!empty($_POST["keyword"])) {
                 //セレクトボックス未入力、検索フォーム入力済み
 
@@ -102,7 +128,7 @@ function get_material($dbh)
 
         }
 
-    
+
     // データを戻す
     return $sth;
 
@@ -171,7 +197,7 @@ function update_material($dbh, $input)
     try {
         // プレースホルダ付きSQLを構築
         $sql = "UPDATE m_material ";
-        $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, "; 
+        $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, ";
         $sql .= "genre_id=:genre_id, material_yaer=:material_year, picture=:picture, caption=:caption ";
         $sql .= "WHERE material_id=:material_id";
         $sth = $dbh->prepare($sql); // SQLを準備
