@@ -5,7 +5,7 @@
 	require_once("../lib/init.php");
 
 	//美術品テーブルの処理関数呼び出し
-	require_once("../lib/funtion/db_material.php");
+	require_once("../lib/function/db_material.php");
 
 	//選択した美術品詳細データをデータベースから取得する
 	$sth = get_material_by_id($dbh, $_GET["id"]); //美術品ひとつを取得する関数
