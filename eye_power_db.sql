@@ -60,6 +60,22 @@ CREATE TABLE
  INSERT INTO eye_power_db.m_material(material_name, material_kana, author_name, author_kana, genre_id, material_year, picture, caption)
   VALUES ('テスト2彫刻', 'てすとかいが', 'テスト・ハナーコ', 'てすと・はなーこ',3,'1500', 'not_found.jpg','testtesttest');
 
+/* m_job作成 */
+
+ CREATE TABLE
+  eye_power_db.m_job (
+   job_id INT PRIMARY KEY AUTO_INCREMENT,
+   job_name VARCHAR(10) NOT NULL
+  );
+
+ /* 職種テーブルINSERT */
+ INSERT INTO eye_power_db.m_job(job_name)
+  VALUES ('大学教授');
+ INSERT INTO eye_power_db.m_job(job_name)
+  VALUES ('学生');
+ INSERT INTO eye_power_db.m_job(job_name)
+  VALUES ('主婦');
+  
   /* m_user作成 */
   CREATE TABLE
   eye_power_db.m_user (
@@ -69,7 +85,8 @@ CREATE TABLE
     user_name VARCHAR(50) NOT NULL,
     job_id INT NOT NULL,
     user_lv INT NOT NULL,
-    profile VARCHAR(5000) DEFAULT NULL
+    profile VARCHAR(5000) DEFAULT NULL,
+    FOREIGN KEY (job_id) REFERENCES m_job(job_id)
   );
 
   /* ユーザテーブルINSERT */
@@ -119,22 +136,6 @@ CREATE TABLE
   VALUES (2, 2);
  INSERT INTO eye_power_db.t_good(grade_id, user_id)
   VALUES (3, 3);
-
- /* m_job作成 */
-
- CREATE TABLE
-  eye_power_db.m_job (
-   job_id INT PRIMARY KEY AUTO_INCREMENT,
-   job_name VARCHAR(10) NOT NULL
-  );
-
- /* 職種テーブルINSERT */
- INSERT INTO eye_power_db.m_job(job_name)
-  VALUES ('大学教授');
- INSERT INTO eye_power_db.m_job(job_name)
-  VALUES ('学生');
- INSERT INTO eye_power_db.m_job(job_name)
-  VALUES ('主婦');
 
  /* m_closed作成 */
  CREATE TABLE

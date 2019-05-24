@@ -17,52 +17,38 @@
 <link rel="stylesheet" href="../css/m_style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>管理者画面</h1>
-      <ul>
-        <li><a href="m_top.html">トップページ</a></li>
-        <li><a href="../../m_control/m_select_material.php">美術品一覧</a></li>
-        <li><a href="../../m_control/m_select_user.php">管理者一覧</a></li>
-        <li><a href="../../m_control/m_select_genre.php">ジャンル一覧</a></li>
-        <li><a href="../../m_control/m_select_job.php">職種一覧</a></li>
-        <li><a href="../../m_control/m_select_closed.php">休館日一覧</a></li>
-        <li><a href="">ログアウト</a></div>
-      </ul>
-    </nav>
-  </header>
-
-  <?php
-      // require_once("../init.php");
-      //
-      // try {
-      //     // SQLを構築
-      //     $sql = "SELECT * FROM eye_power_db.m_material";
-      //     $sth = $dbh->prepare($sql); // SQLを準備
-      //
-      //     // SQLを発行
-      //     $sth->execute();
-      // } catch (PDOException $e) {
-      //     exit("SQL発行エラー：{$e->getMessage()}");
-      // }
-  ?>
+      <header>
+        <nav>
+          <h1>管理者画面</h1>
+          <ul>
+            <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
+            <li><a href="m_select_material.php">美術品一覧</a></li>
+            <li><a href="m_select_user.php">管理者一覧</a></li>
+            <li><a href="m_select_genre.php">ジャンル一覧</a></li>
+            <li><a href="m_select_job.php">職種一覧</a></li>
+            <li><a href="m_select_closed.php">休館日一覧</a></li>
+            <li><a href="../logout.php" onclick="return confirm('本当にログアウトしますか？'); ">ログアウト</a></li>
+          </ul>
+        </nav>
+      </header>
 
 <h2>管理美術品編集画面</h2>
-<form action="m_update_exec_material.php" method="post">
+<form action="m_update_material.php?material_id=<?php ph($row["material_id"]);?>" method="post">
 <table>
-<tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
-<tr><td>美術品読み</td><td><input type="text" name="material_kana"></td></tr>
-<tr><td>作者名</td><td><input type="text" name="author_name"></td></tr>
-<tr><td>作者名読み</td><td><input type="text" name="author_kana"></td></tr>
-<tr><td>ジャンル</td><td><select name="jenre_id">
-        <?php //while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {?>
-          <option value="<?php //ph($row["jenre_id"]);?>"><?php //ph($row["jenre_name"]);?></option>
-        <?php //} ?>
-      </select></td></tr>
-<tr><td>制作年</td><td><input type="text" name="mateial_year"></td></tr>
-<tr><td>写真</td><td><input type="text" name="picture"></td></tr>
-<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
+<tr><td>美術品名</td><td><input type="text" name="material_name" value="<?php ph($row["material_name"]);?>"></td></tr>
+<tr><td>美術品読み</td><td><input type="text" name="material_kana" value="<?php ph($row["material_kana"]);?>"></td></tr>
+<tr><td>作者名</td><td><input type="text" name="author_name" value="<?php ph($row["author_name"]);?>"></td></tr>
+<tr><td>作者名読み</td><td><input type="text" name="author_kana" value="<?php ph($row["author_kana"]);?>"></td></tr>
+<tr><td>ジャンル</td><td><select name="genre_id">
+  <?php while ($row_genre = $sth->fetch(PDO::FETCH_ASSOC)) {?>
+    <option value="<?php ph($row_genre["genre_id"]);?>" selected="<?php ph($row["genre_id"]);?>"><?php ph($row_genre["genre_name"]);?></option>
+  <?php } ?>
+</select></td></tr>
+<tr><td>制作年</td><td><input type="text" name="mateial_year" value="<?php ph($row["material_year"]);?>"></td></tr>
+<tr><td>写真</td><td><input type="text" name="picture" value="<?php ph($row["picture"]);?>"></td></tr>
+<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"><?php ph($row["caption"]);?></textarea></td></tr>
 </table>
+<br>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
 
 <!-- 美術品一覧画面に戻る -->

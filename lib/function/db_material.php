@@ -73,10 +73,8 @@ function get_material_by_id($dbh, $id)
         // SQLを発行
         $sth->execute();
 
-        $row = $sth->fetch(PDO::FETCH_ASSOC);
-
         // データを戻す
-        return $row;
+        return $sth;
 
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
@@ -184,7 +182,6 @@ function insert_material($dbh, $input)
         $sth->bindValue(":material_year", $input["material_year"]);
         $sth->bindValue(":picture", $input["picture"]);
         $sth->bindValue(":caption", $input["caption"]);
-        $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行
         $sth->execute();
@@ -240,6 +237,9 @@ function update_material($dbh, $input)
 
         // SQLを発行
         $sth->execute();
+
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }

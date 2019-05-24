@@ -9,27 +9,31 @@ require_once("../lib/init.php");
 
   // ユーザレベル判定
   // if($_SESSION["user_lv"] == 2) { // 管理者のとき
-
    if (empty($_POST)) {
     // 美術品登録画面ビュー出力
-    require_once("../lib/function/db_material.php");
-    $sth=get_material($dbh);
+    require_once("../lib/function/db_genre.php");
+    $sth = get_genre($dbh);
     require_once("../lib/m_view/m_insert_material.php");
    } else {
     // 内容漏れチェック
-    if (isset($_POST["material_name"]) && isset($_POST["material_kana"])
-     && isset($_POST["author_name"]) && isset($_POST["author_kana"])
-     && isset($_POST["genre_id"]) && isset($_POST["material_year"])
-     && isset($_POST["caption"])) {
-
-       // 入力OK
-       insert_material($dbh, $_POST);
-       require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
-     } else {
+    if (empty($_POST["material_name"]) || empty($_POST["material_kana"])
+     || empty($_POST["author_name"]) || empty($_POST["author_kana"])
+     || empty($_POST["genre_id"]) || empty($_POST["material_year"])
+     || empty($_POST["caption"])) {
 
        // 入力NG
        // require_once(".js"); // 入力エラー表示
+       require_once("../lib/function/db_genre.php");
+       $sth = get_genre($dbh);
        require_once("../lib/m_view/m_insert_material.php"); // 美術品登録画面ビュー出力
+     } else {
+
+       // 入力OK
+       require_once("../lib/function/db_genre.php");
+       $sth=get_genre($dbh);
+       require_once("../lib/function/db_material.php");
+       insert_material($dbh, $_POST);
+       require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
      }
    }
 //   } else {  // 管理者でないとき
