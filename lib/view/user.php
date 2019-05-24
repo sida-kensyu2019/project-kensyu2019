@@ -51,7 +51,7 @@
       </tr>
       <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
       <tr>
-  			<td><a href = "material_detail.php?material_id=<?php $row["material_id"] ?>"> <?php ph($row["material_name"]); ?> </a></td>
+  			<td><a href = "material_detail.php?material_id=<?php ph($row["material_id"]); ?>"> <?php ph($row["material_name"]); ?> </a></td>
   			<td><?php ph($row["author_name"]); ?></td>
         <td><?php ph($row["star"]); ?></td>
   			<td><?php ph($row["comment"]); ?></td>
