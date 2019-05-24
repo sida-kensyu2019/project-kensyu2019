@@ -62,7 +62,7 @@
           $sth->bindValue(":user_name", $input["user_name"]);
           $sth->bindValue(":job_id", $input["job_id"]);
           $sth->bindValue(":profile", $input["profile"]);
-          
+
           // SQLを発行
           $sth->execute();
       } catch (PDOException $e) {
@@ -133,7 +133,7 @@
     try {
         // プレースホルダ付きSQLを構築
         $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1)";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
