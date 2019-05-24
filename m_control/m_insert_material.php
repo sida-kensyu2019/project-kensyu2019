@@ -17,10 +17,10 @@ var_dump($_POST);
     require_once("../lib/m_view/m_insert_material.php");
    } else {
     // 内容漏れチェック
-    if (empty($_POST["material_name"]) && empty($_POST["material_kana"])
-     && empty($_POST["author_name"]) && empty($_POST["author_kana"])
-     && empty($_POST["genre_id"]) && empty($_POST["material_year"])
-     && empty($_POST["caption"])) {
+    if (empty($_POST["material_name"]) || empty($_POST["material_kana"])
+     || empty($_POST["author_name"]) || empty($_POST["author_kana"])
+     || empty($_POST["genre_id"]) || empty($_POST["material_year"])
+     || empty($_POST["caption"])) {
 
        // 入力NG
        // require_once(".js"); // 入力エラー表示
