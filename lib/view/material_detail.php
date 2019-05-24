@@ -65,7 +65,7 @@
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
                   <span class="user_name">
-                    <a href="../../user.php?user_id=<?php ph($row["user_id"]); ?>}">
+                    <a href="user.php?user_id=<?php ph($row2["user_id"]); ?>">
                     <?php ph($row2["user_name"]); ?></a>さんの評価
                   </span>
                   <?php //五段階評価それぞれで表示する画像変更

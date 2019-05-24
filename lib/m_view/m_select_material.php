@@ -40,7 +40,7 @@
 			while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
 			<tr>
 				<td><?php ph($row["picture"]); ?></td>
-				<td><?php ph($row["material_name"]); ?></td>
+				<td><a href="../material_detail.php?material_id=<?php ph($row["material_id"]); ?>" target="_blank"><?php ph($row["material_name"]); ?></a></td>
 				<td><?php ph($row["author_name"]); ?></td>
 				<td><?php ph($row["genre_name"]); ?></td>
 				<td><?php ph($row["material_year"]); ?></td>
