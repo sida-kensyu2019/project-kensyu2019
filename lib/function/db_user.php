@@ -62,7 +62,7 @@
           $sth->bindValue(":user_name", $input["user_name"]);
           $sth->bindValue(":job_id", $input["job_id"]);
           $sth->bindValue(":profile", $input["profile"]);
-          
+
           // SQLを発行
           $sth->execute();
       } catch (PDOException $e) {
@@ -121,6 +121,8 @@
         return $sth;
 
         } catch (PDOException $e) {
+            print "このメールアドレスはすでに使用されているので、使用できません。<br>";
+            print "<a href=\"m_insert_user.php\">新規登録画面</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
   }
@@ -133,7 +135,7 @@
     try {
         // プレースホルダ付きSQLを構築
         $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1)";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
@@ -149,6 +151,8 @@
         return $sth;
 
         } catch (PDOException $e) {
+            print "このメールアドレスはすでに使用されているので、使用できません。<br>";
+            print "<a href=\"insert_user.php\">新規登録画面</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
   }
