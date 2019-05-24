@@ -22,11 +22,11 @@
       <h1>管理者画面</h1>
       <ul>
         <li><a href="m_top.html">トップページ</a></li>
-        <li><a href="../../m_control/m_select_material.php">美術品一覧</a></li>
-        <li><a href="../../m_control/m_select_user.php">管理者一覧</a></li>
-        <li><a href="../../m_control/m_select_genre.php">ジャンル一覧</a></li>
-        <li><a href="../../m_control/m_select_job.php">職種一覧</a></li>
-        <li><a href="../../m_control/m_select_closed.php">休館日一覧</a></li>
+        <li><a href="m_select_material.php">美術品一覧</a></li>
+        <li><a href="m_select_user.php">管理者一覧</a></li>
+        <li><a href="m_select_genre.php">ジャンル一覧</a></li>
+        <li><a href="m_select_job.php">職種一覧</a></li>
+        <li><a href="m_select_closed.php">休館日一覧</a></li>
         <li><a href="">ログアウト</a></div>
       </ul>
     </nav>
@@ -47,22 +47,23 @@
       // }
   ?>
 <h2>管理美術品登録画面</h2>
-<form action="m_insert_exec_material.php" method="post">
+<form action="m_insert_material.php" method="post">
 <table>
 <tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
 <tr><td>美術品読み</td><td><input type="text" name="material_kana"></td></tr>
 <tr><td>作者名</td><td><input type="text" name="author_name"></td></tr>
 <tr><td>作者名読み</td><td><input type="text" name="author_kana"></td></tr>
-<tr><td>ジャンル</td><td><select name="jenre_id">
-        <?php //while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {?>
-          <option value="<?php //ph($row["jenre_id"]);?>"><?php //ph($row["jenre_name"]);?></option>
-        <?php //} ?>
+<tr><td>ジャンル</td><td><select name="genre_id">
+        <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {?>
+          <option value="<?php ph($row["genre_id"]);?>"><?php ph($row["genre_name"]);?></option>
+        <?php } ?>
       </select></td></tr>
-<tr><td>制作年</td><td><input type="text" name="mateial_year"></td></tr>
+<tr><td>制作年</td><td><input type="text" name="material_year"></td></tr>
 <tr><td>写真</td><td><input type="text" name="picture"></td></tr>
 <tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
 </table>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
+<input type="hidden" name="genre_name">
 
 <!-- 美術品一覧画面に戻る -->
 <input type="button" value="登録中止" onclick="location.href='m_select_material.php'">
