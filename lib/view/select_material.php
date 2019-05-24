@@ -19,7 +19,7 @@
 
 <!-- 検索ボックス -->
   <table id="search">
-    <form action="m_select_material.php" method="post">
+    <form action="select_material.php" method="post">
       <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>
       <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"></th></tr>
       <tr><th>ジャンル</th>
@@ -32,14 +32,13 @@
         </th>
       </tr>
       <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
+  </table>
       <input type="submit" name="検索">
       <input type="reset" name="クリア">
     </form>
-  </table>
 
 <!-- 検索結果 -->
 <h2>美術品検索結果</h2>
-<?php	    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
 <table>
     <tr>
       <th>画像</th>
@@ -48,19 +47,22 @@
       <th>ジャンル</th>
       <th>制作年</th>
     </tr>
+    <?php while ($row=$sth->fetch(PDO::FETCH_ASSOC)) { ?>
+      
+    <?php var_dump($row); ?>
     <tr>
 			<td><?php ph($row["picture"]); ?></td>
 			<td><?php ph($row["material_name"]); ?></td>
 			<td><?php ph($row["author_name"]); ?></td>
 			<td><?php ph($row["genre_name"]); ?></td>
 			<td><?php ph($row["material_year"]); ?></td>
-		</tr>
+    </tr>
+    <?php } ?>
+
 </table>
 
 <a href="#search">条件を絞り込む</a>
 <!-- ページ上部の検索フォームへのページ内リンク -->
-
-<?php } ?>
 
 </body>
 </html>

@@ -121,6 +121,8 @@
         return $sth;
 
         } catch (PDOException $e) {
+            print "このメールアドレスはすでに使用されているので、使用できません。<br>";
+            print "<a href=\"m_insert_user.php\">新規登録画面</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
   }
@@ -149,6 +151,8 @@
         return $sth;
 
         } catch (PDOException $e) {
+            print "このメールアドレスはすでに使用されているので、使用できません。<br>";
+            print "<a href=\"insert_user.php\">新規登録画面</a><br><br>";
             exit("SQL発行エラー：{$e->getMessage()}");
         }
   }
