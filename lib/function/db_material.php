@@ -29,6 +29,7 @@ function get_material_top($dbh)
 //美術品詳細画面表示用の処理
 // データベースのデータをIDを指定して1件取得する
 //$id: GET["id"]
+//return $row  連想配列 関数内でfetch
 function get_material_by_id($dbh, $id)
 {
     try {
@@ -45,8 +46,10 @@ function get_material_by_id($dbh, $id)
         // SQLを発行
         $sth->execute();
 
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+
         // データを戻す
-        return $sth;
+        return $row;
         
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
@@ -202,6 +205,49 @@ function update_material($dbh, $input)
 
         // SQLを発行
         $sth->execute();
+    } catch (PDOException $e) {
+        exit("SQL発行エラー：{$e->getMessage()}");
+    }
+}
+
+
+//偽物
+function serch_material_($dbh)
+{
+    try {
+        // SQLを構築
+        $sql = "SELECT * FROM m_material ";
+        $sql .= "INNER JOIN m_genre ";
+        $sql .= "ON m_material.material_id = m_genre.genre_id ";
+
+        if (empty($_POST)) {
+            //検索なしのアクセス、もしくは
+            //セレクトボックス、検索フォーム共に未入力
+
+            $sth = $dbh->prepare($sql); // SQLを準備
+            // SQLを発行
+            $sth->execute();
+        
+        } else {
+                if (!empty($_POST["keyword"])) {
+                //セレクトボックス未入力、検索フォーム入力済み
+
+                $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
+                $sql .= "OR m_material.material_name_kana LIKE :keyword ";
+                $sth = $dbh->prepare($sql); // SQLを準備
+                $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
+                // SQLを発行
+                $sth->execute();
+            }
+
+
+
+        }
+
+    
+    // データを戻す
+    return $sth;
+
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }
