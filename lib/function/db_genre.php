@@ -6,13 +6,13 @@
             // SQLを構築
             $sql = "SELECT * FROM m_genre;";
             $sth = $dbh->prepare($sql); // SQLを準備
-    
+
             // SQLを発行
             $sth->execute();
 
             // データを戻す
             return $sth;
-            
+
         } catch (PDOException $e) {
             exit("SQL発行エラー：{$e->getMessage()}");
         }
@@ -27,10 +27,10 @@
             $sql = "INSERT INTO m_genre (genre_name) ";
             $sql .= "VALUES (:genre_name)";
             $sth = $dbh->prepare($sql); // SQLを準備
-    
+
             // プレースホルダに値をバインド
             $sth->bindValue(":genre_name", $input["genre_name"]);
-    
+
             // SQLを発行
             $sth->execute();
 
@@ -48,10 +48,10 @@
             $sql = "DELETE FROM m_genre ";
             $sql .= "WHERE genre_id=:genre_id";
             $sth = $dbh->prepare($sql); // SQLを準備
-    
+
             // プレースホルダに値をバインド
             $sth->bindValue(":genre_id", (int) $id);
-    
+
             // SQLを発行
             $sth->execute();
         } catch (PDOException $e) {
