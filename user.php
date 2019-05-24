@@ -10,5 +10,8 @@
 	//ユーザデータをデータベースから取得する
 	$row=get_user_by_id($dbh,$_GET["user_id"]);
 
+
+	$sth=get_grade_by_user($dbh, $input["user_id"]);
+
 	//マイページビュー出力
 	require_once("lib/view/user.php");
