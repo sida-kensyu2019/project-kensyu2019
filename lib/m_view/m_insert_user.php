@@ -11,7 +11,7 @@
     <table>
       <form action="../m_control/m_insert_user.php" method="post">
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
-        <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
+        <tr><th>パスワード</th><th><input type="password" size="30" name ="password"></th></tr>
         <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
         <tr><th>職業</th>
           <th>
