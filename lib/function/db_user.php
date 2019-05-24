@@ -45,6 +45,32 @@
       }
   }
 
+// 一般ユーザのデータ更新
+//$input: $_POST
+  function update_user($dbh, $input)
+  {
+      try {
+          // プレースホルダ付きSQLを構築
+          $sql = "UPDATE m_user ";
+          $sql .= "SET password=:password, user_name=:user_name, ";
+          $sql .= "job_id=:job_id, profile=:profile ";
+          $sql .= "WHERE user_id=:user_id";
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          // プレースホルダに値をバインド
+          $sth->bindValue(":password", $input["password"]);
+          $sth->bindValue(":user_name", $input["user_name"]);
+          $sth->bindValue(":job_id", $input["job_id"]);
+          $sth->bindValue(":profile", $input["profile"]);
+          
+          // SQLを発行
+          $sth->execute();
+      } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+      }
+  }
+
+
     //return $row 連想配列  関数内でfetch
   function get_user_by_id($dbh, $id)
   {
@@ -106,8 +132,8 @@
   {
     try {
         // プレースホルダ付きSQLを構築
-        $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv, profile) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1, :profile)";
+        $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
@@ -115,7 +141,6 @@
         $sth->bindValue(":password", $input["password"]);
         $sth->bindValue(":user_name", $input["user_name"]);
         $sth->bindValue(":job_id", $input["job_id"]);
-        $sth->bindValue(":profile", $input["profile"]);
 
         // SQLを発行
         $sth->execute();
