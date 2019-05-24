@@ -43,7 +43,7 @@
 				<td><?php ph($row["author_name"]); ?></td>
 				<td><?php ph($row["genre_name"]); ?></td>
 				<td><?php ph($row["material_year"]); ?></td>
-				<td><a href="m_update_material.php">編集</a></td> <!-- 美術品編集画面リンク -->
+				<td><a href="m_update_material.php?material_id=<?php ph($row["material_id"]);?>">編集</a></td> <!-- 美術品編集画面リンク -->
 				<td><a href="m_delete_exec_material.php">削除</a></td> <!-- 削除完了画面リンク -->
 			</tr>
 		<?php } ?>
