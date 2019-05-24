@@ -50,8 +50,8 @@
 <tr><td>説明</td><td><textarea cols="100" rows="10" name="caption" value="<?php ph($row["caption"]);?>"><?php ph($row["caption"]);?></textarea></td></tr>
 </table>
 <br>
+<input type="hidden" name="material_id" value="<?php ph($row["material_id"]);?>">
 <input type="submit" value="登録"> <input type="reset" value="クリア"><br>
-
 <!-- 美術品一覧画面に戻る -->
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">
 
