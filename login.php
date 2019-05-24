@@ -10,7 +10,7 @@
 		$_SESSION["login"]="";//$_SESSIONの初期化
 		$errorMessage = ""; //エラーメッセージの初期化
 		require_once("lib/view/login.php"); //ログイン画面を表示
-	}else if($_SESSION["login"]==true){ //既にログインしたユーザがアクセスした時
+	}else if(isset($_SESSION["login"]) && $_SESSION["login"]==true){ //既にログインしたユーザがアクセスした時
  		require_once("index.php"); //トップ画面に遷移
  	}else{
 		if(empty($_POST["mail_address"] || $_POST["password"])){ //入力されてない時
