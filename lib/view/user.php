@@ -41,22 +41,23 @@
 <br>
 
 <!-- 過去の評価コメント一覧 -->
-<h1>過去の評価コメント</h2>
-  <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
-  <table>
+<h2>過去の評価コメント</h2>
+  <table border="1">
       <tr>
         <th>美術品名</th>
         <th>作者名</th>
+        <th>評価</th>
         <th>評価コメント</th>
       </tr>
+      <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
       <tr>
-  			<td><?php ph($row["material_name"]); ?></td>
+  			<td><a href = "material_detail.php?material_id=<?php ph($row["material_id"]); ?>"> <?php ph($row["material_name"]); ?> </a></td>
   			<td><?php ph($row["author_name"]); ?></td>
+        <td><?php ph($row["star"]); ?></td>
   			<td><?php ph($row["comment"]); ?></td>
   		</tr>
+      <?php } ?>
   </table>
-<?php } ?>
-
 
 <?php if ($row["user_lv"] == 1) { ?>
 

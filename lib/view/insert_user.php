@@ -2,15 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>新規管理者登録画面</title>
+<title>新規登録画面</title>
 </head>
 <body>
-<?php
-//require_once("../init.php");
- ?>
+
 <h1>新規登録画面</h1>
 <table>
-  <form action="comtrol/insert_user.php" method="post">
+  <form action="insert_user.php" method="post">
     <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
     <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
     <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
@@ -23,15 +21,19 @@
       </select>
       </th>
     </tr>
-  </form>
 </table>
-<a href="insert_check_user.php">
-<input type="button" value="登録">
-</a>　
-<input type="reset" value="クリア">
-
-<a href="login.php">
+<br>
+<br>
+  <input type="submit" value="登録">
+  <input type="reset" value="クリア">
+  </form>
+<br>
+<br>
+<a href "login.php">
 <input type="button" value="ログイン画面">
 </a>
+
+
+<?php print $msg; ?>
 </body>
 </html>

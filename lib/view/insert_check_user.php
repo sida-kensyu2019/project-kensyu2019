@@ -13,27 +13,29 @@
 //require_once("../init.php");
 ?>
 <table>
-  <tr><th>メールアドレス</th><th><?php// ph($_POST["mail_address"]) ?></th></tr>
-  <tr><th>パスワード</th><th><?php// ph($_POST["password"]) ?></th></tr>
-  <tr><th>表示名</th><th><?php// ph($_POST["user_name"]) ?></th></tr>
+  <tr><th>メールアドレス</th><th><?php ph($_POST["mail_address"]) ?></th></tr>
+  <tr><th>パスワード</th><th><?php ph($_POST["password"]) ?></th></tr>
+  <tr><th>表示名</th><th><?php ph($_POST["user_name"]) ?></th></tr>
   <tr><th>職業</th>
     <th>
-      <select name="job_id">
-        <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
-          <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
-        <?php } ?>
-      </select>
+        <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+                if ($row["job_id"] == $_POST["job_id"]) {
+                  ph($row["job_name"]);
+                }
+              }?>
     </th>
   </tr>
 </table><br>
 <br>
 <br>
 <br>
-<a href="insert_exec_user.php">
-<input type="button" value="登録">
-</a>　
-<a href="insert_user.php">
-<input type="button" value="修正">
-</a>
+<form action="insert_exec_user.php" method="post">
+<input type="hidden" name="mail_address" value="<?php ph($_POST["mail_address"]);?>">
+<input type="hidden" name="password" value="<?php ph($_POST["password"]);?>">
+<input type="hidden" name="user_name" value="<?php ph($_POST["user_name"]);?>">
+<input type="hidden" name="job_id" value="<?php ph($_POST["job_id"]);?>">
+<input type="submit" value="登録">
+<input type="button" value="修正" onclick="history.back();">
+</form>
 </body>
 </html>

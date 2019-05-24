@@ -88,79 +88,71 @@ function get_material_by_id($dbh, $id)
     データベースのデータを取得する
     検索結果も反映
 */
-function get_material($dbh)
+function get_material($dbh, $input)
 {
     try {
-        // SQLを構築
-        $sql = "SELECT * FROM m_material ";
-        $sql .= "INNER JOIN m_genre ";
-        $sql .= "ON m_material.material_id = m_genre.genre_id ";
 
+        $where = [];
+        $bind = [];
 
-        //検索なしのアクセス、もしくは
-        //セレクトボックス、検索フォーム共に未入力
-
-        $sth = $dbh->prepare($sql); // SQLを準備
-        // SQLを発行
-        $sth->execute();
-
-
-        // データを戻す
-        return $sth;
-
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
-}
-
-//偽物
-function serch_material($dbh)
-{
-    try {
-        // SQLを構築
-        $sql = "SELECT * FROM m_material ";
-        $sql .= "INNER JOIN m_genre ";
-        $sql .= "ON m_material.material_id = m_genre.genre_id ";
-
-        if (empty($_POST)) {
-            //検索なしのアクセス、もしくは
-            //セレクトボックス、検索フォーム共に未入力
-
-            $sth = $dbh->prepare($sql); // SQLを準備
-            // SQLを発行
-            $sth->execute();
-
-        } else {
-            if (!empty($_POST["keyword"])) {
-                //セレクトボックス入力済み、検索フォーム入力済み
-
-                $sql .= "AND (m_material.material_name_kanji LIKE :keyword ";
-                $sql .= "OR m_material.material_name_kana LIKE :keyword) ";
-                $sth = $dbh->prepare($sql); // SQLを準備
-                $sth->bindValue(":key_taste_id", $_POST["key_taste_id"]);
-                $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
-                // SQLを発行
-                $sth->execute();
-
-
-            } elseif (!empty($_POST["keyword"])) {
-                //セレクトボックス未入力、検索フォーム入力済み
-
-                $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
-                $sql .= "OR m_material.material_name_kana LIKE :keyword ";
-                $sth = $dbh->prepare($sql); // SQLを準備
-                $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
-                // SQLを発行
-                $sth->execute();
-            }
-
-
-
+        if (!empty($input["material_name"])) {
+            $where[] = "material_name LIKE :material_name";
+            $bind[] = "material_name";
+        }
+        if (!empty($input["material_kana"])) {
+            $where[] = "material_kana LIKE :material_kana";
+            $bind[] = "material_kana";
+        }
+        if (!empty($input["author_name"])) {
+            $where[] = "author_name LIKE :author_name";
+            $bind[] = "author_name";
+        }
+        if (!empty($input["author_kana"])) {
+            $where[] = "author_kana LIKE :author_kana";
+            $bind[] = "author_kana";
+        }
+        if (!empty($input["author_kana"])) {
+            $where[] = "author_kana LIKE :author_kana";
+            $bind[] = "author_kana";
+        }
+        if (!empty($input["material_year"])) {
+            $where[] = "material_year LIKE :material_year";
+            $bind[] = "material_year";
         }
 
+        if (!empty($where)) {
+            $where_sql = implode(" AND ", $where);
+            // SQLを構築
+            $sql = "SELECT * FROM m_material ";
+            $sql .= "INNER JOIN m_genre ";
+            $sql .= "ON m_material.material_id = m_genre.genre_id ";
+            $sql .= "WHERE " . $where_sql ;
 
-    // データを戻す
-    return $sth;
+            $sth = $dbh->prepare($sql); // SQLを準備
+
+            // プレースホルダに値をバインド
+            foreach ($bind as $bind_value) {
+                $sth->bindValue(":" . $bind_value, $input[$bind_value]);
+            }
+
+            // SQLを発行
+            $sth->execute();
+            // データを戻す
+            return $sth;
+
+        } else {
+            // SQLを構築
+            $sql = "SELECT * FROM m_material ";
+            $sql .= "INNER JOIN m_genre ";
+            $sql .= "ON m_material.material_id = m_genre.genre_id ";
+
+            $sth = $dbh->prepare($sql); // SQLを準備
+
+            // SQLを発行
+            $sth->execute();
+            // データを戻す
+            return $sth;
+        }
 
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
@@ -244,49 +236,6 @@ function update_material($dbh, $input)
 
         // SQLを発行
         $sth->execute();
-    } catch (PDOException $e) {
-        exit("SQL発行エラー：{$e->getMessage()}");
-    }
-}
-
-
-//偽物
-function serch_material_($dbh)
-{
-    try {
-        // SQLを構築
-        $sql = "SELECT * FROM m_material ";
-        $sql .= "INNER JOIN m_genre ";
-        $sql .= "ON m_material.material_id = m_genre.genre_id ";
-
-        if (empty($_POST)) {
-            //検索なしのアクセス、もしくは
-            //セレクトボックス、検索フォーム共に未入力
-
-            $sth = $dbh->prepare($sql); // SQLを準備
-            // SQLを発行
-            $sth->execute();
-
-        } else {
-                if (!empty($_POST["keyword"])) {
-                //セレクトボックス未入力、検索フォーム入力済み
-
-                $sql .= "WHERE m_material.material_name_kanji LIKE :keyword ";
-                $sql .= "OR m_material.material_name_kana LIKE :keyword ";
-                $sth = $dbh->prepare($sql); // SQLを準備
-                $sth->bindValue(":keyword", "%{$_POST["keyword"]}%");
-                // SQLを発行
-                $sth->execute();
-            }
-
-
-
-        }
-
-
-    // データを戻す
-    return $sth;
-
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }

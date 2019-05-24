@@ -2,16 +2,18 @@
 
     //ユーザマイページでの評価一覧表示
     // データベースのデータを取得する
-    function get_grade_by_user($dbh, $input)
+    function get_grade_by_user($dbh, $id)
     {
         try {
             // SQLを構築
-            $sql = "SELECT * FROM t_grade;";
-            $sql .= "WHERE user_id=:user_id ";
+            $sql = "SELECT * FROM t_grade ";
+            $sql .= "INNER JOIN m_material ";
+            $sql .= "ON t_grade.material_id = m_material.material_id ";
+            $sql .= "WHERE t_grade.user_id=:user_id";
             $sth = $dbh->prepare($sql); // SQLを準備
 
             // プレースホルダに値をバインド
-            $sth->bindValue(":user_id", $input["user_id"]);
+            $sth->bindValue(":user_id", (int) $id);
 
             // SQLを発行
             $sth->execute();
@@ -114,5 +116,3 @@
             exit("SQL発行エラー：{$e->getMessage()}");
         }
     }
-
-    
