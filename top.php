@@ -7,6 +7,14 @@
 
 require_once("lib/init.php");
 
+//カレンダーSQL召喚
+require_once("lib/function/db_closed.php");
+  get_closed($dbh);
+require_once("lib/function/calender_function.php")
+  mkCalender();
+  //休館日データをすべて二次元配列に格納
+  $closed_list = $sth->fetchAll(PDO::FETCH_ASSOC);
+
 //SQL召喚
 require_once("lib/function/db_material.php");
  $sth = get_material_top($dbh);

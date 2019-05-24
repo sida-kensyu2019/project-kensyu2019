@@ -58,8 +58,10 @@
           // SQLを発行
           $sth->execute();
 
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
+
           // データを戻す
-          return $sth;
+          return $row;
 
       } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
