@@ -16,7 +16,7 @@
           <li><a href="../../m_control/m_select_genre.php">ジャンル一覧</a></li>
           <li><a href="../../m_control/m_select_job.php">職種一覧</a></li>
           <li><a href="../../m_control/m_select_closed.php">休館日一覧</a></li>
-          <li><a href="">ログアウト</a></div>
+          <li><a href="../../logout.php">ログアウト</a></li>
         </ul>
       </nav>
     </header>
