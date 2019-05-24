@@ -73,10 +73,8 @@ function get_material_by_id($dbh, $id)
         // SQLを発行
         $sth->execute();
 
-        $row = $sth->fetch(PDO::FETCH_ASSOC);
-
         // データを戻す
-        return $row;
+        return $sth;
 
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
@@ -239,6 +237,9 @@ function update_material($dbh, $input)
 
         // SQLを発行
         $sth->execute();
+
+        $row = $sth->fetch(PDO::FETCH_ASSOC);
+
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }

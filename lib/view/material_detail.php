@@ -20,8 +20,8 @@
         <body>
             <h2>美術品詳細</h2>
 
-            <?php require_once("../init.php");
-            $row1=$sth->fetch(PDO::FETCH_ASSOC){ // 該当美術品データを配列にして取得
+            <?php
+            $row1 = $sth_material->fetch(PDO::FETCH_ASSOC);// 該当美術品データを配列にして取得
             ?>
 
             <div id="material_name">
@@ -46,35 +46,32 @@
 
             <!--↓美術品に対する評価↓-->
             <!--該当美術品IDの評価件数を$countに代入が必要-->
-            <h3><?php ph($count); ?>件の評価</h3>
-            <a href="insert_grade.php?id=<?php $row["material_id"]; ?>">
+            <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
+            <a href="insert_grade.php?id=<?php $row1["material_id"]; ?>">
               評価を書き込む
             </a>
-            <?php
-            //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
-            while($row2=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+            <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
+            while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
-                <span class="user_name"><?php ph($row2["user_name"]); ?>さんの評価</span>
-                <img src="" name="star" width="" height="" class="star">
-                <div class="comment">
-                  <?php ph($row2["comment"]); ?>
-                </div>
-                <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
-                <form action="material_detail.php" method="post" class="good">
-                  <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="good">
-                  <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
-                  <input type="submit" value="いいね">
-                  <?php ph($good_count);
-                        //該当評価IDのいいねの数を$good_countに代入が必要
-                  ?>
-                </form>
-                <?php if($row2["user_id"] == $_SESSION["user_id"]){ ?>
-                <form action="material_detail.php" method="post" class="delete">
-                  <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="delete">
-                  <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="delete">
-                  <input type="submit" value="削除">
-                </form>
-                <?php } ?>
+                  <span class="user_name"><?php ph($row2["user_name"]); ?>さんの評価</span>
+                  <img src="" name="star" width="" height="" class="star">
+                  <div class="comment">
+                    <?php ph($row2["comment"]); ?>
+                  </div>
+                  <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
+                  <form action="material_detail.php" method="post" class="good">
+                    <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="good">
+                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
+                    <input type="submit" value="いいね">
+                  </form>
+                  <?php ph($row2["cnt"]); ?>
+                  <?php if($row2["user_id"] == $_SESSION["user_id"]){ ?>
+                  <form action="material_detail.php" method="post" class="delete">
+                    <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="delete">
+                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="delete">
+                    <input type="submit" value="削除">
+                  </form>
+                  <?php } ?>
               </div>
               <br>
             <?php } ?>
