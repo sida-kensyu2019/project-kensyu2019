@@ -47,6 +47,7 @@
       <th>作者名</th>
       <th>ジャンル</th>
       <th>制作年</th>
+      <th>詳細</th>
     </tr>
 
     <?php while ($row_result=$sth_result->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -57,6 +58,7 @@
 			<td><?php ph($row_result["author_name"]); ?></td>
 			<td><?php ph($row_result["genre_name"]); ?></td>
 			<td><?php ph($row_result["material_year"]); ?></td>
+			<td><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>">詳細</a></td>
     </tr>
     <?php } ?>
 
