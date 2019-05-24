@@ -74,7 +74,7 @@
                         break;
                       }
                    ?>
-                  <img src="<?php ph($starImg); ?>" name="star" width="" height="" class="star">
+                  <img src="<?php ph($starImg); ?>" name="star" width="" height="12px" class="star">
                   <div class="comment">
                     <?php ph($row2["comment"]); ?>
                   </div>
