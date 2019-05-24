@@ -222,7 +222,7 @@ function update_material($dbh, $input)
         // プレースホルダ付きSQLを構築
         $sql = "UPDATE m_material ";
         $sql .= "SET material_name=:material_name, material_kana=:material_kana, author_name=:author_name, author_kana=:author_kana, ";
-        $sql .= "genre_id=:genre_id, material_yaer=:material_year, picture=:picture, caption=:caption ";
+        $sql .= "genre_id=:genre_id, material_year=:material_year, picture=:picture, caption=:caption ";
         $sql .= "WHERE material_id=:material_id";
         $sth = $dbh->prepare($sql); // SQLを準備
 
@@ -239,8 +239,6 @@ function update_material($dbh, $input)
 
         // SQLを発行
         $sth->execute();
-
-        $row = $sth->fetch(PDO::FETCH_ASSOC);
 
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");

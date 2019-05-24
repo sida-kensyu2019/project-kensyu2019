@@ -39,7 +39,7 @@
 			// 入力OK
 			//データベースに管理ユーザを追加
 			require_once("../lib/function/db_material.php");
-			$sth=update_material($dbh, $_POST);
+			update_material($dbh, $_POST);
 			require_once("../lib/m_view/m_update_exec_material.php");
 		}
 	}
