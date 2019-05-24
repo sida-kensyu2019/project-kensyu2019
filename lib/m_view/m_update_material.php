@@ -32,23 +32,8 @@
     </nav>
   </header>
 
-  <?php
-      // require_once("../init.php");
-      //
-      // try {
-      //     // SQLを構築
-      //     $sql = "SELECT * FROM eye_power_db.m_material";
-      //     $sth = $dbh->prepare($sql); // SQLを準備
-      //
-      //     // SQLを発行
-      //     $sth->execute();
-      // } catch (PDOException $e) {
-      //     exit("SQL発行エラー：{$e->getMessage()}");
-      // }
-  ?>
-
 <h2>管理美術品編集画面</h2>
-<form action="m_update_exec_material.php" method="post">
+<form action="m_update_material.php?material_id=<?php ph($row["material_id"]);?>" method="post">
 <table>
 <tr><td>美術品名</td><td><input type="text" name="material_name" value="<?php ph($row["material_name"]);?>"></td></tr>
 <tr><td>美術品読み</td><td><input type="text" name="material_kana" value="<?php ph($row["material_kana"]);?>"></td></tr>
@@ -56,7 +41,7 @@
 <tr><td>作者名読み</td><td><input type="text" name="author_kana" value="<?php ph($row["author_kana"]);?>"></td></tr>
 <tr><td>ジャンル</td><td><select name="genre_id">
   <?php while ($row_genre = $sth->fetch(PDO::FETCH_ASSOC)) {?>
-    <option value="<?php ph($row_genre["genre_id"]);?>" selected="<?php ph($row_genre["genre_id"]);?>"><?php ph($row["genre_name"]);?></option>
+    <option value="<?php ph($row_genre["genre_id"]);?>" selected="<?php ph($row["genre_id"]);?>"><?php ph($row_genre["genre_name"]);?></option>
   <?php } ?>
 </select></td></tr>
 <tr><td>制作年</td><td><input type="text" name="mateial_year" value="<?php ph($row["material_year"]);?>"></td></tr>
