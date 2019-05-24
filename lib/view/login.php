@@ -22,7 +22,7 @@
       <input type="text" name="mail_address"><br>
     パスワード:
       <input type="password" name="password"><br>
-  <?php print $errorMessage; ?>
+  <?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?>
       <input type="submit" value="ログイン"><br>
   </form>
 </body>
