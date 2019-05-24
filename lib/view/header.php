@@ -13,13 +13,11 @@
         <nav>
           <h1>愛パワー美術館</h1>
           <ul>
-            <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
-            <li><a href="m_select_material.php">美術品一覧</a></li>
-            <li><a href="m_select_user.php">管理者一覧</a></li>
-            <li><a href="m_select_genre.php">ジャンル一覧</a></li>
-            <li><a href="m_select_job.php">職種一覧</a></li>
-            <li><a href="m_select_closed.php">休館日一覧</a></li>
-            <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？'); ">ログアウト</a></li>
+            <li><a href="top.php">トップページ</a></li>
+            <li><a href="insert_user.php">新規登録</a></li>
+            <li><a href="usr.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページ</a></li>
+            <li><a href="login.php">ログイン</a></li>
+            <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
           </ul>
         </nav>
       </header>
