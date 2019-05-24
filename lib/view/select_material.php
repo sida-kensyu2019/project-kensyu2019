@@ -24,7 +24,7 @@
       <li><a href="top.php">トップページ</a></li>
       <?php if (user_lv_check()) { ?>
         <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
-        <li><a href="usr.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページ</a></li>
+        <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページ</a></li>
       <?php } else { ?>
       <li><a href="login.php">ログイン</a></li>
       <li><a href="insert_user.php">新規登録</a></li>
