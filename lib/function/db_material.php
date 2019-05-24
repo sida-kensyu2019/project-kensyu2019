@@ -88,14 +88,14 @@ function get_material_by_id($dbh, $id)
     データベースのデータを取得する
     検索結果も反映
 */
-function get_material($dbh, $input)
+function get_material($dbh)
 {
     try {
 
         $where = [];
         $bind = [];
 
-        if (!empty($input["material_name"])) {
+        if (!empty($_POST["material_name"])) {
             $where[] = "material_name LIKE :material_name";
             $bind[] = "material_name";
         }
