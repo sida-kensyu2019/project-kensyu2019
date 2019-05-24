@@ -44,7 +44,7 @@
     <option value="<?php ph($row_genre["genre_id"]);?>" selected="<?php ph($row["genre_id"]);?>"><?php ph($row_genre["genre_name"]);?></option>
   <?php } ?>
 </select></td></tr>
-<tr><td>制作年</td><td><input type="text" name="mateial_year" value="<?php ph($row["material_year"]);?>"></td></tr>
+<tr><td>制作年</td><td><input type="text" name="material_year" value="<?php ph($row["material_year"]);?>"></td></tr>
 <tr><td>写真</td><td><input type="text" name="picture" value="<?php ph($row["picture"]);?>"></td></tr>
 <tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"><?php ph($row["caption"]);?></textarea></td></tr>
 </table>
