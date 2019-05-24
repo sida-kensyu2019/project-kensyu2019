@@ -111,9 +111,9 @@ function get_material($dbh, $input)
             $where[] = "author_kana LIKE :author_kana";
             $bind[] = "author_kana";
         }
-        if (!empty($input["author_kana"])) {
-            $where[] = "author_kana LIKE :author_kana";
-            $bind[] = "author_kana";
+        if (!empty($input["genre_id"])) {
+            $where[] = "m_material.genre_id = :genre_id";
+            $bind[] = "genre_id";
         }
         if (!empty($input["material_year"])) {
             $where[] = "material_year LIKE :material_year";
@@ -125,14 +125,18 @@ function get_material($dbh, $input)
             // SQLを構築
             $sql = "SELECT * FROM m_material ";
             $sql .= "INNER JOIN m_genre ";
-            $sql .= "ON m_material.material_id = m_genre.genre_id ";
+            $sql .= "ON m_material.genre_id = m_genre.genre_id ";
             $sql .= "WHERE " . $where_sql ;
 
             $sth = $dbh->prepare($sql); // SQLを準備
 
             // プレースホルダに値をバインド
             foreach ($bind as $bind_value) {
-                $sth->bindValue(":" . $bind_value, $input[$bind_value]);
+                if ($bind_value == "genre_id") {
+                    $sth->bindValue(":genre_id", $input["genre_id"]);
+                } else {
+                    $sth->bindValue(":{$bind_value}", "%{$input[$bind_value]}%");
+                }
             }
 
             // SQLを発行
@@ -144,7 +148,7 @@ function get_material($dbh, $input)
             // SQLを構築
             $sql = "SELECT * FROM m_material ";
             $sql .= "INNER JOIN m_genre ";
-            $sql .= "ON m_material.material_id = m_genre.genre_id ";
+            $sql .= "ON m_material.genre_id = m_genre.genre_id ";
 
             $sth = $dbh->prepare($sql); // SQLを準備
 
