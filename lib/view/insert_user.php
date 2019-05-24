@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>新規登録画面</title>
+<link rel="stylesheet" href="pass">
 </head>
 <body>
 
@@ -29,10 +30,8 @@
   </form>
 <br>
 <br>
-<a href "login.php">
-<input type="button" value="ログイン画面">
-</a>
 
+<input type="button" value="ログイン画面" onclick="window.location.href='login.php';">
 
 <?php print $msg; ?>
 </body>

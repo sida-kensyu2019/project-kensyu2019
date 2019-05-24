@@ -52,7 +52,10 @@
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
-                  <span class="user_name"><?php ph($row2["user_name"]); ?>さんの評価</span>
+                  <span class="user_name">
+                    <a href="../../user.php?user_id=<?php ph($row["user_id"]); ?>}"</a>
+                    <?php ph($row2["user_name"]); ?>さんの評価
+                  </span>
                   <?php //五段階評価それぞれで表示する画像変更
                       switch($row2["star"]){
                         case "NULL":
