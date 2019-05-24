@@ -23,7 +23,7 @@
             <h1>愛パワー美術館</h1>
             <ul>
               <li><a href="top.php">トップページ</a></li>
-              <?php if (user_lv_check()) { ?>
+              <?php if (login_check()) { ?>
                 <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
                 <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページ</a></li>
               <?php } else { ?>
