@@ -5,10 +5,10 @@
  * システム名：愛パワー美術品評価管理システム
  * 作成者：村上菜々
  * 作成日：2019/5/23
- * 最終更新日：
+ * 最終更新日：2019/5/24
  * レビュー担当者：
  * レビュー日：
- * バージョン：0.1
+ * バージョン：1.1
   -->
     <html>
         <head>
@@ -45,7 +45,6 @@
             <!--↑美術品詳細↑-->
 
             <!--↓美術品に対する評価↓-->
-            <!--該当美術品IDの評価件数を$countに代入が必要-->
             <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
             <a href="insert_grade.php?id=<?php $row1["material_id"]; ?>">
               評価を書き込む
@@ -54,7 +53,26 @@
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
                   <span class="user_name"><?php ph($row2["user_name"]); ?>さんの評価</span>
-                  <img src="" name="star" width="" height="" class="star">
+                  <?php //五段階評価それぞれで表示する画像変更
+                      switch($row2["star"]){
+                        case "1":
+                        $starImg = "pass";
+                        break;
+                        case "2":
+                        $starImg = "pass";
+                        break;
+                        case "3":
+                        $starImg = "pass";
+                        break;
+                        case "4":
+                        $starImg = "pass";
+                        break;
+                        case "5":
+                        $starImg = "pass";
+                        break;
+                      }
+                   ?>
+                  <img src="<?php ph($starImg); ?>" name="star" width="" height="" class="star">
                   <div class="comment">
                     <?php ph($row2["comment"]); ?>
                   </div>
@@ -65,13 +83,13 @@
                     <input type="submit" value="いいね">
                   </form>
                   <?php ph($row2["cnt"]); ?>
-                  <?php if($row2["user_id"] == $_SESSION["user_id"]){ ?>
-                  <form action="material_detail.php" method="post" class="delete">
-                    <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="delete">
-                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="delete">
-                    <input type="submit" value="削除">
-                  </form>
+                  <?php
+                  if ($_SESSION["user_id"]) {
+                    if($row2["user_id"] == $_SESSION["user_id"]){ ?>
+                      <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                    <?php } ?>
                   <?php } ?>
+
               </div>
               <br>
             <?php } ?>
