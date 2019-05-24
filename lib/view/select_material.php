@@ -33,8 +33,8 @@
       </tr>
       <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
   </table>
-      <input type="submit" name="検索">
-      <input type="reset" name="クリア">
+      <input type="submit" value="検索">
+      <input type="reset" value="クリア">
     </form>
 
 <!-- 検索結果 -->
@@ -47,6 +47,7 @@
       <th>ジャンル</th>
       <th>制作年</th>
     </tr>
+    <?php var_dump($sth); ?>
     <?php while ($row=$sth->fetch(PDO::FETCH_ASSOC)) { ?>
       
     <?php var_dump($row); ?>
