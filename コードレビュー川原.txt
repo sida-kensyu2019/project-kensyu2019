@@ -1,0 +1,12 @@
+■insert_exec_grade.php
+10,21行目:パスが絶対パスになっている（その他のファイルにも多数）
+
+■login.php
+10行目:初期化するのはそれだけでよい？
+13行目:$_SESSION["login"]が無い場合、undefinedエラーがでるはず
+14,29行目:遷移していない。コントローラをrequire_onceするのはおかしい
+37行目:不要（その他のファイルにも多数）
+
+■m_control/m_insert_material.php
+20行目：空文字が判定でき無さそう
+入力チェックが甘い（insert系、update系全般）
