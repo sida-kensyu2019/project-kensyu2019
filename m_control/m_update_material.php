@@ -9,6 +9,12 @@
 
 	//選択した美術品詳細データをデータベースから取得する
 	$row = get_material_by_id($dbh, $_GET["material_id"]); //美術品ひとつを取得する関数
-	$row = update_material($dbh, $input);
+
+	//ジャンルテーブルの処理関数呼び出し
+	require_once("../lib/function/db_genre.php");
+
+	//選択したジャンルデータをデータベースから取得する
+	$sth = get_genre($dbh);
+
 	//美術品編集画面ビュー出力
 	require_once("../lib/m_view/m_update_material.php");
