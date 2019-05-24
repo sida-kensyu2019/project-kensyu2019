@@ -25,6 +25,7 @@
       <tr><th>ジャンル</th>
         <th>
         <select name="genre_id">
+          <option value="" selected disabled>選択してください</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
             <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
           <?php } ?>
@@ -47,16 +48,15 @@
       <th>ジャンル</th>
       <th>制作年</th>
     </tr>
-    <?php var_dump($sth); ?>
-    <?php while ($row=$sth->fetch(PDO::FETCH_ASSOC)) { ?>
-      
-    <?php var_dump($row); ?>
+
+    <?php while ($row_result=$sth_result->fetch(PDO::FETCH_ASSOC)) { ?>
+
     <tr>
-			<td><?php ph($row["picture"]); ?></td>
-			<td><?php ph($row["material_name"]); ?></td>
-			<td><?php ph($row["author_name"]); ?></td>
-			<td><?php ph($row["genre_name"]); ?></td>
-			<td><?php ph($row["material_year"]); ?></td>
+			<td><?php ph($row_result["picture"]); ?></td>
+			<td><?php ph($row_result["material_name"]); ?></td>
+			<td><?php ph($row_result["author_name"]); ?></td>
+			<td><?php ph($row_result["genre_name"]); ?></td>
+			<td><?php ph($row_result["material_year"]); ?></td>
     </tr>
     <?php } ?>
 

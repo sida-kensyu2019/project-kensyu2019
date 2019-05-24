@@ -17,8 +17,8 @@ require_once("lib/function/calender_function.php");
   $closed_list = $sth_closed->fetchAll(PDO::FETCH_ASSOC);
 
 //検索ボックス用関数召喚
-require_once("lib/function/db_material.php");
-  $sth = get_material($dbh,$_POST);
+require_once("lib/function/db_genre.php");
+  $sth = get_genre($dbh);
 
 //表示する美術品召喚SQL
 require_once("lib/function/db_material.php");
