@@ -6,7 +6,7 @@
 	require_once("lib/function/function.php");
 	require_once("lib/function/db_user.php");
 
-	if(empty($_POST)){ //初回アクセス時
+	if(empty($_POST) || empty($_SESSION["login"])){ //初回アクセス時
 		$_SESSION["login"]="";//$_SESSIONの初期化
 		$errorMessage = ""; //エラーメッセージの初期化
 		require_once("lib/view/login.php"); //ログイン画面を表示
