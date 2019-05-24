@@ -228,21 +228,21 @@ function update_material($dbh, $input)
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":material_name", $_POST["material_name"]);
-        $sth->bindValue(":material_kana", $_POST["material_kana"]);
-        $sth->bindValue(":author_name", $_POST["author_name"]);
-        $sth->bindValue(":author_kana", $_POST["author_kana"]);
-        $sth->bindValue(":genre_id", $_POST["genre_id"]);
-        $sth->bindValue(":material_year", $_POST["material_year"]);
-        $sth->bindValue(":picture", $_POST["picture"]);
-        $sth->bindValue(":caption", $_POST["caption"]);
-        $sth->bindValue(":material_id", $_POST["material_id"]);
+        $sth->bindValue(":material_name", $input["material_name"]);
+        $sth->bindValue(":material_kana", $input["material_kana"]);
+        $sth->bindValue(":author_name", $input["author_name"]);
+        $sth->bindValue(":author_kana", $input["author_kana"]);
+        $sth->bindValue(":genre_id", $input["genre_id"]);
+        $sth->bindValue(":material_year", $input["material_year"]);
+        $sth->bindValue(":picture", $input["picture"]);
+        $sth->bindValue(":caption", $input["caption"]);
+        $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行
         $sth->execute();
 
         $row = $sth->fetch(PDO::FETCH_ASSOC);
-        
+
     } catch (PDOException $e) {
         exit("SQL発行エラー：{$e->getMessage()}");
     }
