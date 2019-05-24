@@ -23,11 +23,12 @@ require_once("../lib/init.php");
      && isset($_POST["caption"])) {
 
        // 入力OK
+       insert_material($dbh, $_POST);
        require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
      } else {
 
        // 入力NG
-       require_once(".js"); // 入力エラー表示
+       // require_once(".js"); // 入力エラー表示
        require_once("../lib/m_view/m_insert_material.php"); // 美術品登録画面ビュー出力
      }
    }
