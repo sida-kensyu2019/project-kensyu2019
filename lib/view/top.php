@@ -95,6 +95,7 @@
                 //平均評価の降順で20件ほどSELECT表示
                   $cnt == 0;
             	    foreach($rowTop as $topMaterial){ ?>
+                    <?php $cnt++; ?>
                     <table>
                         <tr>
                     			<td>
