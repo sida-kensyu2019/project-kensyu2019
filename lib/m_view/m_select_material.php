@@ -25,7 +25,7 @@
 		<a href="m_search_material.php">条件を絞り込む</a>
 		<a href="m_insert_material.php">新規追加する</a>
 
-		<?php require_once("../init.php");
+		<?php
 		while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
 		<table>
 			<tr>
