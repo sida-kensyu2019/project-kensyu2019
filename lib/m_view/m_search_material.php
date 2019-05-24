@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>管理美術品検索画面</title>
-  <link rel="stylesheet" href="../../css/m_style.css">
+  <link rel="stylesheet" href="../css/m_style.css">
   </head>
   <body>
     <header>
