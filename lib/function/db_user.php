@@ -31,7 +31,7 @@
           $sql = "SELECT * FROM m_user ";
           $sql .= "INNER JOIN m_job ";
           $sql .= "ON m_user.job_id = m_job.job_id ";
-          $sql .= "WHERE m_user.user_lv=2";
+          $sql .= "WHERE m_user.user_lv=1";
           $sth = $dbh->prepare($sql); // SQLを準備
 
           // SQLを発行
@@ -105,7 +105,7 @@
     try {
         // プレースホルダ付きSQLを構築
         $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 2)";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1)";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
@@ -135,7 +135,7 @@
     try {
         // プレースホルダ付きSQLを構築
         $sql = "INSERT INTO m_user (mail_address, password, user_name, job_id, user_lv) ";
-        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 1)";
+        $sql .= "VALUES (:mail_address, :password, :user_name, :job_id, 2)";
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
