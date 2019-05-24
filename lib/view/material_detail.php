@@ -55,20 +55,22 @@
                   <span class="user_name"><?php ph($row2["user_name"]); ?>さんの評価</span>
                   <?php //五段階評価それぞれで表示する画像変更
                       switch($row2["star"]){
+                        case "NULL"
+                        $starImg = "image/star_0.png";
                         case "1":
-                        $starImg = "pass";
+                        $starImg = "image/star_1.png";
                         break;
                         case "2":
-                        $starImg = "pass";
+                        $starImg = "image/star_2.png";
                         break;
                         case "3":
-                        $starImg = "pass";
+                        $starImg = "image/star_3.png";
                         break;
                         case "4":
-                        $starImg = "pass";
+                        $starImg = "image/star_4.png";
                         break;
                         case "5":
-                        $starImg = "pass";
+                        $starImg = "image/star_5.png";
                         break;
                       }
                    ?>
