@@ -41,15 +41,16 @@
 <tr><td>作者名読み</td><td><input type="text" name="author_kana" value="<?php ph($row["author_kana"]);?>"></td></tr>
 <tr><td>ジャンル</td><td><select name="genre_id">
   <?php while ($row_genre = $sth->fetch(PDO::FETCH_ASSOC)) {?>
-    <option value="<?php ph($row_genre["genre_id"]);?>" selected="<?php ph($row["genre_id"]);?>"><?php ph($row_genre["genre_name"]);?></option>
+    <option <?php if ($row_genre["genre_id"] == $row["genre_id"]) {print "selected";} ?>
+    value="<?php ph($row_genre["genre_id"]);?>"><?php ph($row_genre["genre_name"]);?></option>
   <?php } ?>
 </select></td></tr>
 <tr><td>制作年</td><td><input type="text" name="mateial_year" value="<?php ph($row["material_year"]);?>"></td></tr>
 <tr><td>写真</td><td><input type="text" name="picture" value="<?php ph($row["picture"]);?>"></td></tr>
-<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"><?php ph($row["caption"]);?></textarea></td></tr>
+<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption" value="<?php ph($row["caption"]);?>"><?php ph($row["caption"]);?></textarea></td></tr>
 </table>
 <br>
-<input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
+<input type="submit" value="登録"> <input type="reset" value="クリア"><br>
 
 <!-- 美術品一覧画面に戻る -->
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">
