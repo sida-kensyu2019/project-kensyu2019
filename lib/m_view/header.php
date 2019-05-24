@@ -8,9 +8,20 @@
        <script src=""></script>
      </head>
      <body>
-       <h1>削除完了</h1>
-       <p>該当の管理者を削除しました。</p>
-       <br>
-       <a href="../m_control/m_select_user.php">管理者一覧画面に戻る</a>
+       <header>
+         <h1>管理画面</h1>
+         <nav>
+           <ul>
+             <li><a href="m_top.php">トップページ</a></li>
+             <li><a href="../../m_control/m_select_material.php">美術品一覧画面</a></li>
+             <li><a href=""></a></li>
+             <li><a href=""></a></li>
+             <li><a href=""></a></li>
+             <li><a href=""></a></li>
+             <li><a href=""></a></li>
+           </ul>
+         </nav>
+       </header>
+
      </body>
  </html>
