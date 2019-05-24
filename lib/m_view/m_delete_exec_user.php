@@ -4,7 +4,7 @@
      <head>
        <meta charset="UTF-8">
        <title>削除完了</title>
-       <link rel="stylesheet" href="../../css/m_style.css">       <script src=""></script>
+       <link rel="stylesheet" href="../css/m_style.css">       <script src=""></script>
      </head>
      <body>
        <header>
