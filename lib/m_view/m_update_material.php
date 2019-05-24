@@ -55,5 +55,6 @@
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">
 
 </form>
+<?php print $msg; ?>
 </body>
 </html>

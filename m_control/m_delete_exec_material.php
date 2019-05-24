@@ -4,7 +4,16 @@
 //更新者佐藤：2019.5.23
     require_once("../lib/init.php");
 
+    //いいねテーブルの削除関数呼び出し
+    require_once("../lib/function/db_good.php");
+    $sth=delete_good_by_grade($dbh, $_GET["material_id"]);
+
+    //評価テーブルの削除関数呼び出し
+    require_once("../lib/function/db_grade.php");
+    $sth=delete_grade($dbh, $_GET["material_id"]);
+
+    //美術品テーブルの削除関数呼び出し
     require_once("../lib/function/db_material.php");
-    $sth=delete_material($dbh);
+    $sth=delete_material($dbh, $_GET["material_id"]);
 
     require_once("../lib/m_view/m_delete_exec_material.php");
