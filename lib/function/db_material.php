@@ -73,9 +73,9 @@ function get_material_by_id($dbh, $id)
         // SQLを発行
         $sth->execute();
 
+        // データを戻す
         $row = $sth->fetch(PDO::FETCH_ASSOC);
 
-        // データを戻す
         return $row;
 
     } catch (PDOException $e) {
