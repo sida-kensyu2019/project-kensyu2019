@@ -99,23 +99,23 @@ function get_material($dbh)
             $where[] = "material_name LIKE :material_name";
             $bind[] = "material_name";
         }
-        if (!empty($input["material_kana"])) {
+        if (!empty($_POST["material_kana"])) {
             $where[] = "material_kana LIKE :material_kana";
             $bind[] = "material_kana";
         }
-        if (!empty($input["author_name"])) {
+        if (!empty($_POST["author_name"])) {
             $where[] = "author_name LIKE :author_name";
             $bind[] = "author_name";
         }
-        if (!empty($input["author_kana"])) {
+        if (!empty($_POST["author_kana"])) {
             $where[] = "author_kana LIKE :author_kana";
             $bind[] = "author_kana";
         }
-        if (!empty($input["genre_id"])) {
+        if (!empty($_POST["genre_id"])) {
             $where[] = "m_material.genre_id = :genre_id";
             $bind[] = "genre_id";
         }
-        if (!empty($input["material_year"])) {
+        if (!empty($_POST["material_year"])) {
             $where[] = "material_year LIKE :material_year";
             $bind[] = "material_year";
         }
@@ -133,9 +133,9 @@ function get_material($dbh)
             // プレースホルダに値をバインド
             foreach ($bind as $bind_value) {
                 if ($bind_value == "genre_id") {
-                    $sth->bindValue(":genre_id", $input["genre_id"]);
+                    $sth->bindValue(":genre_id", $_POST["genre_id"]);
                 } else {
-                    $sth->bindValue(":{$bind_value}", "%{$input[$bind_value]}%");
+                    $sth->bindValue(":{$bind_value}", "%{$_POST[$bind_value]}%");
                 }
             }
 
