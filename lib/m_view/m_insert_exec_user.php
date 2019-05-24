@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>管理者登録完了画面</title>
-<link rel="stylesheet" href="../../css/m_style.css">
+<link rel="stylesheet" href="../css/m_style.css">
 </head>
 <body>
   <header>
