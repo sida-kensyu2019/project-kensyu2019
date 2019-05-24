@@ -71,3 +71,25 @@
             exit("SQL発行エラー：{$e->getMessage()}");
         }
     }
+
+    //データベースのデータを削除する
+    function delete_good_by_grade($dbh, $input)
+    {
+        try{
+          // プレースホルダ付きSQLを構築
+          $sql = "DELETE FROM t_good ";
+          $sql .= "WHERE grade_id IN ";
+          $sql .= "(SELECT grade_id FROM t_grade ";
+          $sql .= "WHERE material_id=:material_id)";
+          $sth = $dbh->prepare($sql); //SQLを準備
+          
+          //プレースホルダに値をバインド
+          $sth->bindValue(":material_id", $input);
+
+          //SQLを発行
+          $sth->execute();
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
+        }
+    }
