@@ -114,3 +114,5 @@
             exit("SQL発行エラー：{$e->getMessage()}");
         }
     }
+
+    

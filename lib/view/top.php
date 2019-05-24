@@ -93,17 +93,22 @@
             <!-- 美術品TOP20 -->
             <?php
                 //平均評価の降順で20件ほどSELECT表示
-            	    while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
+                  $cnt == 0;
+            	    foreach($rowTop as $topMaterial){ ?>
                     <table>
                         <tr>
                     			<td>
-                            <img src="<?php ph($row["picture"]); ?>">
+                            <img src="<?php ph($topMaterial["picture"]); ?>">
                           </td>
-                          <td><?php ph($row["AVG(star)"]); ?></td>
-                    			<td><?php ph($row["material_name"]); ?>
-                    			<br><?php ph($row["author_name"]); ?></td>
+                          <td><?php ph($topMaterial["AVG(star)"]); ?></td>
+                    			<td><?php ph($topMaterial["material_name"]); ?>
+                    			<br><?php ph($topMaterial["author_name"]); ?></td>
+                          <td><?php ph($topMaterial["comment"]); ?></td>
                     		</tr>
                     </table>
+                      <?php if ($cnt == 20){
+                        break;
+                      } ?>
             <?php } ?>
             <a href="#search">条件を絞り込む</a>
         </body>
