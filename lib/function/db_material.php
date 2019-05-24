@@ -184,7 +184,6 @@ function insert_material($dbh, $input)
         $sth->bindValue(":material_year", $input["material_year"]);
         $sth->bindValue(":picture", $input["picture"]);
         $sth->bindValue(":caption", $input["caption"]);
-        $sth->bindValue(":material_id", $input["material_id"]);
 
         // SQLを発行
         $sth->execute();
