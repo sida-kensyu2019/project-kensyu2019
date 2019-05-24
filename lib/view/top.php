@@ -9,19 +9,25 @@
         <head>
             <title></title>
             <meta charset="utf-8">
-            <link rel="stylesheet" href="pass">
+            <link rel="stylesheet" href="css/style.css">
             <script src=""></script>
         </head>
         <body>
-          　<!--ヘッダメニュー（タイトルロゴとログイン／マイページリンク）-->
-            <div id="header">
-              <img src="" name="logo">
-              <?php if(empty($_SESSION)){ ?>
-                  <a href="login.php" id="loginOrMypage">ログイン</a>
+        <header>
+          <nav>
+            <h1>愛パワー美術館</h1>
+            <ul>
+              <li><a href="top.php">トップページ</a></li>
+              <?php if (user_lv_check()) { ?>
+                <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
+                <li><a href="usr.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページ</a></li>
               <?php } else { ?>
-                  <a href="user.php" id="loginOrMypage">マイページ</a>
+              <li><a href="login.php">ログイン</a></li>
+              <li><a href="insert_user.php">新規登録</a></li>
               <?php } ?>
-            </div>
+            </ul>
+          </nav>
+        </header>
             <div id="titleCalender">
             <!--なんかいい感じの画像-->
               <img src="なんかいい感じの画像" name="title">
