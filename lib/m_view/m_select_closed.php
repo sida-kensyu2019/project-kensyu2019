@@ -41,7 +41,9 @@
 		</select>日
 		<input type="submit" value="新規追加">
   </form>
-  <?php print $msg; ?>
+  <?php if (empty($_POST)) {
+    print "";
+  } else { print $msg;} ?>
   <br>
   <table border=1>
     <tr><th class="d5">休館日</th><th></th></tr>

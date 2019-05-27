@@ -17,7 +17,6 @@
 require_once("../lib/init.php");
 //不正なアクセスを無効化
 m_access_check();
-
 require_once("../lib/function/db_closed.php");
 $sth=get_closed($dbh);
 require_once("../lib/m_view/m_select_closed.php");
