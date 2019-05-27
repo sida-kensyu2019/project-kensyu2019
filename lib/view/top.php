@@ -39,8 +39,12 @@
         <?php setcookie("access_error", "", time()-60, "/");
           } ?>
         </script>
-            <div id="titleImg">
+            <div class="titleImg">
               <img src="image/test.jpg" name="title" width="500px">
+              <img src="image/test.jpg" name="title" width="500px">
+              <img src="image/museum1.png" width="500px">
+              <!-- <img src="image/museum2.jpg" width="500px"> -->
+              <img src="image/museum3.jpg" width="500px">
             </div>
             <div id="calendar">
               <table id="table_calendar">
