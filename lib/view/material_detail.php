@@ -94,7 +94,7 @@
                     <?php ph($row2["comment"]); ?>
                   </div>
                   <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
-                    <?php if (login_check()) { ?>
+                <?php if (login_check()) { ?>
                   <form action="insert_exec_good.php" method="post" class="good">
                     <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
                     <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
