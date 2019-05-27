@@ -48,7 +48,7 @@
   </tr>
 </table>
 
-<?php if ($row["user_lv"] == 2) { ?>
+<?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
 <a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>">ユーザ情報を変更する</a><br>
@@ -80,7 +80,9 @@
 <!-- 管理者がアクセスした場合のみ表示 -->
 <input type="button" value="ユーザ削除" onclick="location.href='m_control/m_delete_exec_user.php'"><br>
 
-<?php } else { ?>
+<?php } ?>
+
+<?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
 <a href="delete_user.php">退会する</a>
