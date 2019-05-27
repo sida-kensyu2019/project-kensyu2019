@@ -119,8 +119,8 @@
         try {
             // プレースホルダ付きSQLを構築
             $sql = "SELECT * ";
-            $sql .= "FROM t_grade ";
-            $sql .= "WHERE t_grade.user_id = :user_id";
+            $sql .= "FROM t_good ";
+            $sql .= "WHERE t_good.user_id = :user_id";
             $sth = $dbh->prepare($sql); // SQLを準備
 
             //プレースホルダに値をバインド
