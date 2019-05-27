@@ -131,12 +131,47 @@
           $sth->bindValue(":material_id", $material_id);
 
           $sth->execute();
-          $row = $sth->fetch(PDO::FETCH_ASSOC);
+          $cnt = $sth->fetch(PDO::FETCH_ASSOC);
 
-          return $row;
+          return $cnt;
 
         } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
         }
 
+    }
+
+    //ユーザごとの評価件数集計
+    //$id :$_GET["user_id"]
+    function grade_count_by_user($dbh, $id){
+        try {
+          $sql = "SELECT COUNT(*) FROM t_grade ";
+          $sql .= "WHERE t_grade.user_id=:user_id ";
+          $sql .= "GROUP BY t_grade.user_id ";
+
+          $sth = $dbh->prepare($sql); // SQLを準備
+
+          $sth->bindValue(":user_id", (int) $id);
+
+          $sth->execute();
+          $cnt = $sth->fetch(PDO::FETCH_ASSOC);
+
+          return $cnt;
+
+        } catch (PDOException $e) {
+          exit("SQL発行エラー：{$e->getMessage()}");
+        }
+
+    }
+
+    //引数にユーザID。コメント数がnullなら、0を返す。
+    function cnt_comment($dbh, $id)
+    {
+        $ary_cnt = grade_count_by_user($dbh, $id);
+        if (empty($ary_cnt["COUNT(*)"])) {
+            $cnt = 0;
+            return $cnt;
+        } 
+        $cnt = $ary_cnt["COUNT(*)"];
+        return $cnt;
     }
