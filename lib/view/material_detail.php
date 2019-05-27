@@ -119,7 +119,7 @@
                             <input type="image" src="image/nogood.png" width="50" value="未いいね" name="good">
                           <?php } ?>
                         </form>
-                      </div>                  
+                      </div>
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
                     <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"
