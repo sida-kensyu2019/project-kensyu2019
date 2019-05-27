@@ -4,8 +4,6 @@
 require_once("lib/init.php");
 
 // ユーザIDとユーザページのIDがが同じかどうか
-var_dump($_GET["user_id"]);
-var_dump($_SESSION["user_id"]);
 if ($_GET["user_id"] == $_SESSION["user_id"]) {
 
   // ユーザIDとユーザページのIDが一致
@@ -13,8 +11,10 @@ if ($_GET["user_id"] == $_SESSION["user_id"]) {
   if(empty($_POST)) {
 
     // ユーザ情報変更画面ビュー出力
+    require_once("lib/function/db_user.php");
+    $sth = get_user_by_id($dbh, $_SESSION["user_id"]);
     require_once("lib/function/db_job.php");
-    $sth = get_job($dbh);
+    $sth_job = get_job($dbh);
     $msg = "";
     require_once("lib/view/update_user.php");
 
@@ -24,16 +24,20 @@ if ($_GET["user_id"] == $_SESSION["user_id"]) {
     if (empty($_POST["password"]) || empty($_POST["user_name"]) || empty($_POST["job_id"])) {
 
       //入力NG
+      require_once("lib/function/db_user.php");
+      $sth = get_user_by_id($dbh, $_SESSION["user_id"]);
       require_once("lib/function/db_job.php");
-      $sth = get_job($dbh);
+      $sth_job = get_job($dbh);
       $msg = "すべて入力してください";
       require_once("lib/view/update_user.php");
 
     } else {
 
       //入力OK
+      require_once("lib/function/db_user.php");
+      $sth = get_user_by_id($dbh, $_SESSION["user_id"]);
       require_once("lib/function/db_job.php");
-      $sth=get_job($dbh);
+      $sth_job = get_job($dbh);
       require_once("update_user.php");
     }
   }
