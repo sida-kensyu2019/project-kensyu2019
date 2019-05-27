@@ -13,13 +13,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/user.css">
 <title>ユーザマイページ</title>
 </head>
 <body>
 <header>
   <nav>
-    <h1>愛パワー美術館</h1>
+    <img src="image/titlelogo.png" height="90px">
     <ul>
       <li><a href="top.php">トップページ</a></li>
       <?php if (login_check()) { ?>
@@ -34,31 +34,35 @@
 </header>
 
 <!-- ユーザ名表示 -->
-<h1><?php ph($row["user_name"]); ?></h1>
+<h1><?php ph($row["user_name"]); ?>さんのページ</h1>
 
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
-<table border="1">
+<table id="user">
   <tr>
-    <td>アイコン</td>
-    <td rowspan="3"><?php ph($row["profile"]); ?></td>
+    <td class="user" width="150px">
+      <img src="icon1.png" width="150px" height="150px">
+    </td>
+    <td rowspan="3" class="user"><?php ph($row["profile"]); ?></td>
   </tr>
   <tr>
-    <td>コメント数<br>
-        いいね数</td>
+    <td class="user">
+        コメント()<br>
+        いいね()
+    </td>
   </tr>
 </table>
 
 <?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
-<a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>">ユーザ情報を変更する</a><br>
+<a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>" class="menu">ユーザ情報を変更する</a><br>
 
 <?php } ?>
 <br>
 
 <!-- 過去の評価コメント一覧 -->
 <h2>過去の評価コメント</h2>
-  <table border="1">
+  <table>
       <tr>
         <th>美術品名</th>
         <th>作者名</th>
@@ -69,7 +73,28 @@
       <tr>
   			<td><a href = "material_detail.php?material_id=<?php ph($row["material_id"]); ?>"> <?php ph($row["material_name"]); ?> </a></td>
   			<td><?php ph($row["author_name"]); ?></td>
-        <td><?php ph($row["star"]); ?></td>
+        <td width="60px"><?php //五段階評価それぞれで表示する画像変更
+            switch($row["star"]){
+              case "NULL":
+              $starImg = "image/star_0.png";
+              case "1":
+              $starImg = "image/star_1.png";
+              break;
+              case "2":
+              $starImg = "image/star_2.png";
+              break;
+              case "3":
+              $starImg = "image/star_3.png";
+              break;
+              case "4":
+              $starImg = "image/star_4.png";
+              break;
+              case "5":
+              $starImg = "image/star_5.png";
+              break;
+            }
+         ?>
+        <img src="<?php ph($starImg); ?>" name="star" width="" height="12px" class="star"> <!--評価の星表示--></td>
   			<td><?php ph($row["comment"]); ?></td>
   		</tr>
       <?php } ?>
