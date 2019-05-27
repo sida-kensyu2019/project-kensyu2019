@@ -23,9 +23,11 @@ function mkCalender(){
         $j++;
         //月末日のみ残り曜日に空の文字列格納
         if ($i == $last_day) {
-            for ($e = 1; $e <= 6 ; $e++) {
+          $week_end = date("w", mktime(0, 0, 0,$month + 1, 0, $year));
+            while ($week_end < 6) {
               $calender[$j]["day"] = "";
               $j++;
+              $week_end++;
             }
         }
     }

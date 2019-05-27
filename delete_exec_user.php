@@ -21,5 +21,10 @@
 	//ユーザのデータをデータベースから削除する
 	$sth = delete_user($dbh, $_POST["user_id"]); //ユーザデータを削除する関数
 
+	// ログアウト処理
+	$_SESSION["login"] = false;
+	$_SESSION["user_id"] = NULL;
+	$_SESSION["user_lv"] = NULL;
+
 	//美術館トップビュー出力
 	header("Location:top.php");
