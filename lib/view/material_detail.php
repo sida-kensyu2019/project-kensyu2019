@@ -36,13 +36,13 @@
 
             <h2>美術品詳細</h2>
 
-            <div id="material_name">
+            <div id="material_name"> <!--美術品名表示-->
               <?php print h($sth_material["material_name"])."(".h($sth_material["material_name"]).")"; ?>
             </div>
-            <div id="material_img">
+            <div id="material_img"> <!--画像表示-->
               <img src="<?php ph($sth_material["picture"]); ?>" name="" width="" height="">
             </div>
-            <div id="material_text">
+            <div id="material_text"> <!--詳細コメント表示-->
               <p id="material_overview">
                 <?php
                   $overview = $sth_material["author_name"]."(".$sth_material["author_kana"].")/";
@@ -58,13 +58,11 @@
 
             <!--↓美術品に対する評価↓-->
             <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
-            <a href="insert_grade.php?id=<?php $row1["material_id"]; ?>">
-              評価を書き込む
-            </a>
+            <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
-                  <span class="user_name">
+                  <span class="user_name"> <!--評価したユーザの名前表示-->
                     <a href="user.php?user_id=<?php ph($row2["user_id"]); ?>">
                     <?php ph($row2["user_name"]); ?></a>さんの評価
                   </span>
@@ -89,20 +87,20 @@
                         break;
                       }
                    ?>
-                  <img src="<?php ph($starImg); ?>" name="star" width="" height="12px" class="star">
-                  <div class="comment">
+                  <img src="<?php ph($starImg); ?>" name="star" width="" height="12px" class="star"> <!--評価の星表示-->
+                  <div class="comment"> <!--評価コメント表示-->
                     <?php ph($row2["comment"]); ?>
                   </div>
                   <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
                   <form action="material_detail.php" method="post" class="good">
                     <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="good">
                     <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
-                    <input type="submit" value="いいね">
+                    <input type="submit" value="いいね"> <!--いいねを押した際に飛ばすデータ入力-->
                   </form>
                   <?php ph($row2["cnt"]); ?>
                   <?php
                   if (empty($_SESSION["user_id"])) {
-
+                    //非ログインユーザがいいねを押した場合(要検討)
                   } else {
                     if($row2["user_id"] == $_SESSION["user_id"]){ ?>
                         <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
