@@ -171,7 +171,7 @@
         if (empty($cnt)) {
             $cnt = 0;
             return $cnt;
-        } 
-        
+        }
+
         return $cnt;
     }
