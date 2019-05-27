@@ -101,13 +101,13 @@
                     <?php foreach ($row_goodList as $row_good) {
                       if ($row_good["grade_id"] == $row2["grade_id"]) { ?>
                         <!-- いいね済み -->
-                        <input type="submit" value="いいね" name="good">
+                        <input type="image" src="image/good.png" width="50" value="いいね" name="good">
                         <?php $no_good = false;
                       }
                     }
                     if ($no_good) { ?>
                       <!-- 未いいね -->
-                      <input type="submit" value="いいね" name="good">
+                      <input type="image" src="image/nogood.png" width="50" value="いいね" name="good">
                     <?php } ?>
                   </form>
                 <?php
