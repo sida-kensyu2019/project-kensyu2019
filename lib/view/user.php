@@ -40,7 +40,7 @@
     <table id="user">
       <tr>
         <td class="user" width="150px">
-          <img src="icon1.png" width="150px" height="150px">
+          <img src="image/india_main.jpg" width="150px" height="150px">
         </td>
         <td rowspan="3" class="user"><?php ph($row["profile"]); ?></td>
       </tr>
@@ -68,7 +68,7 @@
           </tr>
           <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
           <tr>
-      			<td><a href = "material_detail.php?material_id=<?php ph($row["material_id"]); ?>"> <?php ph($row["material_name"]); ?> </a></td>
+      			<td><a href = "material_detail.php?material_id=<?php ph($row["material_id"]); ?>" target="_blank"> <?php ph($row["material_name"]); ?> </a></td>
       			<td><?php ph($row["author_name"]); ?></td>
             <td width="60px"><?php //五段階評価それぞれで表示する画像変更
                 switch($row["star"]){

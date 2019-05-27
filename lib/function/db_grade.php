@@ -171,7 +171,7 @@
         if (empty($ary_cnt["COUNT(*)"])) {
             $cnt = 0;
             return $cnt;
-        } 
+        }
         $cnt = $ary_cnt["COUNT(*)"];
         return $cnt;
     }
