@@ -11,19 +11,6 @@
     "grade_id" => $_POST["grade_id"],
   ];
 
-  //$no_good = true;
-
-  // while($row=$sth->fetch(PDO::FETCH_ASSOC)){
-  //   if($row["grade_id"] == $_POST["grade_id"]){
-  //     delete_good($dbh, $_POST);
-  //     $no_good = false;
-  //   }
-  // }
-  //
-  // if ($no_good){
-  //   insert_good($dbh, $_POST);
-  // }
-
   while($row=$sth->fetch(PDO::FETCH_ASSOC)){
     if($row["grade_id"] == $_POST["grade_id"]){
       delete_good($dbh, $input);
