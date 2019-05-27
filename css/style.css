@@ -12,9 +12,28 @@ ul li {
   display: inline-block;  /* リストを横並びにする */
   width: 100px;
   margin: 1px;     /* 枠外の余白 */
-  padding: 5px;   /* 枠内の余白 */
-  border: 1px solid; /* メニュー項目の枠線 */
+  padding: 8px;   /* 枠内の余白 */
+  border: 3px solid #8ad8b2; /* メニュー項目の枠線 */
   border-radius: 5px;
+  background-color: #8ad8b2;
+  color: #ffffff;
+}
+
+ul li:hover{
+  background-color: #ffffff;
+}
+
+.li_a{
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.li_a:visited {
+  color: #ffffff;
+}
+
+.li_a:hover {
+  color: #8ad8b2;
 }
 
 #titleImg{
@@ -77,6 +96,18 @@ ul li {
 }
 
 .material_list{
+  border-collapse: collapse;
+  border: solid 1px #282b2b;
+  width: 800px;
+  color: #282b2b;
   margin-left:auto;
   margin-right:auto;
+}
+
+.ml_td{
+  height:50px;
+}
+
+.ml_tr:nth-child(even) {
+	background: #d8ffee;
 }
