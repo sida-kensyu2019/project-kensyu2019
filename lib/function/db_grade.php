@@ -36,12 +36,14 @@
         $sql .= "FROM t_grade INNER JOIN m_user ON t_grade.user_id = m_user.user_id ";
         $sql .= "LEFT OUTER JOIN (SELECT COUNT(*) cnt, grade_id FROM t_good GROUP BY grade_id) t1 ";
         $sql .= "ON t_grade.grade_id = t1.grade_id ";
-        $sql .= "WHERE t_grade.material_id = {$input} ";
+        $sql .= "WHERE t_grade.material_id = $input ";
         $sql .= "ORDER BY t1.cnt DESC; ";
         $sth = $dbh->prepare($sql); // SQLを準備
 
             // SQLを発行
         $sth->execute();
+
+        //$sth->bindValue(":material_id", $input);
 
         return $sth;
 
@@ -59,7 +61,7 @@
         try {
             // プレースホルダ付きSQLを構築
             $sql = "INSERT INTO t_grade (material_id, user_id, grade_date, star, comment) ";
-            $sql .= "VALUES (:material_id, :user_id, :grade_date, :star, :comment)";
+            $sql .= "VALUES (:material_id, :user_id, :grade_date, :star, :comment);";
             $sth = $dbh->prepare($sql); // SQLを準備
 
             // プレースホルダに値をバインド
@@ -84,7 +86,7 @@
         try {
             // プレースホルダ付きSQLを構築
             $sql = "DELETE FROM t_grade ";
-            $sql .= "WHERE grade_id=:grade_id";
+            $sql .= "WHERE grade_id=:grade_id;";
             $sth = $dbh->prepare($sql); // SQLを準備
 
             // プレースホルダに値をバインド
@@ -104,7 +106,7 @@
         try {
             // プレースホルダ付きSQLを構築
             $sql = "DELETE FROM t_grade ";
-            $sql .= "WHERE user_id=:user_id";
+            $sql .= "WHERE user_id=:user_id;";
             $sth = $dbh->prepare($sql); // SQLを準備
 
             // プレースホルダに値をバインド
@@ -121,16 +123,17 @@
     function grade_count($dbh, $material_id){
         try {
           $sql = "SELECT COUNT(*) FROM t_grade ";
-          $sql .= "WHERE t_grade.material_id=$material_id ";
-          $sql .= "GROUP BY material_id; ";
+          $sql .= "WHERE t_grade.material_id=:material_id ";
+          $sql .= "GROUP BY t_grade.material_id ";
 
           $sth = $dbh->prepare($sql); // SQLを準備
 
+          $sth->bindValue(":material_id", $material_id);
+
           $sth->execute();
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
 
-          $sth = $sth->fetch(PDO::FETCH_ASSOC);
-
-          return $sth;
+          return $row;
 
         } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
