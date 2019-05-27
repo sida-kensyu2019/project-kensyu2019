@@ -17,5 +17,5 @@ if (login_check()) { // ログインユーザ
   // ダイアログ「ログインしてください」表示
   //require_once(".js");
   // 美術品詳細表示
-  require_once("material_detail.php");
+  header("Location:material_detail.php");
 }
