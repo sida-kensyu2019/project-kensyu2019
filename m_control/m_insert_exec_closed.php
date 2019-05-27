@@ -14,6 +14,8 @@
  */
 
 require_once("../lib/init.php");
+//不正なアクセスを無効化
+m_access_check();
 
 require_once("../lib/function/db_closed.php");
 $sth=insert_closed($dbh, $_POST);

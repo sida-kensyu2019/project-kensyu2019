@@ -3,6 +3,8 @@
 // 管理ユーザ削除完了画面コントローラ
 
 	require_once("../lib/init.php");
+	//不正なアクセスを無効化
+	m_access_check();
 
 	//ユーザテーブルの処理関数呼び出し
 	require_once("../lib/function/db_user.php");
