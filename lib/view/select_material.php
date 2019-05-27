@@ -34,6 +34,7 @@
 </header>
 
 <!-- 検索ボックス -->
+<div class="material_list">
   <table id="search">
     <form action="select_material.php" method="post">
       <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>
@@ -56,7 +57,7 @@
 
 <!-- 検索結果 -->
 <h2>美術品検索結果</h2>
-<table class="material_list">
+<table>
     <tr>
       <th>画像</th>
       <th>美術品名</th>
@@ -82,6 +83,7 @@
 
 <a href="#search">条件を絞り込む</a>
 <!-- ページ上部の検索フォームへのページ内リンク -->
+</div>
 
 </body>
 </html>
