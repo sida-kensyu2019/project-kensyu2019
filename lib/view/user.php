@@ -47,7 +47,7 @@
       <tr>
         <td class="user">
             コメント(<?php ph($gradeCnt); ?>)<br>
-            いいね()
+            いいね(<?php ph($goodCnt); ?>)
         </td>
       </tr>
     </table>
