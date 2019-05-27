@@ -10,7 +10,7 @@
  * レビュー日：
  * バージョン：0.1
   -->
-<?php require_once("../init.php"); ?>
+<?php require_once("lib/init.php"); ?>
 <html>
 <head>
 <meta charset="utf-8">
@@ -35,7 +35,7 @@
 </header>
 
 <h2>美術品評価確認画面</h2>
-<form action="insert_check_grade.php" method="post">
+<form action="insert_exec_grade.php" method="post">
 評価
     <?php ph($_POST["star"]); ?>
     <br>
@@ -45,10 +45,15 @@
 <?php ph($_POST["comment"]); ?><br>
 
 <!-- 評価を登録 -->
-<input type="submit" value= "送信" onclick="location.href='material_detail.php'">
+<input type="hidden" value=<?php ph($_POST["material_id"]); ?> name="material_id">
+<input type="hidden" value=<?php ph($_POST["user_id"]); ?> name="user_id">
+<input type="hidden" value=<?php ph($_POST["grade_date"]); ?> name="grade_date">
+<input type="hidden" value=<?php ph($_POST["star"]); ?> name="star">
+<input type="hidden" value=<?php ph($_POST["comment"]); ?> name="comment">
+<input type="submit" value= "送信">
 
 <!-- 美術品評価書込画面に戻る -->
-<input type="button" value="訂正" onclick="location.href='insert_grade.php'">
+<input type="button" value="訂正" onclick="window.history.back();">
 
 </form>
 </body>

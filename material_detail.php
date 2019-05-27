@@ -11,7 +11,6 @@
   // 美術品詳細データをデータベースから取得
   $sth_material = get_material_by_id($dbh, $_GET["material_id"]);
 
-
   //該当美術品IDの評価件数を取得
   require_once("lib/function/db_grade.php");
   $count = grade_count($dbh, $_GET["material_id"]);

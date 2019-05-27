@@ -45,6 +45,8 @@
             // SQLを発行
             $sth->execute();
 
+            return $sth
+
         } catch (PDOException $e) {
             exit("SQL発行エラー：{$e->getMessage()}");
         }
@@ -108,6 +110,28 @@
 
           //SQLを発行
           $sth->execute();
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
+        }
+    }
+
+    function get_good_by_user($dbh, $id)
+    {
+        try {
+            // プレースホルダ付きSQLを構築
+            $sql = "SELECT * ";
+            $sql .= "FROM t_grade ";
+            $sql .= "WHERE t_grade.user_id = :user_id";
+            $sth = $dbh->prepare($sql); // SQLを準備
+
+            //プレースホルダに値をバインド
+            $sth->bindValue(":user_id", (int) $id);
+
+            // SQLを発行
+            $sth->execute();
+
+            return $sth;
 
         } catch (PDOException $e) {
             exit("SQL発行エラー：{$e->getMessage()}");
