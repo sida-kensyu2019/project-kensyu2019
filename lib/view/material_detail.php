@@ -102,13 +102,24 @@
                   </div>
                   <div class="grade_date"><?php ph($row2["grade_date"]); ?></div>
                     <?php if (login_check()) { ?>
-                  <div class="good">
-                    <form action="insert_exec_good.php" method="post">
-                      <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
-                      <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
-                      <input type="submit" value="いいね" name="good"> <!--いいねを押した際に飛ばすデータ入力-->
-                    </form>
-                  </div>
+                      <div class="good">
+                        <form action="insert_exec_good.php" method="post" class="good">
+                          <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
+                          <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
+                          <?php $no_good=true;
+                          foreach ($row_goodList as $row_good) {
+                            if ($row_good["grade_id"] == $row2["grade_id"]) { ?>
+                              <!-- いいね済み -->
+                              <input type="image" src="image/good.png" width="50" value="いいね" name="good">
+                              <?php $no_good = false;
+                            }
+                          }
+                          if ($no_good) { ?>
+                            <!-- 未いいね -->
+                            <input type="image" src="image/nogood.png" width="50" value="未いいね" name="good">
+                          <?php } ?>
+                        </form>
+                      </div>                  
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
                     <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"

@@ -75,3 +75,8 @@ ul li {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
 }
+
+.material_list_th{
+  color: #161616;/*文字色*/
+  background: #82ffc8;/*背景色*/
+}

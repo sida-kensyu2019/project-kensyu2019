@@ -9,7 +9,6 @@
      <body>
      <header>
         <nav>
-          <h1>管理者画面</h1>
           <ul>
             <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
@@ -21,10 +20,21 @@
           </ul>
         </nav>
       </header>
-
-       <h1>削除完了</h1>
-       <p>該当の管理者を削除しました。</p>
        <br>
-       <a href="../m_control/m_select_user.php">管理者一覧画面に戻る</a>
+        <h1>削除完了</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+        該当の管理者を削除しました。
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="../m_control/m_select_user.php">管理者一覧画面に戻る</a>
+      </div>
      </body>
  </html>

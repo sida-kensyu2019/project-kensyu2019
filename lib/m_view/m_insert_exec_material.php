@@ -9,7 +9,6 @@
 <body>
       <header>
         <nav>
-          <h1>管理者画面</h1>
           <ul>
             <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
@@ -41,10 +40,12 @@
 <br>
 <br>
 <br>
+<div>
 <p>上記の内容で美術品の登録が完了しました。<p>
 <br>
-</body>
 <a href="m_insert_material.php">
 <input type="button" value="美術品登録に戻る">
 </a>
+</div>
+</body>
 </html>
