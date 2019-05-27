@@ -20,6 +20,7 @@
 
   if (login_check()) {
     //ログインユーザがいいねした評価を取り出す
+    require_once("lib/function/db_good.php");
     $sth_good=get_good_by_user($dbh, $_SESSION["user_id"]);
     $row_goodList=$sth_good->fetchall(PDO::FETCH_ASSOC);
     $no_good=true;
