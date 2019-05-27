@@ -35,7 +35,7 @@
 <h2>ユーザ情報変更画面</h2>
 
 <table>
-  <form action="update_check_user.php" method="post">
+  <form action="update_user.php" method="post">
     <tr><th>メールアドレス</th><th> <?php ph($_POST["mail_address"]) ?>/th></tr>
     <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
     <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
@@ -48,12 +48,14 @@
       </select>
       </th>
     </tr>
+    <tr><th>
     <input type="submit" name="変更">
     <input type="reset" name="クリア">
+  </tr></th>
     <br>
-    <a href="user.php">マイページに戻る</a>
   </form>
 </table>
+<a href="user.php">マイページに戻る</a>
 
 </body>
 </html>

@@ -19,7 +19,13 @@ require_once("../lib/init.php");
     if (empty($_POST["material_name"]) || empty($_POST["material_kana"])
      || empty($_POST["author_name"]) || empty($_POST["author_kana"])
      || empty($_POST["genre_id"]) || empty($_POST["material_year"])
-     || empty($_POST["caption"])) {
+     || empty($_POST["picture"]) || empty($_POST["caption"])
+     || preg_match("/^[^ -~｡-ﾟ]{1,50}$/", $_POST["material_name"])
+     || preg_match("/^[あ-ん]{1,70}$/", $_POST["material_kana"])
+     || preg_match("/^[^ -~｡-ﾟ]{1,50}$/", $_POST["author_name"])
+     || preg_match("/^[あ-ん]{1,70}$/", $_POST["author_kana"])
+     || $_POST["material_year"] > 20 || $_POST["picture"] > 100
+     || $_POST["caption"] > 200) {
 
        // 入力NG
        // require_once(".js"); // 入力エラー表示
