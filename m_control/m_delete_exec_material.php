@@ -8,7 +8,7 @@
 
     //いいねテーブルの削除関数呼び出し
     require_once("../lib/function/db_good.php");
-    $sth=delete_good_by_grade($dbh, $_GET["material_id"]);
+    $sth=delete_good_by_material($dbh, $_GET["material_id"]);
 
     //評価テーブルの削除関数呼び出し
     require_once("../lib/function/db_grade.php");
