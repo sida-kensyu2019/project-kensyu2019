@@ -25,7 +25,7 @@
       <input type="text" name="job_name">
       <input type="submit" value="新規追加">
     </form>
-    <table>
+    <table border=1>
       <tr>
         <th>職種ID</th>
         <th>職種名</th>
