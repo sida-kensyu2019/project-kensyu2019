@@ -2,6 +2,8 @@
 // 制作者：井田　日時：2019.05.23 Ver1.0
 // 管理ユーザ登録画面コントローラ
 require_once("../lib/init.php");
+//不正なアクセスを無効化
+m_access_check();
 
 //ユーザログイン確認
 //if ($_SESSION["login"]) {
