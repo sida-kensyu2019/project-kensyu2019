@@ -127,6 +127,7 @@
                     			<td><?php ph($topMaterial["material_name"]); ?>
                     			<br><?php ph($topMaterial["author_name"]); ?></td>
                           <td><?php ph($topMaterial["comment"]); ?></td>
+                          <td><a href="material_detail.php?material_id=<?php ph($topMaterial["material_id"]); ?>" target="_blank">詳細</a></td>
                     		</tr>
                     </table>
                       <?php if ($cnt == 20){

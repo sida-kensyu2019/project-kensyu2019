@@ -1,5 +1,4 @@
 <?php
-var_dump($_GET["material_id"]);
 // 制作者：井田　日時：2019.05.23 Ver1.0
 // 美術品詳細画面コントローラ
   require_once("lib/init.php");
