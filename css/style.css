@@ -36,7 +36,7 @@ ul li:hover{
   color: #8ad8b2;
 }
 
-#titleImg{
+.titleImg{
   float: left;
   width: 500px;
   margin-bottom: 10px;
@@ -110,4 +110,42 @@ ul li:hover{
 
 .ml_tr:nth-child(even) {
 	background: #d8ffee;
+}
+
+div.titleImg {
+    width: 500px; /* スライドショーの幅 */
+    position: relative;
+}
+
+.titleImg img {
+    animation: show 15s infinite; /* 12秒のスライドショーを繰り返し */
+    max-width: 100%;
+    height: auto;
+    opacity: 0;
+    position: absolute; /* 画像を重ねて表示 */
+    left: 0;
+    top: 0;
+}
+
+@keyframes show {
+    0% {opacity: 0}
+    17% {opacity: 1}
+    33% {opacity: 1}
+    50% {opacity: 0}
+}
+
+.titleImg img:nth-of-type(1) {
+    position: relative;
+}
+
+.titleImg img:nth-of-type(2) {
+    animation-delay: 0s;
+}
+
+.titleImg img:nth-of-type(3) {
+    animation-delay: 4s;
+}
+
+.titleImg img:nth-of-type(4) {
+    animation-delay: 8s;
 }
