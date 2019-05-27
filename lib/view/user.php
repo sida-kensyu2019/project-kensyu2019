@@ -87,6 +87,9 @@ onclick="location.href='m_control/m_delete_exec_user.php?user_id=<?php ph($_GET[
 <?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
+<form action="delete_user.php" method="post">
+  <!-- <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>"> -->
+</form>
 <a href="delete_user.php">退会する</a>
 
 <?php } ?>

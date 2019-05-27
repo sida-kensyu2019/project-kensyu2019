@@ -12,7 +12,7 @@ require_once("lib/function/db_user.php");
 // ユーザデータをデータベースから取得
 $sth = get_user_by_id($dbh, $_SESSION["user_id"]);
 // ユーザ情報をデータベースに更新する
-$user = update_user($dbh, $_POST);
+update_user($dbh, $_POST);
 
 // 追加しましたダイアログ表示
 // require_once(".js"); // 未作成のため、コメントアウト
