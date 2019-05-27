@@ -40,7 +40,7 @@
     <table id="user">
       <tr>
         <td class="user" width="150px">
-          <img src="icon1.png" width="150px" height="150px">
+          <img src="image/india_main.jpg" width="150px" height="150px">
         </td>
         <td rowspan="3" class="user"><?php ph($row["profile"]); ?></td>
       </tr>

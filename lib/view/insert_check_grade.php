@@ -45,11 +45,11 @@
 <?php ph($_POST["comment"]); ?><br>
 
 <!-- 評価を登録 -->
-<input type="hidden" value=<?php ph($_POST["material_id"]); ?> name="material_id">
-<input type="hidden" value=<?php ph($_POST["user_id"]); ?> name="user_id">
-<input type="hidden" value=<?php ph($_POST["grade_date"]); ?> name="grade_date">
-<input type="hidden" value=<?php ph($_POST["star"]); ?> name="star">
-<input type="hidden" value=<?php ph($_POST["comment"]); ?> name="comment">
+<input type="hidden" value="<?php ph($_POST["material_id"]); ?>" name="material_id">
+<input type="hidden" value="<?php ph($_POST["user_id"]); ?>" name="user_id">
+<input type="hidden" value="<?php ph($_POST["grade_date"]); ?>" name="grade_date">
+<input type="hidden" value="<?php ph($_POST["star"]); ?>" name="star">
+<input type="hidden" value="<?php ph($_POST["comment"]); ?>" name="comment">
 <input type="submit" value= "送信">
 
 <!-- 美術品評価書込画面に戻る -->
