@@ -52,8 +52,8 @@
   </tr>
   <?php } ?>
 </table>
-
-<div class="d2">
+<br>
+<div>
 <input type="button" value="新規追加" onclick="location.href='m_insert_user.php'">
 <!-- 新規管理者登録画面に遷移 -->
 </div>
