@@ -14,6 +14,7 @@ ul li {
   margin: 1px;     /* 枠外の余白 */
   padding: 5px;   /* 枠内の余白 */
   border: 1px solid; /* メニュー項目の枠線 */
+  border-radius: 5px;
 }
 div{
   border: thin none black;
@@ -37,7 +38,7 @@ div{
   font-size: small;
 }
 .th{
-  background: #EEEEEE;
+  background-color: #EEEEEE;
   width: 50px;
 }
 .td{
@@ -49,8 +50,9 @@ div{
   clear: both;
   margin: 10px;
   text-align: center;
-  border: thin solid blue;
+  border: thin none blue;
   padding: 10px;
+  background-color: #EEEEEE;
 }
 #table_search{
   text-align: center;
@@ -58,10 +60,14 @@ div{
   margin:0px auto 0px;
 }
 #table_top{
-  width: 800px;
+  width: 790px;
   text-align: center;
   border: thin none black;
   margin:0px auto 0px;
+}
+.material_th{
+  border: thin solid #CCCCCC;
+  background-color: #EEEEEE;
 }
 .material{
   border: thin solid #CCCCCC;

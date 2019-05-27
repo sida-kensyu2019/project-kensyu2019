@@ -15,7 +15,7 @@
         <body>
         <header>
           <nav>
-            <h1>愛パワー美術館</h1>
+            <img src="image/titlelogo.png" height="90px">
             <ul>
               <li><a href="top.php">トップページ</a></li>
               <?php if (login_check()) { ?>
@@ -115,11 +115,11 @@
             <table id="table_top">
               <caption><h2>TOP20</h2></caption>
               <tr>
-                <th class="material" width="150px">画像</th>
-                <th class="material">星</th>
-                <th class="material" width="160px">作品名<br>作者名</th>
-                <th class="material">評価TOPコメント</th>
-                <th class="material" width="60px">詳細へ</th>
+                <th class="material_th" width="150px">画像</th>
+                <th class="material_th">星</th>
+                <th class="material_th" width="160px">作品名<br>作者名</th>
+                <th class="material_th">評価TOPコメント</th>
+                <th class="material_th" width="60px">詳細へ</th>
               </tr>
             <?php
                 //平均評価の降順で20件ほどSELECT表示
