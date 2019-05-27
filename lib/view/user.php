@@ -44,6 +44,13 @@
     </td>
     <td rowspan="3" class="user"><?php ph($row["profile"]); ?></td>
   </tr>
+</table>
+<br>
+<table border="1">
+  <tr>
+    <th>コメント数</th>
+    <td>aaa</td>
+  </tr>
   <tr>
     <td class="user">
         コメント()<br>
