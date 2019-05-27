@@ -94,20 +94,17 @@
                     <?php ph($row2["comment"]); ?>
                   </div>
                   <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
-                  <form action="material_detail.php" method="post" class="good">
-                    <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="good">
+                    <?php if (login_check()) { ?>
+                  <form action="material_detail.php?material_id=<?php ph($sth_material["material_id"]); ?>" method="post" class="good">
+                    <input type="hidden" value="<?php ph($row2["user_id"]); ?>" name="good">
                     <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
-                    <input type="submit" value="いいね"> <!--いいねを押した際に飛ばすデータ入力-->
+                    <input type="submit" value="いいね" name="good"> <!--いいねを押した際に飛ばすデータ入力-->
                   </form>
-                  <?php ph($row2["cnt"]); ?>
-                  <?php
-                  if (empty($_SESSION["user_id"])) {
-                    //非ログインユーザがいいねを押した場合(要検討)
-                  } else {
-                    if($row2["user_id"] == $_SESSION["user_id"]){ ?>
-                        <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
-                      <?php } ?>
-                  <?php } ?>
+                <?php
+                if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
+                    <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                  <?php }
+                } ?>
 
               </div>
               <br>
