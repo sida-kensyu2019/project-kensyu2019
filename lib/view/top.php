@@ -28,6 +28,15 @@
             </ul>
           </nav>
         </header>
+        
+        <!--管理画面に不正なアクセスがあった場合、トップに遷移し、エラーメッセージ表示-->
+        <script>
+        <?php if (!(empty($_COOKIE["access_error"]))) { ?>
+          alert("アクセス権がありません");
+        <?php setcookie("access_error", "", time()-60, "/");
+          } ?>
+        </script>
+
             <div id="titleCalender">
             <!--なんかいい感じの画像-->
               <img src="なんかいい感じの画像" name="title">

@@ -14,6 +14,8 @@
  */
 
 require_once("../lib/init.php");
+//不正なアクセスを無効化
+m_access_check();
 
 require_once("../lib/function/db_genre.php");
 $sth=delete_genre($dbh, $_GET["genre_id"]);

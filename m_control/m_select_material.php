@@ -3,6 +3,8 @@
 // 管理美術品一覧画面コントローラ
 
 	require_once("../lib/init.php");
+	//不正なアクセスを無効化
+	m_access_check();
 
 	//美術品テーブルの処理関数呼び出し
 	require_once("../lib/function/db_material.php");
