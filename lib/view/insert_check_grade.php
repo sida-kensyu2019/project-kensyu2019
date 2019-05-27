@@ -10,6 +10,7 @@
  * レビュー日：
  * バージョン：0.1
   -->
+<?php require_once("../init.php"); ?>
 <html>
 <head>
 <meta charset="utf-8">

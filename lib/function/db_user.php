@@ -54,7 +54,7 @@
           $sql = "UPDATE m_user ";
           $sql .= "SET password=:password, user_name=:user_name, ";
           $sql .= "job_id=:job_id, profile=:profile ";
-          $sql .= "WHERE user_id=:user_id";
+          $sql .= "WHERE user_id=:user_id;";
           $sth = $dbh->prepare($sql); // SQLを準備
 
           // プレースホルダに値をバインド
@@ -62,6 +62,7 @@
           $sth->bindValue(":user_name", $input["user_name"]);
           $sth->bindValue(":job_id", $input["job_id"]);
           $sth->bindValue(":profile", $input["profile"]);
+          $sth->bindValue(":user_id", $input["user_id"]);
 
           // SQLを発行
           $sth->execute();

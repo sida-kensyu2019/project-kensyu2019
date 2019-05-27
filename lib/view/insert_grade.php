@@ -34,9 +34,9 @@
 </header>
 
 <h2>美術品評価</h2>
-<form action="insert_check_grade.php" method="post">
+<form action="lib/view/insert_check_grade.php" method="post">
 評価
-    <input type="radio" name="star" value="0">0
+    <input type="radio" name="star" value="0" checked="checked">0
     <input type="radio" name="star" value="1">1
     <input type="radio" name="star" value="2">2
     <input type="radio" name="star" value="3">3
