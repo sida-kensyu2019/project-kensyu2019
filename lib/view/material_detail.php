@@ -58,7 +58,9 @@
 
             <!--↓美術品に対する評価↓-->
             <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
-            <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
+            <?php if (login_check()) { ?>
+              <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
+            <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">

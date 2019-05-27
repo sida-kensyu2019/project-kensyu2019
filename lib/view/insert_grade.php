@@ -52,7 +52,7 @@
 <input type="submit" value= "登録">
 
 <!-- 美術品詳細画面に戻る -->
-<input type="button" value="キャンセル" onclick="location.href='material_detail.php'">
+<a href="material_detail.php?material_id=<?php ph($_GET["material_id"]); ?>">キャンセル</a>
 
 </form>
 </body>
