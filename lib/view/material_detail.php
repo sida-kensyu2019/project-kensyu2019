@@ -57,7 +57,7 @@
             <!--↑美術品詳細↑-->
 
             <!--↓美術品に対する評価↓-->
-            <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
+            <h3><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
             <?php if (login_check()) { ?>
               <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
             <?php } ?>
@@ -104,7 +104,8 @@
                   </form>
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
-                    <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                    <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>" 
+                    onclick="return window.confirm('本当に削除しますか？')">削除</a>
                   <?php }
                 } ?>
 

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>データ追加失敗</title>
-    <link rel="stylesheet" href="../../css/m_style.css">
+    <link rel="stylesheet" href="../../css/style.css">
   </head>
   <body>
       <header>
