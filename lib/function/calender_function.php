@@ -15,8 +15,8 @@ function mkCalender(){
         //一日目のみ月始め曜日まで空の文字列格納
         if ($i == 1) {
             for ($s = 0; $s <= $week; $s++) {
-            $calender[$j]["day"] = "";
-            $j++;
+              $calender[$j]["day"] = "";
+              $j++;
             }
         }
         $calender[$j]["day"] = $i;
@@ -31,5 +31,3 @@ function mkCalender(){
     }
     return $calender;
 }
-
- ?>

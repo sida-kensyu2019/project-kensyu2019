@@ -3,6 +3,8 @@
 // 管理美術品編集画面コントローラ
 
 	require_once("../lib/init.php");
+	//不正なアクセスを無効化
+	m_access_check();
 
 	//美術品テーブルの処理関数呼び出し
 	require_once("../lib/function/db_material.php");
@@ -30,12 +32,12 @@
      || empty($_POST["author_name"]) || empty($_POST["author_kana"])
      || empty($_POST["genre_id"]) || empty($_POST["material_year"])
      || empty($_POST["picture"]) || empty($_POST["caption"])
-     || preg_match("/^[^ -~｡-ﾟ]{1,50}$/", $_POST["material_name"])
-     || preg_match("/^[あ-ん]{1,70}$/", $_POST["material_kana"])
-     || preg_match("/^[^ -~｡-ﾟ]{1,50}$/", $_POST["author_name"])
-     || preg_match("/^[あ-ん]{1,70}$/", $_POST["author_kana"])
-     || $_POST["material_year"] > 20 || $_POST["picture"] > 100
-     || $_POST["caption"] > 200) {
+     || !preg_match("/^[^\x01-\x7E]{1,50}$/", $_POST["material_name"])
+     || !preg_match("/^[あ-ん]{1,70}$/", $_POST["material_kana"])
+     || !preg_match("/^[^\x01-\x7E]{1,50}$/", $_POST["author_name"])
+     || !preg_match("/^[あ-ん]{1,70}$/", $_POST["author_kana"])
+     || mb_strlen($_POST["material_year"]) > 20 || mb_strlen($_POST["picture"]) > 100
+     || mb_strlen($_POST["caption"])) {
 			// require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
 
 			$msg = "すべての項目を入力してください";
