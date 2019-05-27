@@ -14,13 +14,13 @@
         <head>
             <meta charset="utf-8">
             <title>美術品詳細</title>
-            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/material_detail.css">
             <script href="pass"></script>
         </head>
         <body>
         <header>
           <nav>
-            <h1>愛パワー美術館</h1>
+            <img src="image/titlelogo.png" height="90px">
             <ul>
               <li><a href="top.php">トップページ</a></li>
               <?php if (login_check()) { ?>
@@ -37,10 +37,10 @@
             <h2>美術品詳細</h2>
 
             <div id="material_name"> <!--美術品名表示-->
-              <?php print h($sth_material["material_name"])."(".h($sth_material["material_name"]).")"; ?>
+              <?php print "<h3>".h($sth_material["material_name"])."(".h($sth_material["material_name"]).")</h3>"; ?>
             </div>
             <div id="material_img"> <!--画像表示-->
-              <img src="<?php ph($sth_material["picture"]); ?>" name="" width="" height="">
+              <img src="<?php ph($sth_material["picture"]); ?>" name="" width="300px" height="300px">
             </div>
             <div id="material_text"> <!--詳細コメント表示-->
               <p id="material_overview">
@@ -55,19 +55,23 @@
             </div>
             <div id="material_control"></div>
             <!--↑美術品詳細↑-->
-
+            <br>
             <!--↓美術品に対する評価↓-->
             <h3><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
             <?php if (login_check()) { ?>
-              <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
+              <p class="right">
+                <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">
+                  評価を書き込む
+                </a>
+              </p>
             <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
-                  <span class="user_name"> <!--評価したユーザの名前表示-->
-                    <a href="user.php?user_id=<?php ph($row2["user_id"]); ?>">
-                    <?php ph($row2["user_name"]); ?></a>さんの評価
-                  </span>
+                  <div class="user_name"> <!--評価したユーザの名前表示-->
+                      <a href="user.php?user_id=<?php ph($row2["user_id"]); ?>">
+                      <?php ph($row2["user_name"]); ?></a>さんの評価
+                  </div>
                   <?php //五段階評価それぞれで表示する画像変更
                       switch($row2["star"]){
                         case "NULL":
@@ -89,34 +93,39 @@
                         break;
                       }
                    ?>
-                  <img src="<?php ph($starImg); ?>" name="star" width="" height="12px" class="star"> <!--評価の星表示-->
+                  <div class="star">
+                     <img src="<?php ph($starImg); ?>" name="star" width="" height="12px">
+                     <!--評価の星表示-->
+                  </div>
                   <div class="comment"> <!--評価コメント表示-->
                     <?php ph($row2["comment"]); ?>
                   </div>
-                  <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
+                  <div class="grade_date"><?php ph($row2["grade_date"]); ?></div>
                     <?php if (login_check()) { ?>
-                  <form action="insert_exec_good.php" method="post" class="good">
-                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
-                    <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
-                    <?php foreach ($row_goodList as $row_good) {
-                      if ($row_good["grade_id"] == $row2["grade_id"]) { ?>
-                        <!-- いいね済み -->
-                        <input type="image" src="image/good.png" width="50" value="いいね" name="good">
-                        <?php $no_good = false;
-                      }
-                    }
-                    if ($no_good) { ?>
-                      <!-- 未いいね -->
-                      <input type="image" src="image/nogood.png" width="50" value="いいね" name="good">
-                    <?php } ?>
-                  </form>
+                      <div class="good">
+                        <form action="insert_exec_good.php" method="post" class="good">
+                          <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
+                          <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
+                          <?php $no_good=true;
+                          foreach ($row_goodList as $row_good) {
+                            if ($row_good["grade_id"] == $row2["grade_id"]) { ?>
+                              <!-- いいね済み -->
+                              <input type="image" src="image/good.png" width="50" value="いいね" name="good">
+                              <?php $no_good = false;
+                            }
+                          }
+                          if ($no_good) { ?>
+                            <!-- 未いいね -->
+                            <input type="image" src="image/nogood.png" width="50" value="未いいね" name="good">
+                          <?php } ?>
+                        </form>
+                      </div>
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
                     <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"
                     onclick="return window.confirm('本当に削除しますか？')">削除</a>
                   <?php }
                 } ?>
-
               </div>
               <br>
             <?php } ?>

@@ -16,9 +16,7 @@ ul li {
   border: 1px solid; /* メニュー項目の枠線 */
   border-radius: 5px;
 }
-div{
-  border: thin none black;
-}
+
 #titleImg{
   float: left;
   width: 500px;

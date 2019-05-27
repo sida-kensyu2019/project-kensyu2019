@@ -19,7 +19,7 @@
           </ul>
         </nav>
       </header>
-
+    <br>
     <h1>新規管理者登録画面</h1>
     <?php print $msg; ?>
     <table>

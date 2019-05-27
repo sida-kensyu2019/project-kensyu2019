@@ -63,11 +63,3 @@ td {
   width: 120px;
   text-align: center;
 }
-
-/* テーブル幅 */
-.d5 {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 120px;
-}
