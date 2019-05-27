@@ -43,7 +43,7 @@
   </form>
   <br>
   <table border=1>
-    <tr><th class="d5">休館日</th><th></th></tr>
+    <tr><th class="d4">休館日</th><th></th></tr>
   <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <tr>
       <td><?php ph($row["closed"]); ?></td>

@@ -30,8 +30,8 @@
           </ul>
         </nav>
       </header>
-
-<h2>管理美術品編集画面</h2>
+<br>
+<h1>管理美術品編集画面</h1>
 <form action="m_update_material.php?material_id=<?php ph($row["material_id"]);?>" method="post">
 <table>
 <tr><td>美術品名</td><td><input type="text" name="material_name" value="<?php ph($row["material_name"]);?>"></td></tr>
@@ -49,11 +49,13 @@
 <tr><td>説明</td><td><textarea cols="100" rows="10" name="caption" value="<?php ph($row["caption"]);?>"><?php ph($row["caption"]);?></textarea></td></tr>
 </table>
 <br>
+<div>
 <input type="hidden" name="material_id" value="<?php ph($row["material_id"]);?>">
 <input type="submit" value="登録"> <input type="reset" value="クリア"><br>
 <!-- 美術品一覧画面に戻る -->
+<br>
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">
-
+</div>
 </form>
 <?php print $msg; ?>
 </body>
