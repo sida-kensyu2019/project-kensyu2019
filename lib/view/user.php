@@ -39,12 +39,19 @@
 <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
 <table border="1">
   <tr>
-    <td>アイコン</td>
+    <th>アイコン</th>
     <td rowspan="3"><?php ph($row["profile"]); ?></td>
   </tr>
+</table>
+<br>
+<table border="1">
   <tr>
-    <td>コメント数<br>
-        いいね数</td>
+    <th>コメント数</th>
+    <td>aaa</td>
+  </tr>
+  <tr>
+    <th>いいね数</th>
+    <td>aaa</td>
   </tr>
 </table>
 
