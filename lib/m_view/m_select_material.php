@@ -9,7 +9,6 @@
 	<body>
 		<header>
         <nav>
-          <h1>管理者画面</h1>
           <ul>
             <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
@@ -25,18 +24,14 @@
 		<br>
     <h1>美術品一覧</h1>
 
-		<div class="d1">
-		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">
-		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
-		</div>
 		<div>
 		<table border="1">
 			<tr>
 				<th>画像</th>
-				<th>美術品名</th>
-				<th>作者名</th>
-				<th>ジャンル</th>
-				<th>制作年</th>
+				<th class="d1">美術品名</th>
+				<th class="d1">作者名</th>
+				<th class="d2">ジャンル</th>
+				<th class="d2">制作年</th>
 				<th>編集</th>
 				<th>削除</th>
 				<th>詳細</th>
@@ -55,6 +50,9 @@
 			</tr>
 		<?php } ?>
 		</table>
+		<br>
+		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">
+		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
 		</div>
 
 </body>
