@@ -16,4 +16,4 @@ insert_grade($dbh,$_POST);
 // require_once(".js"); // 未作成のため、コメントアウト
 
 // 美術品詳細画面遷移
-header('Location:material_detail.php?material_id={$_GET["material_id"])};');
+header("Location:material_detail.php?material_id={$_POST['material_id']}");
