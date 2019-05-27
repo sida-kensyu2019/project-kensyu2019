@@ -19,6 +19,9 @@
   // 評価詳細一覧表示取得
   $sth_grade = get_grade_by_material($dbh, $_GET["material_id"]);
 
-
   // 美術品詳細画面ビュー出力
   require_once("lib/view/material_detail.php");
+
+  if(isset($_POST["good"])) {
+      $sth_insert_grade = insert_good($dbh, $_POST); //いいねの追加
+  } 
