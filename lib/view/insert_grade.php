@@ -34,7 +34,7 @@
 </header>
 
 <h2>美術品評価</h2>
-<form action="lib/view/insert_check_grade.php" method="post">
+<form action="insert_grade.php" method="post">
 評価
     <input type="radio" name="star" value="0" checked="checked">0
     <input type="radio" name="star" value="1">1
@@ -49,10 +49,14 @@
 <textarea cols="100" rows="10" name="comment"></textarea><br>
 
 <!-- 評価を登録 -->
+<input type="hidden" value="<?php ph($_GET["material_id"]); ?>" name="material_id">
+<input type="hidden" value="<?php ph($_SESSION["user_id"]); ?>" name="user_id">
+<input type="hidden" value="<?php ph(date("Y-m-d H:i:s")); ?>" name="grade_date">
 <input type="submit" value= "登録">
 
 <!-- 美術品詳細画面に戻る -->
-<input type="button" value="キャンセル" onclick="location.href='material_detail.php'">
+<input type="button" value="キャンセル"
+       onclick="location.href='material_detail.php?material_id=<?php ph($_GET["material_id"]); ?>'">
 
 </form>
 </body>
