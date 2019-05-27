@@ -19,6 +19,7 @@
 <body>
 <header>
   <nav>
+    <img src="image/titlelogo.png" height="90px">
     <h1>愛パワー美術館</h1>
     <ul>
       <li><a href="top.php" class="li_a">トップページ</a></li>
