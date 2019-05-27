@@ -18,7 +18,8 @@
 
 	//評価データをデータベースから取得する
 	$sth=get_grade_by_user($dbh,$_GET["user_id"]);
-
+  //
+	$gradeCnt = cnt_comment($dbh, $_GET["user_id"]);
 	//マイページビュー出力
 	require_once("lib/view/user.php");
 	}
