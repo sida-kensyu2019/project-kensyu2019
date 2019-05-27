@@ -14,7 +14,7 @@
 <head>
 <meta charset="utf-8">
 <title>検索結果表示画面</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/user.css">
 </head>
 <body>
 <header>
