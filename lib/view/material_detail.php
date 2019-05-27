@@ -104,7 +104,7 @@
                     <?php ph($row2["grade_date"]); ?>
                   </div>
                   <div class="goodcnt">
-                  <?php ph($row2["cnt"]); ?> いいね
+                  <?php ph(isset($row2["cnt"]) ? $row2["cnt"] : "0");?> いいね
                   </div>
                   <?php if (login_check()) { ?>
                       <div class="good">
