@@ -98,6 +98,8 @@
                   <form action="material_detail.php?material_id=<?php ph($sth_material["material_id"]); ?>" method="post" class="good">
                     <input type="hidden" value="<?php ph($row2["user_id"]); ?>" name="good">
                     <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
+                  </form>
+                  <form action="material_detail.php?material_id=<?php ph($sth_material["material_id"]); ?>" method="post" class="good_id">
                     <input type="submit" value="いいね" name="good"> <!--いいねを押した際に飛ばすデータ入力-->
                   </form>
                 <?php
