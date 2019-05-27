@@ -23,7 +23,6 @@
     require_once("lib/function/db_good.php");
     $sth_good=get_good_by_user($dbh, $_SESSION["user_id"]);
     $row_goodList=$sth_good->fetchall(PDO::FETCH_ASSOC);
-    $no_good=true;
   }
   
   // 美術品詳細画面ビュー出力
