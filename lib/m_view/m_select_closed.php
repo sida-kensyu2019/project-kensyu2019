@@ -32,12 +32,12 @@
 		</select>年
 		<select name="month">
 			<?php for($i=0;$i<12;$i++){ //選択肢に月を12表示(要検討) ?>
-    	<option value="<?php ph(date('m')+$i)?>"><?php ph(date("n")+$i)?></option>
+    	<option value="<?php ph(1+$i)?>"><?php ph(1+$i)?></option>
 			<?php } ?>
 		</select>月
 		<select name="day">
 			<?php for($i=0;$i<31;$i++){ //選択肢に日を31表示(要検討) ?>
-    	<option value="<?php ph(date('d')+$i)?>"><?php ph(date("j")+$i)?></option>
+    	<option value="<?php ph(1+$i)?>"><?php ph(1+$i)?></option>
 			<?php } ?>
 		</select>日
 		<input type="submit" value="新規追加">
