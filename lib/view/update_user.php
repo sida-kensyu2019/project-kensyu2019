@@ -35,19 +35,27 @@
 <h2>ユーザ情報変更画面</h2>
 
 <table>
-  <form action="update_user.php" method="post">
-    <tr><th>メールアドレス</th><th> <?php ph($_POST["mail_address"]) ?>/th></tr>
-    <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
-    <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
+  <form action="update_exec_user.php" method="post">
+
+    <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
+    <tr><th>パスワード</th><td><input type="password" size="30" name ="password"></td></tr>
+    <tr><th>表示名</th><td><input type="text" size="30" name ="user_name"></td></tr>
     <tr><th>職業</th>
-      <th>
+      <td>
       <select name="job_id">
-        <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
+        <?php while ($row = $sth_job->fetch(PDO::FETCH_ASSOC)) { ?>
           <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
         <?php } ?>
       </select>
-      </th>
+      </td>
     </tr>
+    <tr>
+      <th>プロフィールコメント</th>
+      <td>
+        <textarea cols="40" rows="5" name="profile">よろしくお願いします。</textarea>
+      </td>
+    </tr>
+    <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
     <tr><th>
     <input type="submit" name="変更">
     <input type="reset" name="クリア">
@@ -55,7 +63,7 @@
     <br>
   </form>
 </table>
-<a href="user.php">マイページに戻る</a>
+<a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページに戻る</a>
 
 </body>
 </html>

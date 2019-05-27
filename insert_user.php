@@ -13,7 +13,8 @@ if (empty($_POST)) {
 } else {
   // 内容漏れチェック
   if (empty($_POST["mail_address"]) || empty($_POST["password"])
-    || empty($_POST["user_name"]) || empty($_POST["job_id"])) {
+    || empty($_POST["user_name"]) || empty($_POST["job_id"]
+    || (preg_match("/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:¥.[a-zA-Z0-9-]+)*$/", $_POST["mail_address")$$))) {
     // require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
     require_once("lib/function/db_job.php");
     $sth=get_job($dbh);
