@@ -32,7 +32,9 @@
         </nav>
       </header>
 
-<h2>管理者一覧画面</h2>
+<br>
+<br>
+<h1>管理者一覧画面</h1>
 
 <table border="1">
   <tr>
@@ -50,9 +52,11 @@
   </tr>
   <?php } ?>
 </table>
-
+<br>
+<div>
 <input type="button" value="新規追加" onclick="location.href='m_insert_user.php'">
 <!-- 新規管理者登録画面に遷移 -->
+</div>
 
 </body>
 </html>
