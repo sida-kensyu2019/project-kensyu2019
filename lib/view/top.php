@@ -63,8 +63,8 @@
                         $year = date("Y");
                         $month = date("n");
                          foreach($calender as $value_day){
+                           $closed_judge = true;
                             foreach($closed_list as $value_closed){
-                                 $closed_judge = true;
                                  $date = explode("-", $value_closed["closed"]);
                                  if ((int)$date[2] == $value_day["day"] AND (int)$date[0] == $year AND (int)$date[1] == $month) { ?>
                                    <td class="td">

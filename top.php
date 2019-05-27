@@ -15,7 +15,11 @@ require_once("lib/function/calender_function.php");
   $calender = mkCalender();
   //休館日データをすべて二次元配列に格納
   $closed_list = $sth_closed->fetchAll(PDO::FETCH_ASSOC);
-
+  if(empty($closed_list)){
+    $black = true;
+  } else {
+    $black = false;
+  }
 //検索ボックス用関数召喚
 require_once("lib/function/db_genre.php");
   $sth = get_genre($dbh);
