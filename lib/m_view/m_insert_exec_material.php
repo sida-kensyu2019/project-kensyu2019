@@ -40,10 +40,12 @@
 <br>
 <br>
 <br>
+<div>
 <p>上記の内容で美術品の登録が完了しました。<p>
 <br>
-</body>
 <a href="m_insert_material.php">
 <input type="button" value="美術品登録に戻る">
 </a>
+</div>
+</body>
 </html>

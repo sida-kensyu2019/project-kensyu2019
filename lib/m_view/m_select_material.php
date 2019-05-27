@@ -27,7 +27,7 @@
 		<div>
 		<table border="1">
 			<tr>
-				<th>画像</th>
+				<th class="d4">画像</th>
 				<th class="d1">美術品名</th>
 				<th class="d1">作者名</th>
 				<th class="d2">ジャンル</th>
