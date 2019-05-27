@@ -100,33 +100,39 @@
                   <div class="comment"> <!--評価コメント表示-->
                     <?php ph($row2["comment"]); ?>
                   </div>
-                  <div class="grade_date"><?php ph($row2["grade_date"]); ?></div>
-                    <?php if (login_check()) { ?>
+                  <div class="grade_date">
+                    <?php ph($row2["grade_date"]); ?>
+                  </div>
+                  <div class="goodcnt">
+                  </div>
+                  <?php if (login_check()) { ?>
                       <div class="good">
-                        <form action="insert_exec_good.php" method="post" class="good">
+                        <form action="insert_exec_good.php" method="post">
                           <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
                           <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
                           <?php $no_good=true;
                           foreach ($row_goodList as $row_good) {
                             if ($row_good["grade_id"] == $row2["grade_id"]) { ?>
                               <!-- いいね済み -->
-                              <input type="image" src="image/good.png" width="50" value="いいね" name="good">
+                              <input type="image" src="image/good.png" width="30" value="いいね" name="good">
                               <?php $no_good = false;
                             }
                           }
                           if ($no_good) { ?>
                             <!-- 未いいね -->
-                            <input type="image" src="image/nogood.png" width="50" value="未いいね" name="good">
-                          <?php } ?>
+                            <input type="image" src="image/nogood.png" width="30" value="未いいね" name="good">
                         </form>
                       </div>
+                      <?php } ?>
+                </div>
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
+                  <div class="delete">
                     <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"
                     onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                  </div>
                   <?php }
                 } ?>
-              </div>
               <br>
             <?php } ?>
 
