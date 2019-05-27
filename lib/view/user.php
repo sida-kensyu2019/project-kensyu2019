@@ -75,10 +75,12 @@
       <?php } ?>
   </table>
 
-<?php if ($row["user_lv"] == 1) { ?>
+<?php if ($_SESSION["user_lv"] == 1) { ?>
 
 <!-- 管理者がアクセスした場合のみ表示 -->
-<input type="button" value="ユーザ削除" onclick="location.href='m_control/m_delete_exec_user.php'"><br>
+<input type="button" value="ユーザ削除"
+onclick="location.href='m_control/m_delete_exec_user.php?user_id=<?php ph($_GET["user_id"]); ?>'">
+<br>
 
 <?php } ?>
 

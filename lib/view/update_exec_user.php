@@ -29,7 +29,7 @@
 <br>
 <br>
 </body>
-<a href="user.php">
+<a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
 <input type="button" value="マイページに戻る">
 </a>
 </html>
