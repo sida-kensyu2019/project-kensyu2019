@@ -40,14 +40,14 @@
     <table id="user">
       <tr>
         <td class="user" width="150px">
-          <img src="icon1.png" width="150px" height="150px">
+          <img src="image/india_main.jpg" width="150px" height="150px">
         </td>
         <td rowspan="3" class="user"><?php ph($row["profile"]); ?></td>
       </tr>
       <tr>
         <td class="user">
-            コメント()<br>
-            いいね()
+            コメント(<?php ph($gradeCnt); ?>)<br>
+            いいね(<?php ph($goodCnt); ?>)
         </td>
       </tr>
     </table>
@@ -102,7 +102,6 @@
     <!-- 管理者がアクセスした場合のみ表示 -->
     <input type="button" value="ユーザ削除"
     onclick="location.href='m_control/m_delete_exec_user.php?user_id=<?php ph($_GET["user_id"]); ?>'">
-    <br>
 
     <?php } ?>
 

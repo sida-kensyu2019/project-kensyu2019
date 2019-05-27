@@ -63,7 +63,7 @@ function get_material_by_id($dbh, $id)
         // SQLを構築
         $sql = "SELECT * FROM m_material ";
         $sql .= "INNER JOIN m_genre ";
-        $sql .= "ON m_material.material_id = m_genre.genre_id ";
+        $sql .= "ON m_material.genre_id = m_genre.genre_id ";
         $sql .= "WHERE m_material.material_id=:material_id ";
         $sth = $dbh->prepare($sql); // SQLを準備
 

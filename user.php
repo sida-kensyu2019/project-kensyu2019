@@ -15,10 +15,14 @@
 
 	//評価テーブルの処理関数呼び出し
 	require_once("lib/function/db_grade.php");
-
 	//評価データをデータベースから取得する
 	$sth=get_grade_by_user($dbh,$_GET["user_id"]);
+  //評価件数取得
+	$gradeCnt = cnt_comment($dbh, $_GET["user_id"]);
 
+	//いいねをもらった数取得
+	require_once("lib/function/db_good.php");
+	$goodCnt = get_goodCount_by_user($dbh, $_GET["user_id"]);
 	//マイページビュー出力
 	require_once("lib/view/user.php");
 	}

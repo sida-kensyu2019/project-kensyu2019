@@ -20,12 +20,17 @@
             <li><a href="../logout.php" onclick="return confirm('本当にログアウトしますか？'); ">ログアウト</a></li>
           </ul>
         </nav>
-      	</header>
+  	</header>
+		<br>
+		<br>
+    <h1>美術品一覧</h1>
 
-		<a href="m_search_material.php">条件を絞り込む</a>
-		<a href="m_insert_material.php">新規追加する</a>
-
-		<table>
+		<div class="d1">
+		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">
+		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
+		</div>
+		<div>
+		<table border="1">
 			<tr>
 				<th>画像</th>
 				<th>美術品名</th>
@@ -50,6 +55,7 @@
 			</tr>
 		<?php } ?>
 		</table>
+		</div>
 
 </body>
 </html>

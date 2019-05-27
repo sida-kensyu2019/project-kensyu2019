@@ -21,11 +21,16 @@
         </nav>
       </header>
 
+  <br>
   <h1>美術品ジャンル一覧</h1>
+  <br>
+  <div>
   <form action="m_insert_exec_genre.php" method="post">
     <input type="text" size="30" name="genre_name">
     <input type="submit" value="新規追加">
   </form>
+  </div>
+  <br>
     <table border=1>
       <tr>
         <th>ジャンルID</th>
@@ -37,7 +42,7 @@
         <td><?php ph($row["genre_id"]); ?></td>
         <td><?php ph($row["genre_name"]); ?></td>
         <td><a href="m_delete_exec_genre.php?genre_id=<?php ph($row["genre_id"]);?>">削除</a></td>
-      <tr>
+      </tr>
       <?php } ?>
     </table>
 </body>

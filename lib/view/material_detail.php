@@ -95,10 +95,9 @@
                   </div>
                   <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
                     <?php if (login_check()) { ?>
-                  <form action="material_detail.php?material_id=<?php ph($sth_material["material_id"]); ?>" method="post" class="good">
-
-                    <input type="hidden" value="<?php ph($row2["user_id"]); ?>" name="user_id">
-                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id_">
+                  <form action="insert_exec_good.php" method="post" class="good">
+                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id">
+                    <input type="hidden" value="<?php ph($row2["material_id"]); ?>" name="material_id">
                     <input type="submit" value="いいね" name="good"> <!--いいねを押した際に飛ばすデータ入力-->
                   </form>
                 <?php
