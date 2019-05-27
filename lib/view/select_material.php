@@ -21,22 +21,21 @@
   <nav>
     <h1>愛パワー美術館</h1>
     <ul>
-      <li><a href="top.php">トップページ</a></li>
+      <li><a href="top.php" class="li_a">トップページ</a></li>
       <?php if (login_check()) { ?>
-        <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');">ログアウト</a></li>
-        <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページ</a></li>
+        <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');" class="li_a">ログアウト</a></li>
+        <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" class="li_a">マイページ</a></li>
       <?php } else { ?>
-      <li><a href="login.php">ログイン</a></li>
-      <li><a href="insert_user.php">新規登録</a></li>
+      <li><a href="login.php" class="li_a">ログイン</a></li>
+      <li><a href="insert_user.php" class="li_a">新規登録</a></li>
       <?php } ?>
     </ul>
   </nav>
 </header>
 
 <!-- 検索ボックス -->
-<div class="material_list">
-  <table id="search">
-    <form action="select_material.php" method="post">
+    <form action="select_material.php" method="post" id="search">
+      <table id="table_search">
       <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>
       <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"></th></tr>
       <tr><th>ジャンル</th>
@@ -50,14 +49,14 @@
         </th>
       </tr>
       <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
-  </table>
+      </table>
       <input type="submit" value="検索">
       <input type="reset" value="クリア">
     </form>
 
 <!-- 検索結果 -->
 <h2>美術品検索結果</h2>
-<table>
+<table border=1 class="material_list">
     <tr>
       <th>画像</th>
       <th>美術品名</th>
@@ -69,21 +68,20 @@
 
     <?php while ($row_result=$sth_result->fetch(PDO::FETCH_ASSOC)) { ?>
 
-    <tr>
-			<td><img src="<?php ph($row_result["picture"]); ?>" width="" height=""></td>
-			<td><?php ph($row_result["material_name"]); ?></td>
-			<td><?php ph($row_result["author_name"]); ?></td>
-			<td><?php ph($row_result["genre_name"]); ?></td>
-			<td><?php ph($row_result["material_year"]); ?></td>
-			<td><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>" target="_blank">詳細</a></td>
+    <tr class="ml_tr">
+			<td class="ml_td"><img src="<?php ph($row_result["picture"]); ?>" width="" height=""></td>
+			<td class="ml_td"><?php ph($row_result["material_name"]); ?></td>
+			<td class="ml_td"><?php ph($row_result["author_name"]); ?></td>
+			<td class="ml_td"><?php ph($row_result["genre_name"]); ?></td>
+			<td class="ml_td"><?php ph($row_result["material_year"]); ?></td>
+			<td class="ml_td"><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>" target="_blank">詳細</a></td>
     </tr>
     <?php } ?>
 
 </table>
 
-<a href="#search">条件を絞り込む</a>
+<a href="#table_search">条件を絞り込む</a>
 <!-- ページ上部の検索フォームへのページ内リンク -->
-</div>
 
 </body>
 </html>
