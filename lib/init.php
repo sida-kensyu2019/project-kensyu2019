@@ -22,6 +22,10 @@
 
     //セッションの開始
     session_start();
+    //キャッシュ
+    header('Expires:');
+    header('Cache-Control:');
+    header('Pragma:');
 
     //文字コード設定
     mb_internal_encoding("UTF-8");
