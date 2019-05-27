@@ -8,7 +8,6 @@
 <body>
       <header>
         <nav>
-          <h1>管理者画面</h1>
           <ul>
             <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
@@ -42,9 +41,10 @@
 		</select>日
 		<input type="submit" value="新規追加">
   </form>
+  <?php print $msg; ?>
   <br>
   <table border=1>
-    <tr><th>休館日</th><th></th></tr>
+    <tr><th class="d5">休館日</th><th></th></tr>
   <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <tr>
       <td><?php ph($row["closed"]); ?></td>

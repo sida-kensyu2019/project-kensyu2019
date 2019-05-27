@@ -9,6 +9,7 @@ ul li {
   margin: 1px;     /* 枠外の余白 */
   padding: 5px;   /* 枠内の余白 */
   border: 1px solid; /* メニュー項目の枠線 */
+  border-radius: 5px;
 }
 
 div {
@@ -41,12 +42,32 @@ td {
   padding: 5px;
 }
 
-/* m_select_material ボタン位置 */
+/* テーブル幅 */
 .d1 {
-  margin-right: 440px;
+  width: 200px;
+}
+
+/* テーブル幅 */
+.d2 {
+  width: 80px;
+  text-align: center;
 }
 
 /* m_top テキスト位置 */
 .d3 {
   text-align: center;
+}
+
+/* テーブル幅 */
+.d4 {
+  width: 120px;
+  text-align: center;
+}
+
+/* テーブル幅 */
+.d5 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 120px;
 }

@@ -18,6 +18,12 @@ require_once("../lib/init.php");
 m_access_check();
 
 require_once("../lib/function/db_closed.php");
-$sth=insert_closed($dbh, $_POST);
+if (checkdate($_POST["month"], $_POST["day"], $_POST["year"]) === true) {
+  $sth=insert_closed($dbh, $_POST);
+  $msg = "";
+} else {
+  $msg = "無効な日付です";
+}
+
 
 require_once("m_select_closed.php");

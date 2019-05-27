@@ -8,7 +8,6 @@
   <body>
     <header>
       <nav>
-        <h1>管理者画面</h1>
         <ul>
           <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
           <li><a href="m_select_material.php">美術品一覧</a></li>
@@ -33,7 +32,7 @@
     <br>
       <tr>
         <th>職種ID</th>
-        <th>職種名</th>
+        <th class="d4">職種名</th>
         <th>削除</th>
       </tr>
       <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
