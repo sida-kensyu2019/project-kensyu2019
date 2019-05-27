@@ -63,6 +63,7 @@
                 <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">
                   評価を書き込む
                 </a>
+                <input type="button" value="戻る" onclick="history.back();">
               </p>
             <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
