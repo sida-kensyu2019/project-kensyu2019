@@ -9,6 +9,9 @@
 
 	//ユーザデータをデータベースから取得する
 	$row=get_user_by_id($dbh,$_GET["user_id"]);
+	if (empty($row)) {
+		require_once("user_not_found.php");
+	} else {
 
 	//評価テーブルの処理関数呼び出し
 	require_once("lib/function/db_grade.php");
@@ -18,3 +21,4 @@
 
 	//マイページビュー出力
 	require_once("lib/view/user.php");
+	}
