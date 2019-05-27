@@ -96,13 +96,14 @@
                   <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
                     <?php if (login_check()) { ?>
                   <form action="material_detail.php?material_id=<?php ph($sth_material["material_id"]); ?>" method="post" class="good">
-                    <input type="hidden" value="<?php ph($row2["user_id"]); ?>" name="good">
-                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
+
+                    <input type="hidden" value="<?php ph($row2["user_id"]); ?>" name="user_id">
+                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id_">
                     <input type="submit" value="いいね" name="good"> <!--いいねを押した際に飛ばすデータ入力-->
                   </form>
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
-                    <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>" 
+                    <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"
                     onclick="return window.confirm('本当に削除しますか？')">削除</a>
                   <?php }
                 } ?>

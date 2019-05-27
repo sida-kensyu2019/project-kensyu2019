@@ -40,6 +40,8 @@ m_access_check();
        require_once("../lib/function/db_genre.php");
        $sth=get_genre($dbh);
        require_once("../lib/function/db_material.php");
+
+       $_POST["user_id"] = $_SESSION["user_id"];
        insert_material($dbh, $_POST);
        require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
      }
