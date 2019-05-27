@@ -1,0 +1,29 @@
+body{
+  text-align: center;
+  width: 800px;
+  border: thin none black;
+  margin: 0 auto;
+}
+header{
+  position: static;
+}
+
+ul li {
+  display: inline-block;  /* リストを横並びにする */
+  width: 100px;
+  margin: 1px;     /* 枠外の余白 */
+  padding: 5px;   /* 枠内の余白 */
+  border: 1px solid; /* メニュー項目の枠線 */
+  border-radius: 5px;
+}
+
+table{
+  width: 700px;
+  margin: 10px auto 10px;
+  border: thin none black;
+  background-color: #EEEEEE;
+}
+table td{
+  border: thin solid #CCCCCC;
+  background-color: #FFFFFF;
+}
