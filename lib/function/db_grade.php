@@ -123,21 +123,20 @@
     function grade_count($dbh, $material_id){
         try {
           $sql = "SELECT COUNT(*) FROM t_grade ";
-          $sql .= "WHERE t_grade.material_id=$material_id ";
-          $sql .= "GROUP BY t_grade.material_id; ";
+          $sql .= "WHERE t_grade.material_id=:material_id ";
+          $sql .= "GROUP BY t_grade.material_id ";
 
           $sth = $dbh->prepare($sql); // SQLを準備
 
-          //$sth->bindValue(":material_id", $material_id);
+          $sth->bindValue(":material_id", $material_id);
 
           $sth->execute();
+          $row = $sth->fetch(PDO::FETCH_ASSOC);
 
+          return $row;
 
         } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
         }
-        $sth = $sth->fetch(PDO::FETCH_ASSOC);
-
-        return $sth;
 
     }
