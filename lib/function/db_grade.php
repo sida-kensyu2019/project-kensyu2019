@@ -167,11 +167,11 @@
     //引数にユーザID。コメント数がnullなら、0を返す。
     function cnt_comment($dbh, $id)
     {
-        $cnt = grade_count_by_user($dbh, $id);
-        if (empty($cnt)) {
+        $ary_cnt = grade_count_by_user($dbh, $id);
+        if (empty($ary_cnt["COUNT(*)"])) {
             $cnt = 0;
             return $cnt;
         } 
-        
+        $cnt = $ary_cnt["COUNT(*)"];
         return $cnt;
     }

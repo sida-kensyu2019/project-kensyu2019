@@ -46,7 +46,7 @@
       </tr>
       <tr>
         <td class="user">
-            コメント(<?php ph($gradeCnt["COUNT(*)"]); ?>)<br>
+            コメント(<?php ph($gradeCnt); ?>)<br>
             いいね()
         </td>
       </tr>
