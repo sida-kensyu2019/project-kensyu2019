@@ -51,7 +51,7 @@
 <?php if ($row["user_lv"] == 2) { ?>
 
 <!-- ユーザ本人がアクセスした場合のみ表示 -->
-<a href="update_user.php">ユーザ情報を変更する</a><br>
+<a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>">ユーザ情報を変更する</a><br>
 
 <?php } ?>
 <br>
