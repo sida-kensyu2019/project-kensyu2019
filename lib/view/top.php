@@ -33,8 +33,8 @@
         <script>
         <?php if (!(empty($_COOKIE["access_error"]))) { ?>
           alert("アクセス権がありません");
-          setcookie("access_error", "", time()-60, "/");
-        <?php } ?>
+        <?php setcookie("access_error", "", time()-60, "/");
+          } ?>
         </script>
 
             <div id="titleCalender">
