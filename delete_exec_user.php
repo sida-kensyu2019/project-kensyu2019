@@ -16,7 +16,7 @@
 
 
 	//ユーザテーブルの処理関数呼び出し
-	require_once("lib/funtion/db_user.php");
+	require_once("lib/function/db_user.php");
 
 	//ユーザのデータをデータベースから削除する
 	$sth = delete_user($dbh, $_POST["user_id"]); //ユーザデータを削除する関数
