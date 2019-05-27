@@ -1,0 +1,87 @@
+body{
+
+  width: 800px;
+  border: thin solid black;
+  margin: 0 auto;
+}
+header{
+  position: static;
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;  /* リストを横並びにする */
+  width: 100px;
+  margin: 1px;     /* 枠外の余白 */
+  padding: 5px;   /* 枠内の余白 */
+  border: 1px solid; /* メニュー項目の枠線 */
+  border-radius: 5px;
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+#material_name{
+  border: thin solid black;
+  text-align: center;
+}
+#material_img{
+  float: left;
+  width: 300px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#material_text{
+  float: left;
+  width: 480px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: thin solid black;
+  height: 298px;
+}
+#material_control{
+  clear: both;
+}
+.right{
+  text-align: right;
+  border: thin none black;
+}
+.grade{
+  border: thin solid black;
+  text-align: center;
+}
+.user_name{
+  float: left;
+  text-align: left;
+  border: thin solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 18px;
+}
+.star{
+  float: right;
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 18px;
+}
+.comment{
+  border: thin solid black;
+  width: 760px;
+  margin: 0px auto 5px;
+  clear: both;
+  min-height: 100px;
+  text-align: left;
+}
+.grade_date{
+  text-align: left;
+  margin-bottom: 5px;
+  margin-left: 18px;
+  float: left;
+}
+.good{
+  float: right;
+}
