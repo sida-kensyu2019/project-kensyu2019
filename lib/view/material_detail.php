@@ -58,7 +58,7 @@
 
             <!--↓美術品に対する評価↓-->
             <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
-            <a href="insert_grade.php?id=<?php $row1["material_id"]; ?>">
+            <a href="insert_grade.php?id=<?php $sth_material["material_id"]; ?>">
               評価を書き込む
             </a>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
