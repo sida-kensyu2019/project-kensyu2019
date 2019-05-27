@@ -24,8 +24,8 @@ function get_material_top($dbh)
             try {
                   // プレースホルダ付きSQLを構築
                   $sql = "SELECT t_grade.grade_id, t_grade.comment, COUNT(*) ";
-                  $sql .= "FROM t_good INNER JOIN t_grade ";
-                  $sql .= "ON t_good.grade_id = t_grade.grade_id ";
+                  $sql .= "FROM t_grade LEFT OUTER JOIN t_good ";
+                  $sql .= "ON t_grade.grade_id = t_good.grade_id ";
                   $sql .= "WHERE material_id = ";
                   $sql .= "{$rowTop_idx["material_id"]} ";
                   $sql .= "GROUP BY t_good.grade_id ";
