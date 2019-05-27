@@ -9,7 +9,7 @@
   $no_good = true;
 
   while($row=$sth->fetch(PDO::FETCH_ASSOC)){
-    if($row["grade_id"] === $_POST["grade_id"]){
+    if($row["grade_id"] == $_POST["grade_id"]){
       delete_good($dbh, $_POST);
       $no_good = false;
     }
