@@ -14,7 +14,7 @@
 <head>
 <meta charset="utf-8">
 <title>検索結果表示画面</title>
-<link rel="stylesheet" href="css/user.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <header>
@@ -56,7 +56,7 @@
 
 <!-- 検索結果 -->
 <h2>美術品検索結果</h2>
-<table>
+<table class="material_list">
     <tr>
       <th>画像</th>
       <th>美術品名</th>
