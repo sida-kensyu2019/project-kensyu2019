@@ -6,7 +6,7 @@
 
   $sth=get_good_by_user($dbh, $_SESSION["user_id"]);
 
-$no_good = true;
+  $no_good = true;
 
   $input = [
     "user_id" => $_SESSION["user_id"],

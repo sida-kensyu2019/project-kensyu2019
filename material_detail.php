@@ -18,5 +18,13 @@
   // 評価詳細一覧表示取得
   $sth_grade = get_grade_by_material($dbh, $_GET["material_id"]);
 
+  if (login_check()) {
+    //ログインユーザがいいねした評価を取り出す
+    require_once("lib/function/db_good.php");
+    $sth_good=get_good_by_user($dbh, $_SESSION["user_id"]);
+    $row_goodList=$sth_good->fetchall(PDO::FETCH_ASSOC);
+    $no_good=true;
+  }
+  
   // 美術品詳細画面ビュー出力
   require_once("lib/view/material_detail.php");
