@@ -82,7 +82,7 @@
           $sql .= "(SELECT grade_id FROM t_grade ";
           $sql .= "WHERE material_id=:material_id)";
           $sth = $dbh->prepare($sql); //SQLを準備
-          
+
           //プレースホルダに値をバインド
           $sth->bindValue(":material_id", $input);
 

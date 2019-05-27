@@ -140,23 +140,3 @@
         }
 
     }
-
-    function insert_good($dbh, $input){
-      try {
-          // プレースホルダ付きSQLを構築
-          $sql = "INSERT INTO t_good (good_id, grade_id, user_id) ";
-          $sql .= "VALUES (:good_id, :grade_id, :user_id);";
-          $sth = $dbh->prepare($sql); // SQLを準備
-
-          // プレースホルダに値をバインド
-          $sth->bindValue(":good_id", $input["good_id"]);
-          $sth->bindValue(":grade_id", $input["grade_id"]);
-          $sth->bindValue(":user_id", $input["user_id"]);
-
-          // SQLを発行
-          $sth->execute();
-
-      } catch (PDOException $e) {
-          exit("SQL発行エラー：{$e->getMessage()}");
-      }
-    }
