@@ -20,12 +20,17 @@
         </ul>
       </nav>
     </header>
-
-    <form action="m_insert_exec_job.php" method="post">
-      <input type="text" name="job_name">
-      <input type="submit" value="新規追加">
-    </form>
+    <br>
+    <h1>職種一覧</h1>
+    <br>
+    <div>
+      <form action="m_insert_exec_job.php" method="post">
+        <input type="text" name="job_name">
+        <input type="submit" value="新規追加">
+      </form>
+    </div>
     <table border=1>
+    <br>
       <tr>
         <th>職種ID</th>
         <th>職種名</th>

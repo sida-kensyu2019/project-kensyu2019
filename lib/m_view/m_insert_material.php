@@ -46,28 +46,31 @@
       //     exit("SQL発行エラー：{$e->getMessage()}");
       // }
   ?>
-<h2>管理美術品登録画面</h2>
+<br>
+<h1>管理美術品登録画面</h1>
 <form action="m_insert_material.php" method="post">
 <table>
-<tr><td>美術品名</td><td><input type="text" name="material_name"></td></tr>
-<tr><td>美術品読み</td><td><input type="text" name="material_kana"></td></tr>
-<tr><td>作者名</td><td><input type="text" name="author_name"></td></tr>
-<tr><td>作者名読み</td><td><input type="text" name="author_kana"></td></tr>
-<tr><td>ジャンル</td><td><select name="genre_id">
+<tr><th>美術品名</th><td><input type="text" name="material_name"></td></tr>
+<tr><th>美術品読み</th><td><input type="text" name="material_kana"></td></tr>
+<tr><th>作者名</th><td><input type="text" name="author_name"></td></tr>
+<tr><th>作者名読み</th><td><input type="text" name="author_kana"></td></tr>
+<tr><th>ジャンル</th><td><select name="genre_id">
         <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {?>
           <option value="<?php ph($row["genre_id"]);?>"><?php ph($row["genre_name"]);?></option>
         <?php } ?>
       </select></td></tr>
-<tr><td>制作年</td><td><input type="text" name="material_year"></td></tr>
-<tr><td>写真</td><td><input type="text" name="picture"></td></tr>
-<tr><td>説明</td><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
+<tr><th>制作年</th><td><input type="text" name="material_year"></td></tr>
+<tr><th>写真</th><td><input type="text" name="picture"></td></tr>
+<tr><th>説明</th><td><textarea cols="100" rows="10" name="caption"></textarea></td></tr>
 </table>
+<br>
+<div>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
 <input type="hidden" name="genre_name">
-
+<br>
 <!-- 美術品一覧画面に戻る -->
 <input type="button" value="登録中止" onclick="location.href='m_select_material.php'">
-
+</div>
 </form>
 </body>
 </html>

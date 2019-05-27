@@ -1,4 +1,4 @@
-header{
+header {
   display: fixed;
   text-align: center;
 }
@@ -9,4 +9,50 @@ ul li {
   margin: 1px;     /* 枠外の余白 */
   padding: 5px;   /* 枠内の余白 */
   border: 1px solid; /* メニュー項目の枠線 */
+}
+
+div {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse:  collapse;
+}
+
+tr:nth-child(odd) {
+  background-color: #eff9f0;
+}
+
+th {
+  text-align: center;
+  padding: 5px;
+}
+
+td {
+  text-align: left;
+  padding: 5px;
+}
+
+/* m_select_material ボタン位置 */
+.d1 {
+  margin-right: 440px;
+
+}
+
+/* m_select_user ボタン位置*/
+.d2 {
+  margin-left: 250px;
+}
+
+/* m_top テキスト位置 */
+.d3 {
+  text-align: center;
 }
