@@ -23,9 +23,9 @@ m_access_check();
      || empty($_POST["genre_id"]) || empty($_POST["material_year"])
      || empty($_POST["picture"]) || empty($_POST["caption"])
      || !preg_match("/^[^\x01-\x7E]{1,50}$/", $_POST["material_name"])
-     || !preg_match("/^[あ-ん]{1,70}$/", $_POST["material_kana"])
+     || !preg_match("/^[ぁ-ゞ・＝]{1,70}$/u", $_POST["material_kana"])
      || !preg_match("/^[^\x01-\x7E]{1,50}$/", $_POST["author_name"])
-     || !preg_match("/^[あ-ん]{1,70}$/", $_POST["author_kana"])
+     || !preg_match("/^[ぁ-ゞ・＝]{1,70}$/u", $_POST["author_kana"])
      || mb_strlen($_POST["material_year"]) > 20 || mb_strlen($_POST["picture"]) > 100
      || mb_strlen($_POST["caption"]) > 200) {
 
@@ -40,6 +40,8 @@ m_access_check();
        require_once("../lib/function/db_genre.php");
        $sth=get_genre($dbh);
        require_once("../lib/function/db_material.php");
+
+       $_POST["user_id"] = $_SESSION["user_id"];
        insert_material($dbh, $_POST);
        require_once("../lib/m_view/m_insert_exec_material.php"); // 美術品登録完了画面出力
      }

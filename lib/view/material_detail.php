@@ -57,8 +57,10 @@
             <!--↑美術品詳細↑-->
 
             <!--↓美術品に対する評価↓-->
-            <h3><?php print $count["COUNT(*)"]; ?>件の評価</h3>
-            <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
+            <h3><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
+            <?php if (login_check()) { ?>
+              <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">評価を書き込む</a>
+            <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
               <div class="grade">
@@ -92,20 +94,19 @@
                     <?php ph($row2["comment"]); ?>
                   </div>
                   <span class="grade_date"><?php ph($row2["grade_date"]); ?></span>
-                  <form action="material_detail.php" method="post" class="good">
-                    <input type="hidden" value="<?php ph($row2["user_name"]); ?>" name="good">
-                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="good">
-                    <input type="submit" value="いいね"> <!--いいねを押した際に飛ばすデータ入力-->
+                    <?php if (login_check()) { ?>
+                  <form action="material_detail.php?material_id=<?php ph($sth_material["material_id"]); ?>" method="post" class="good">
+
+                    <input type="hidden" value="<?php ph($row2["user_id"]); ?>" name="user_id">
+                    <input type="hidden" value="<?php ph($row2["grade_id"]); ?>" name="grade_id_">
+                    <input type="submit" value="いいね" name="good"> <!--いいねを押した際に飛ばすデータ入力-->
                   </form>
-                  <?php ph($row2["cnt"]); ?>
-                  <?php
-                  if (empty($_SESSION["user_id"])) {
-                    //非ログインユーザがいいねを押した場合(要検討)
-                  } else {
-                    if($row2["user_id"] == $_SESSION["user_id"]){ ?>
-                        <a href="material_detail.php?id=<?php ph($row["material_id"]);?>" onclick="return window.confirm('本当に削除しますか？')">削除</a>
-                      <?php } ?>
-                  <?php } ?>
+                <?php
+                if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
+                    <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"
+                    onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                  <?php }
+                } ?>
 
               </div>
               <br>

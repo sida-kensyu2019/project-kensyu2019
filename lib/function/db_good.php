@@ -51,8 +51,7 @@
     }
 
     // データベースのデータを削除する
-    //データベースにデータを追加する
-    //$input: $_POST
+    //$id: $_GET
     function delete_good_by_user($dbh, $id)
     {
         try {
@@ -72,8 +71,29 @@
         }
     }
 
+    // データベースのデータを削除する
+    //$id: $_GET
+    function delete_good_by_grade($dbh, $id)
+    {
+        try {
+            // プレースホルダ付きSQLを構築
+            $sql = "DELETE FROM t_good ";
+            $sql .= "WHERE grade_id=:grade_id";
+            $sth = $dbh->prepare($sql); // SQLを準備
+
+            // プレースホルダに値をバインド
+            $sth->bindValue(":grade_id", (int) $id);
+
+            // SQLを発行
+            $sth->execute();
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
+        }
+    }
+
     //データベースのデータを削除する
-    function delete_good_by_grade($dbh, $input)
+    function delete_good_by_material($dbh, $id)
     {
         try{
           // プレースホルダ付きSQLを構築
@@ -82,9 +102,9 @@
           $sql .= "(SELECT grade_id FROM t_grade ";
           $sql .= "WHERE material_id=:material_id)";
           $sth = $dbh->prepare($sql); //SQLを準備
-          
+
           //プレースホルダに値をバインド
-          $sth->bindValue(":material_id", $input);
+          $sth->bindValue(":material_id", (int) $id);
 
           //SQLを発行
           $sth->execute();

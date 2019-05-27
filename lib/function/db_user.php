@@ -54,7 +54,7 @@
           $sql = "UPDATE m_user ";
           $sql .= "SET password=:password, user_name=:user_name, ";
           $sql .= "job_id=:job_id, profile=:profile ";
-          $sql .= "WHERE user_id=:user_id";
+          $sql .= "WHERE user_id=:user_id;";
           $sth = $dbh->prepare($sql); // SQLを準備
 
           // プレースホルダに値をバインド
@@ -62,6 +62,7 @@
           $sth->bindValue(":user_name", $input["user_name"]);
           $sth->bindValue(":job_id", $input["job_id"]);
           $sth->bindValue(":profile", $input["profile"]);
+          $sth->bindValue(":user_id", $input["user_id"]);
 
           // SQLを発行
           $sth->execute();
@@ -109,10 +110,10 @@
         $sth = $dbh->prepare($sql); // SQLを準備
 
         // プレースホルダに値をバインド
-        $sth->bindValue(":mail_address", $_POST["mail_address"]);
-        $sth->bindValue(":password", $_POST["password"]);
-        $sth->bindValue(":user_name", $_POST["user_name"]);
-        $sth->bindValue(":job_id", $_POST["job_id"]);
+        $sth->bindValue(":mail_address", $input["mail_address"]);
+        $sth->bindValue(":password", $input["password"]);
+        $sth->bindValue(":user_name", $input["user_name"]);
+        $sth->bindValue(":job_id", $input["job_id"]);
 
         // SQLを発行
         $sth->execute();
@@ -121,9 +122,8 @@
         return $sth;
 
         } catch (PDOException $e) {
-            print "このメールアドレスはすでに使用されているので、使用できません。<br>";
-            print "<a href=\"m_insert_user.php\">新規登録画面</a><br><br>";
-            exit("SQL発行エラー：{$e->getMessage()}");
+            header("Location:../lib/m_view/m_user_error.html");
+            exit();
         }
   }
 
@@ -151,9 +151,8 @@
         return $sth;
 
         } catch (PDOException $e) {
-            print "このメールアドレスはすでに使用されているので、使用できません。<br>";
-            print "<a href=\"insert_user.php\">新規登録画面</a><br><br>";
-            exit("SQL発行エラー：{$e->getMessage()}");
+            header("Location:lib/view/user_error.php");
+            exit();
         }
   }
 

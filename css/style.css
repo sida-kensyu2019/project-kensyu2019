@@ -1,6 +1,11 @@
-header{
-  display: fixed;
+body{
   text-align: center;
+  width: 800px;
+  border: thin none black;
+  margin: 0 auto;
+}
+header{
+  position: static;
 }
 
 ul li {
@@ -9,4 +14,66 @@ ul li {
   margin: 1px;     /* 枠外の余白 */
   padding: 5px;   /* 枠内の余白 */
   border: 1px solid; /* メニュー項目の枠線 */
+  border-radius: 5px;
+}
+div{
+  border: thin none black;
+}
+#titleImg{
+  float: left;
+  width: 500px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+#calendar{
+  float: left;
+  width: 250px;
+  height: 260px;
+  margin-left: 6px;
+  padding:10px;
+  margin-bottom: 10px;
+}
+#table_calendar{
+  width: 100%;
+  font-size: small;
+}
+.th{
+  background-color: #EEEEEE;
+  width: 50px;
+}
+.td{
+  height: 35px;
+  padding-top: 0px;
+  border: thin solid #CCCCCC;
+}
+#search{
+  clear: both;
+  margin: 10px;
+  text-align: center;
+  border: thin none blue;
+  padding: 10px;
+  background-color: #EEEEEE;
+}
+#table_search{
+  text-align: center;
+  border: thin none blue;
+  margin:0px auto 0px;
+}
+#table_top{
+  width: 790px;
+  text-align: center;
+  border: thin none black;
+  margin:0px auto 0px;
+}
+.material_th{
+  border: thin solid #CCCCCC;
+  background-color: #EEEEEE;
+}
+.material{
+  border: thin solid #CCCCCC;
+}
+.comment{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
 }

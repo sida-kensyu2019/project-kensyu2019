@@ -1,4 +1,4 @@
-<?php //作成者：山田 ?>
+<!-- 作成者：山田 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,18 +26,20 @@
 <br>
 <br>
 <table>
-  <tr><th>メールアドレス</th><td><?php ph($_POST["mail_address"]) ?></td></tr>
+  <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
 </table><br>
 <br>
 <br>
 <p>本当に退会しますか？</p>
 <br>
-</body>
-<a href="top.php">
-<input type="button" value="退会">
-</a>　
+<form action="delete_exec_user.php" method="post">
+  <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
+  <input type="submit" value="退会">
+</form>
 
-<a href="user.php">
+
+<a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
 <input type="button" value="キャンセル">
 </a>
+</body>
 </html>

@@ -7,15 +7,15 @@ require_once("lib/init.php");
 // データベースに登録するためのコントローラ
 
 // 確認画面から飛んできた$_POSTを処理するモデルを出力
-require_once("/lib/function/db_user.php");
+require_once("lib/function/db_user.php");
 
-// 美術品詳細データをデータベースから取得
-$sth = get_user_by_id($dbh, $_GET["user_id"]);
-// 美術品の評価をデータベースに追加する
-update_user($dbh,$_POST);
+// ユーザデータをデータベースから取得
+$sth = get_user_by_id($dbh, $_SESSION["user_id"]);
+// ユーザ情報をデータベースに更新する
+update_user($dbh, $_POST);
 
 // 追加しましたダイアログ表示
 // require_once(".js"); // 未作成のため、コメントアウト
 
-// 美術品詳細画面ビュー出力
-require_once("/view/user.php");
+// ユーザ情報変更完了画面ビュー出力
+require_once("lib/view/update_exec_user.php");
