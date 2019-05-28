@@ -50,7 +50,7 @@
     <tr><th class="d4">休館日</th><th></th></tr>
   <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
     <tr>
-      <td><?php ph($row["closed"]); ?></td>
+      <td class="d4"><?php ph($row["closed"]); ?></td>
       <td><a href="m_delete_exec_closed.php?closed=<?php ph($row["closed"]);?>">削除</a></td>
     </tr>
   <?php } ?>
