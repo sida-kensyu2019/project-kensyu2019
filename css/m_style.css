@@ -1,16 +1,38 @@
-header {
-  display: fixed;
+nav{
   text-align: center;
 }
 
-ul li {
-  display: inline-block;  /* リストを横並びにする */
-  width: 100px;
-  margin: 1px;     /* 枠外の余白 */
-  padding: 5px;   /* 枠内の余白 */
-  border: 1px solid; /* メニュー項目の枠線 */
-  border-radius: 5px;
+nav ul{
+  margin: 0 ;
+  padding: 0 ;
 }
+
+nav li{
+  list-style: none;
+  display: inline-block;
+  width: 10%;
+  min-width: 90px;
+}
+
+nav li:not(:last-child){ /*区切り線*/
+  border-right:2px solid #ddd;
+}
+
+nav a{ /*文字色*/
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.current{
+ color: #6a98e2;
+ border-bottom:2px solid #6a98e2;
+}
+
+nav a:hover{
+  color: #6a98e2;
+  border-bottom:2px solid #6a98e2;
+}
+
 
 div {
   margin-left: auto;
