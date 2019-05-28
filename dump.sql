@@ -199,7 +199,7 @@ CREATE TABLE `t_grade` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `t_grade_ibfk_1` FOREIGN KEY (`material_id`) REFERENCES `m_material` (`material_id`),
   CONSTRAINT `t_grade_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `m_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,7 +208,7 @@ CREATE TABLE `t_grade` (
 
 LOCK TABLES `t_grade` WRITE;
 /*!40000 ALTER TABLE `t_grade` DISABLE KEYS */;
-INSERT INTO `t_grade` VALUES (1,1,1,'2019-05-21 00:00:00',3,'すばらしい作品だと思います'),(2,2,2,'2019-05-22 05:00:00',1,'好きか嫌いかでいうと嫌い'),(3,3,3,'2019-05-22 07:00:00',5,'この時代に生まれてよかった'),(4,18,5,'2019-05-28 12:18:01',2,'小学校のとき、似たようなやつ作ったわ。');
+INSERT INTO `t_grade` VALUES (1,1,1,'2019-05-21 00:00:00',3,'すばらしい作品だと思います'),(2,2,2,'2019-05-22 05:00:00',1,'好きか嫌いかでいうと嫌い'),(3,3,3,'2019-05-22 07:00:00',5,'この時代に生まれてよかった'),(4,18,5,'2019-05-28 12:18:01',2,'小学校のとき、似たようなやつ作ったわ。'),(5,1,4,'2019-05-28 14:05:17',3,'かっこいい');
 /*!40000 ALTER TABLE `t_grade` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -221,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-28 14:00:35
+-- Dump completed on 2019-05-28 14:09:23
