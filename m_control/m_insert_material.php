@@ -15,6 +15,7 @@ m_access_check();
     // 美術品登録画面ビュー出力
     require_once("../lib/function/db_genre.php");
     $sth = get_genre($dbh);
+    $msg = "";
     require_once("../lib/m_view/m_insert_material.php");
    } else {
     // 内容漏れチェック
@@ -33,6 +34,7 @@ m_access_check();
        // require_once(".js"); // 入力エラー表示
        require_once("../lib/function/db_genre.php");
        $sth = get_genre($dbh);
+       $msg = "入力エラーです";
        require_once("../lib/m_view/m_insert_material.php"); // 美術品登録画面ビュー出力
      } else {
 

@@ -46,7 +46,7 @@ ul li:hover{
   float: left;
   width: 500px;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 72px;
 }
 #calendar{
   float: left;
@@ -71,7 +71,7 @@ ul li:hover{
 }
 #search{
   clear: both;
-  margin: 10px;
+  margin: 10px 70px 0px 70px;
   text-align: center;
   border: thin none blue;
   padding: 10px;
