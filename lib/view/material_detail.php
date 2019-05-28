@@ -53,7 +53,7 @@
                 ?>
               </p>
               <br>
-              <p><?php ph($sth_material["caption"]); ?></p>
+              <p><?php print nl2br(h($sth_material["caption"])); ?></p>
             </div>
             <div class="material_control"></div>
             <!--↑美術品詳細↑-->
