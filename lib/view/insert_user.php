@@ -31,6 +31,7 @@
     <tr><th>職業</th>
       <th>
       <select name="job_id">
+        <option value="" selected disabled>選択してください</option>
         <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
           <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
         <?php } ?>
