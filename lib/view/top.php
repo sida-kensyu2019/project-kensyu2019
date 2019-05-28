@@ -122,7 +122,7 @@
               <caption><h2>評価が高い作品TOP20</h2></caption>
               <tr>
                 <th class="material_th" width="150px">画像</th>
-                <th class="material_th">星</th>
+                <th class="material_th"><img src="img/top_star.png"></th>
                 <th class="material_th" width="160px">作品名<br>作者名</th>
                 <th class="material_th">評価TOPコメント</th>
                 <th class="material_th" width="60px">詳細へ</th>
