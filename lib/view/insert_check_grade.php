@@ -18,6 +18,7 @@
 <title>美術品評価書込入力確認画面</title>
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -33,7 +34,6 @@
     </ul>
   </nav>
 </header>
-
 <h2>美術品評価確認画面</h2>
 <form action="insert_exec_grade.php" method="post">
 評価
@@ -56,5 +56,6 @@
 <input type="button" value="訂正" onclick="window.history.back();">
 
 </form>
+</div>
 </body>
 </html>
