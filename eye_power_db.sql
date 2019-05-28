@@ -33,9 +33,9 @@ eye_power_db.m_genre (
 INSERT INTO eye_power_db.m_genre(genre_name)
 VALUES ('西洋絵画');
 INSERT INTO eye_power_db.m_genre(genre_name)
-VALUES ('日本彫刻');
+VALUES ('日本絵画');
 INSERT INTO eye_power_db.m_genre(genre_name)
-VALUES ('西洋彫刻');
+VALUES ('日本彫刻');
 
 /* m_material作成 */
 CREATE TABLE
@@ -54,11 +54,11 @@ CREATE TABLE
 
 /* 美術品テーブルINSERT */
  INSERT INTO eye_power_db.m_material(material_name, material_kana, author_name, author_kana, genre_id, material_year, picture, caption)
-  VALUES ('悲しみの聖母', 'かなしみのせいぼ', 'カルロ・ドルチ', 'かるろ・どるち', 1, '1665', 'not_found.jpg','テスト');
+  VALUES ('悲しみの聖母', 'かなしみのせいぼ', 'カルロ・ドルチ', 'かるろ・どるち', 1, '1665', 'https://www.nmwa.go.jp/jp/collection/img/im_1998-0002.gif','両手を合わせた聖母の構図はティツィアーノの聖母像にその原型を認めることができるが、むしろティツアーノの作品を原型として16-17世紀にスペインで人気を博した聖母像の形式をふまえたものと考えられる。');
  INSERT INTO eye_power_db.m_material(material_name, material_kana, author_name, author_kana, genre_id, material_year, picture, caption)
-  VALUES ('テスト彫刻', 'てすとちょうこく', 'テスト太郎', 'てすとたろう', 2, '2000', 'not_found.jpg','てすてす');
+  VALUES ('金剛界八十一尊曼荼羅', 'こんごうかいはちじゅういっそんまんだら', '円仁', 'えんにん', 2, '1200', 'http://www.nezu-muse.or.jp/jp/collection/02/images/10012_1.jpg','本図に描かれた諸尊は、面長の面部に表された厳しい目鼻立ち、細く引き締まったプロポーション、そして肉身や着衣に強い隈取りを施す点に特徴があり、唐風を色濃くとどめる作風として注目される。');
  INSERT INTO eye_power_db.m_material(material_name, material_kana, author_name, author_kana, genre_id, material_year, picture, caption)
-  VALUES ('テスト2彫刻', 'てすとかいが', 'テスト・ハナーコ', 'てすと・はなーこ',3,'1500', 'not_found.jpg','testtesttest');
+  VALUES ('弥勒菩薩立像', 'みろくぼさつりゅうぞう', '作者不詳', 'さくしゃふしょう',3,'300', 'http://www.nezu-muse.or.jp/jp/collection/03/images/20097.jpg','紀元１世紀半ば頃から3世紀前半にかけて、現在のパキスタン西北部に繁栄したガンダーラ美術は、それまで造形化されることのなかった仏の姿を表す先駆けとなったことで知られる。本像はその典型的な作品。');
 
 /* m_job作成 */
 
@@ -112,11 +112,11 @@ CREATE TABLE
 
  /* 評価テーブルINSERT */
  INSERT INTO eye_power_db.t_grade(material_id, user_id, grade_date, star, comment)
-  VALUES (1, 1, '2019-05-21 00:00:00', 3, 'こめんとてすと');
+  VALUES (1, 1, '2019-05-21 00:00:00', 3, 'すばらしい作品だと思います');
  INSERT INTO eye_power_db.t_grade(material_id, user_id, grade_date, star, comment)
-  VALUES (2, 2, '2019-05-22 05:00:00', 1, 'こめんとてすと');
+  VALUES (2, 2, '2019-05-22 05:00:00', 1, '好きか嫌いかでいうと嫌い');
  INSERT INTO eye_power_db.t_grade(material_id, user_id, grade_date, star, comment)
-  VALUES (3, 3, '2019-05-22 07:00:00', 5, 'こめんとてすと');
+  VALUES (3, 3, '2019-05-22 07:00:00', 5, 'この時代に生まれてよかった');
 
 
  /* t_good作成 */
