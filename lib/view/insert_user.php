@@ -43,12 +43,12 @@
     <?php print $msg; ?>
     <br>
     <div class="right">
-      <input type="submit" value="登録">
-      <input type="reset" value="クリア">
+      <input type="submit" value="登録" class="blue_button">
+      <input type="reset" value="クリア" class="blue_button">
     </div>
   </form>
 <br>
-<input type="button" value="ログイン画面" onclick="window.location.href='login.php';">
+<input type="button" value="ログイン画面" onclick="window.location.href='login.php';" class="blue_button">
 <br>
 <br>
 
