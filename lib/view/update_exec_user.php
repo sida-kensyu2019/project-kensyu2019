@@ -30,7 +30,7 @@
 <br>
 <br>
 <a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
-<input type="button" value="マイページに戻る">
+<input type="button" value="マイページに戻る" class="blue_button">
 </a>
 </div>
 </body>
