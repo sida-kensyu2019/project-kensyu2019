@@ -51,6 +51,7 @@
 </table>
 <br>
 <div>
+<?php print $msg; ?><br>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
 <input type="hidden" name="genre_name">
 <br>

@@ -48,6 +48,7 @@ table {
   margin-left: auto;
   margin-right: auto;
   border-collapse:  collapse;
+  table-layout: fixed;
 }
 
 tr:nth-child(odd) {
@@ -82,6 +83,16 @@ td {
 
 /* テーブル幅 */
 .d4 {
-  width: 120px;
+  width: 180px;
   text-align: center;
+}
+
+.d5 {
+  text-align: center;
+}
+
+img.img {
+  text-align: center;
+  width: 100px;
+  height: 100px;
 }

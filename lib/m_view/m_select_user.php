@@ -45,7 +45,7 @@
   </tr>
   <?php while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
   <tr>
-    <td><?php ph($row["user_id"]); ?></td>
+    <td class="d5"><?php ph($row["user_id"]); ?></td>
     <td><?php ph($row["user_name"]); ?></td>
     <td><?php ph($row["mail_address"]); ?></td>
     <td><a href="m_delete_exec_user.php?user_id=<?php ph($row["user_id"]);?>">削除</td> <!-- 削除完了画面リンク -->

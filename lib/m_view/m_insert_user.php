@@ -22,24 +22,24 @@
       </header>
     <br>
     <h1>新規管理者登録</h1>
-    <?php print $msg; ?>
     <form action="../m_control/m_insert_user.php" method="post">
       <table>
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
         <tr><th>パスワード</th><th><input type="password" size="30" name ="password"></th></tr>
         <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
         <tr><th>職業</th>
-          <th>
+          <td>
           <select name="job_id">
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
               <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]); ?></option>
             <?php } ?>
           </select>
-          </th>
+        </td>
         </tr>
       </table>
       <br>
       <div>
+        <?php print $msg; ?><br>
         <input type="submit" value="登録">
         <input type="reset" value="クリア"><br>
       <br>

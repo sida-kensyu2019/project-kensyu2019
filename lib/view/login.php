@@ -21,7 +21,7 @@
   <div class="back">
 <header>
   <nav>
-    <h1>愛パワー美術館</h1>
+    <img src="image/titlelogo.png" height="90px">
     <ul>
       <li><a href="top.php" class="li_a">トップページ</a></li>
       <?php if (login_check()) { ?>

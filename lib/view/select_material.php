@@ -21,7 +21,6 @@
 <header>
   <nav>
     <img src="image/titlelogo.png" height="90px">
-    <h1>愛パワー美術館</h1>
     <ul>
       <li><a href="top.php" class="li_a">トップページ</a></li>
       <?php if (login_check()) { ?>
@@ -43,7 +42,7 @@
         value="<?php ph($_POST["author_name"]); ?>"></th></tr>
       <tr><th>ジャンル</th>
         <th>
-        <select name="genre_id">
+        <select name="genre_id" id="select_genre">
           <option value="" selected disabled>選択してください</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
             <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
@@ -60,20 +59,20 @@
 
 <!-- 検索結果 -->
 <h2>美術品検索結果</h2>
-<table border=1 class="material_list">
+<table class="material_list">
     <tr>
-      <th>画像</th>
-      <th>美術品名</th>
-      <th>作者名</th>
-      <th>ジャンル</th>
-      <th>制作年</th>
-      <th>詳細</th>
+      <th class="material_th" width="150px">画像</th>
+      <th class="material_th">美術品名</th>
+      <th class="material_th">作者名</th>
+      <th class="material_th">ジャンル</th>
+      <th class="material_th">制作年</th>
+      <th class="material_th">詳細</th>
     </tr>
 
     <?php while ($row_result=$sth_result->fetch(PDO::FETCH_ASSOC)) { ?>
 
     <tr class="ml_tr">
-			<td class="ml_td"><img src="<?php ph($row_result["picture"]); ?>" width="" height=""></td>
+			<td class="ml_td"><img src="<?php ph($row_result["picture"]); ?>" class="img_material"></td>
 			<td class="ml_td"><?php ph($row_result["material_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["author_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["genre_name"]); ?></td>

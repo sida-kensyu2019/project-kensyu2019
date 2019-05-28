@@ -46,7 +46,7 @@ ul li:hover{
   float: left;
   width: 500px;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 72px;
 }
 #calendar{
   float: left;
@@ -71,7 +71,7 @@ ul li:hover{
 }
 #search{
   clear: both;
-  margin: 10px;
+  margin: 10px 70px 0px 70px;
   text-align: center;
   border: thin none blue;
   padding: 10px;
@@ -106,20 +106,22 @@ ul li:hover{
 }
 
 .material_list{
-  border-collapse: collapse;
-  border: solid 1px #282b2b;
+  border-collapse: separate;
   width: 800px;
   color: #282b2b;
   margin-left:auto;
   margin-right:auto;
 }
-
+.ml_th{
+  border: thin solid #CCCCCC;
+}
 .ml_td{
-  height:50px;
+  border: thin solid #CCCCCC;
 }
 
 .ml_tr:nth-child(even) {
 	background: #d8ffee;
+  height: 150px;
 }
 
 div.titleImg {
@@ -163,4 +165,8 @@ div.titleImg {
 #select_genre{
   width: 243px;
   height: 23px;
+}
+.img_material{
+  max-width: 150px;
+  max-height: 150px;
 }
