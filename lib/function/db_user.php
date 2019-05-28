@@ -66,6 +66,8 @@
 
           // SQLを発行
           $sth->execute();
+
+          return $sth;
       } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
       }
