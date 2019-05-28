@@ -17,6 +17,7 @@
 <title>美術品評価書込画面</title>
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -32,7 +33,6 @@
     </ul>
   </nav>
 </header>
-
 <h2>美術品評価</h2>
 <form action="insert_grade.php" method="post">
 評価
@@ -59,5 +59,6 @@
        onclick="location.href='material_detail.php?material_id=<?php ph($_GET["material_id"]); ?>'">
 
 </form>
+</div>
 </body>
 </html>
