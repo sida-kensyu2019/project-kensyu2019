@@ -119,12 +119,11 @@ h2{
 }
 .blue_button{
     background-color: #4669ff;
-    border-bottom: solid 2px #003aff;
-    border-right: solid 2px #003aff;
     border-radius: 20px;
     color: #FFF;
     text-decoration: none;
-    padding: 7px;
+    padding: 7px 12px;
+    cursor: pointer;
 }
 .user_name{
   float: left;
