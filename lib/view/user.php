@@ -14,7 +14,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/user.css">
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
     <title>ユーザマイページ</title>
   </head>
   <body>
@@ -55,7 +55,9 @@
     </table>
       <!-- ユーザ本人がアクセスした場合のみ表示 -->
     <?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
-        <a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>" class="menu">ユーザ情報を変更する</a><br>
+      <div  class="right">
+        <a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>">ユーザ情報を変更する</a><br>
+      </div>
     <?php } ?>
     <br>
 
@@ -114,10 +116,14 @@
     <form action="delete_user.php" method="post">
       <!-- <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>"> -->
     </form>
-    <a href="delete_user.php">退会する</a>
+    <div  class="right">
+      <a href="delete_user.php">退会する</a>
+    </div>
 
     <?php } ?>
 
+  <br>
+  <br>
   </div>
 
   </body>
