@@ -39,6 +39,7 @@
       </table>
       <br>
       <div>
+        <?php print $msg; ?><br>
         <input type="submit" value="登録">
         <input type="reset" value="クリア"><br>
       <br>
