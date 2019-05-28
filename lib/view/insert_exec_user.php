@@ -30,7 +30,7 @@
 <br>
 <br>
 <a href="top.php">
-<input type="button" value="美術館トップに戻る" onclick="window.location.href='top.php';">
+<input type="button" value="美術館トップに戻る" onclick="window.location.href='top.php';" class="blue_button">
 </a>
 </div>
 </body>
