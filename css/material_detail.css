@@ -12,10 +12,28 @@ ul li {
   display: inline-block;  /* リストを横並びにする */
   width: 100px;
   margin: 1px;     /* 枠外の余白 */
-  padding: 5px;   /* 枠内の余白 */
-  border: 1px solid; /* メニュー項目の枠線 */
+  padding: 8px;   /* 枠内の余白 */
+  border: 3px solid #8ad8b2; /* メニュー項目の枠線 */
   border-radius: 5px;
-  text-align: center;
+  background-color: #8ad8b2;
+  color: #ffffff;
+}
+
+ul li:hover{
+  background-color: #ffffff;
+}
+
+.li_a{
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.li_a:visited {
+  color: #ffffff;
+}
+
+.li_a:hover {
+  color: #8ad8b2;
 }
 
 h2{
@@ -41,7 +59,7 @@ h2{
   border: thin none black;
   height: 298px;
 }
-#material_control{
+.material_control{
   clear: both;
 }
 .right{
@@ -51,8 +69,9 @@ h2{
 .grade{
   border: thin none black;
   text-align: center;
-  padding-bottom: 35px;
+  padding-bottom: 0px;
   background-color: yellow;
+  border-radius: 5px;
 }
 .user_name{
   float: left;
@@ -60,15 +79,17 @@ h2{
   border: thin none black;
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: 18px;
+  margin-left: 20px;
   background-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .star{
   float: right;
   text-align: right;
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-right: 18px;
+  margin-right: 20px;
 }
 .comment{
   border: thin none black;
@@ -82,21 +103,23 @@ h2{
 .grade_date{
   text-align: left;
   margin-bottom: 5px;
-  margin-left: 18px;
+  margin-left: 20px;
   float: left;
   border: thin none black;
   background-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .goodcnt{
   float: right;
-  background-color: #FFFFFF;
 }
 .good{
   float: right;
   margin-bottom: 5px;
-  margin-right: 18px;
+  margin-right: 20px;
 }
 .delete{
-  clear: both;
   text-align: right;
+  margin-top: 10px;
+  clear: both;
 }

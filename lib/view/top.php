@@ -13,6 +13,7 @@
             <script src=""></script>
         </head>
         <body>
+          <div class="back">
         <header>
           <nav>
             <img src="image/titlelogo.png" height="90px">
@@ -150,6 +151,7 @@
             <?php } ?>
             </table>
             <a href="#search">条件を絞り込む</a>
+          </div>
           </article>
         </body>
     </html>

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../css/m_style.css">
 </head>
 <body>
+<br>
       <header>
         <nav>
           <ul>
@@ -20,15 +21,21 @@
           </ul>
         </nav>
       </header>
-
+<br>
 <h1>登録完了</h1>
 <br>
+<br>
+<br>
+<br>
+<div>
 <p>管理者を登録しました。<p>
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 </body>
-<a href="m_insert_user.php">
-<input type="button" value="新規管理者登録に戻る">
-</a>
+<a href="../m_control/m_insert_user.php">新規管理者登録に戻る</a>
+</div>
 </html>

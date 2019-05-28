@@ -7,6 +7,7 @@
 <title>ユーザ退会画面</title>
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -41,5 +42,6 @@
 <a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
 <input type="button" value="キャンセル">
 </a>
+</div>
 </body>
 </html>

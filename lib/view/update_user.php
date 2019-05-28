@@ -17,6 +17,7 @@
 <title>ユーザ情報変更画面</title>
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -64,6 +65,6 @@
   </form>
 </table>
 <a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページに戻る</a>
-
+</div>
 </body>
 </html>

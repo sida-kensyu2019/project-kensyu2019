@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <img src="image/titlelogo.png" height="90px">
@@ -33,7 +34,6 @@
     </ul>
   </nav>
 </header>
-
 <!-- 検索ボックス -->
     <form action="select_material.php" method="post" id="search">
       <table id="table_search">
@@ -78,7 +78,7 @@
 			<td class="ml_td"><?php ph($row_result["author_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["genre_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["material_year"]); ?></td>
-			<td class="ml_td"><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>" target="_blank">詳細</a></td>
+			<td class="ml_td"><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>">詳細</a></td>
     </tr>
     <?php } ?>
 
@@ -86,6 +86,6 @@
 
 <a href="#table_search">条件を絞り込む</a>
 <!-- ページ上部の検索フォームへのページ内リンク -->
-
+</div>
 </body>
 </html>

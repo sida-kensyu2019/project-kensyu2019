@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../css/m_style.css">
 </head>
 <body>
+<br>
       <header>
         <nav>
           <ul>
@@ -14,7 +15,7 @@
             <li><a href="m_select_user.php">管理者一覧</a></li>
             <li><a href="m_select_genre.php">ジャンル一覧</a></li>
             <li><a href="m_select_job.php">職種一覧</a></li>
-            <li><a href="m_select_closed.php">休館日一覧</a></li>
+            <li><a class="current" href="m_select_closed.php">休館日一覧</a></li>
             <li><a href="../logout.php" onclick="return confirm('本当にログアウトしますか？'); ">ログアウト</a></li>
           </ul>
         </nav>
