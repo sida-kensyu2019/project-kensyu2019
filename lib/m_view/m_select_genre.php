@@ -25,10 +25,11 @@
   <h1>美術品ジャンル一覧</h1>
   <br>
   <div>
-  <form action="m_insert_exec_genre.php" method="post">
+  <form action="m_select_genre.php" method="post">
     <input type="text" size="30" name="genre_name">
     <input type="submit" value="新規追加">
   </form>
+  <?php ph($msg); ?>
   </div>
   <br>
     <table border=1>

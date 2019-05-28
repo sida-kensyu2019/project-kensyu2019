@@ -13,11 +13,27 @@
  * バージョン：0.1
  */
 
-
 require_once("../lib/init.php");
 //不正なアクセスを無効化
 m_access_check();
 
-require_once("../lib/function/db_genre.php");
-$sth=get_genre($dbh);
-require_once("../lib/m_view/m_select_genre.php");
+if (empty($_POST)) {
+    require_once("../lib/function/db_genre.php");
+    $sth=get_genre($dbh);
+    $msg="";
+    require_once("../lib/m_view/m_select_genre.php");
+} else {
+    if (mb_strlen($_POST["genre_name"]) > 10){
+        require_once("../lib/function/db_genre.php");
+        $sth=get_genre($dbh);
+        $msg="10文字以内で入力してください";
+    require_once("../lib/m_view/m_select_genre.php");
+    } else {
+        require_once("../lib/function/db_genre.php");
+        insert_genre($dbh, $_POST);
+        $sth=get_genre($dbh);
+        $msg="";
+    require_once("../lib/m_view/m_select_genre.php");
+    }
+}
+
