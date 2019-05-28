@@ -39,13 +39,14 @@
   <form action="update_exec_user.php" method="post">
 
     <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
-    <tr><th>パスワード</th><td><input type="password" size="30" name ="password"></td></tr>
-    <tr><th>表示名</th><td><input type="text" size="30" name ="user_name"></td></tr>
+    <tr><th>パスワード</th><td><input type="password" size="30" name ="password" value="<?php ph($sth["password"]) ?>"></td></tr>
+    <tr><th>表示名</th><td><input type="text" size="30" name ="user_name" value="<?php ph($sth["user_name"]) ?>"></td></tr>
     <tr><th>職業</th>
       <td>
       <select name="job_id">
         <?php while ($row = $sth_job->fetch(PDO::FETCH_ASSOC)) { ?>
-          <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
+          <option <?php if ($row["job_id"]==$sth["job_id"]) {print "selected";}?> 
+          value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
         <?php } ?>
       </select>
       </td>
@@ -53,7 +54,7 @@
     <tr>
       <th>プロフィールコメント</th>
       <td>
-        <textarea cols="40" rows="5" name="profile">よろしくお願いします。</textarea>
+        <textarea cols="40" rows="5" name="profile"><?php ph(isset($sth["profile"]) ? $sth["profile"] : "よろしくお願いします。");?></textarea>
       </td>
     </tr>
     <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
