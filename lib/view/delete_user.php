@@ -35,9 +35,9 @@
 <br>
 <form action="delete_exec_user.php" method="post">
   <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
-  <input type="submit" value="退会">
+  <input type="submit" value="退会" class="blue_button">
   <a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>"></a>
-  <input type="button" value="キャンセル" onclick="window.history.back();">
+  <input type="button" value="キャンセル" onclick="window.history.back();" class="blue_button">
 </form>
 
 <br>
