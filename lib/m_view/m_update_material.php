@@ -21,7 +21,7 @@
       <header>
         <nav>
           <ul>
-            <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
+            <li><a href="../lib/m_view/m_top.php">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
             <li><a href="m_select_user.php">管理者一覧</a></li>
             <li><a href="m_select_genre.php">ジャンル一覧</a></li>
@@ -52,7 +52,7 @@
 <br>
 <div>
 <input type="hidden" name="material_id" value="<?php ph($row["material_id"]);?>">
-<input type="submit" value="登録"> <input type="reset" value="クリア"><br>
+<input type="submit" value="編集"> <input type="reset" value="クリア"><br>
 <!-- 美術品一覧画面に戻る -->
 <br>
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">

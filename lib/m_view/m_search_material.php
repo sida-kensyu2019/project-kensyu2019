@@ -10,7 +10,7 @@
       <header>
         <nav>
           <ul>
-            <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
+            <li><a href="../lib/m_view/m_top.php">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
             <li><a href="m_select_user.php">管理者一覧</a></li>
             <li><a href="m_select_genre.php">ジャンル一覧</a></li>
@@ -46,8 +46,8 @@
       </table>
       <br>
       <div>
-        <input type="submit" name="検索">
-        <input type="reset" name="クリア">
+        <input type="submit" value="検索">
+        <input type="reset" value="クリア">
       </div>
     </form>
 </body>

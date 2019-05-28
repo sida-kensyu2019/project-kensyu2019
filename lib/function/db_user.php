@@ -66,6 +66,8 @@
 
           // SQLを発行
           $sth->execute();
+
+          return $sth;
       } catch (PDOException $e) {
           exit("SQL発行エラー：{$e->getMessage()}");
       }
@@ -122,7 +124,7 @@
         return $sth;
 
         } catch (PDOException $e) {
-            header("Location:../lib/m_view/m_user_error.html");
+            header("Location:../lib/m_view/m_user_error.php");
             exit();
         }
   }

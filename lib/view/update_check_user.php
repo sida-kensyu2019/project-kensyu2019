@@ -26,19 +26,26 @@
 <h1>入力確認</h1>
 <br>
 <br>
+<form action="update_exec_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" method="post">
 <table>
-  <tr><th>メールアドレス</th><td><?php ph($_POST["mail_address"]) ?></td></tr>
+  <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
   <tr><th>パスワード</th><td><?php ph($_POST["password"]) ?></td></tr>
   <tr><th>表示名</th><td><?php ph($_POST["user_name"]) ?></td></tr>
   <tr><th>職業</th><td><?php ph($_POST["job_id"]) ?></td></tr>
+  <tr><th>プロフィールコメント</th><td><?php ph($_POST["profile"]) ?></td></tr>
 </table><br>
+<input type="hidden" name="mail_address" value="<?php ph($sth["mail_address"]); ?>">
+<input type="hidden" name="password" value="<?php ph($_POST["password"]); ?>">
+<input type="hidden" name="job_id" value="<?php ph($_POST["job_id"]); ?>">
+<input type="hidden" name="user_name" value="<?php ph($_POST["user_name"]); ?>">
+<input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
+<input type="hidden" name="profile" value="<?php ph($_POST["profile"]); ?>">
 <br>
 <br>
 <br>
-<a href="update_exec_user.php">
-<input type="button" value="更新">
-</a>
-<a href="update_user.php">
+<input type="submit" value="更新">
+</form>
+<a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
 <input type="button" value="キャンセル">
 </a>
 </div>
