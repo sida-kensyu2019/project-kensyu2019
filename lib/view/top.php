@@ -23,7 +23,7 @@
                 <li><a href="logout.php" onclick="return confirm('本当にログアウトしますか？');" class="li_a">ログアウト</a></li>
                 <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" class="li_a">マイページ</a></li>
                   <?php if (user_lv_check()) { ?>
-                    <li><a href="lib/m_view/m_top.html" class="li_a">管理者トップ</a></li>
+                    <li><a href="lib/m_view/m_top.php" class="li_a">管理者トップ</a></li>
                   <?php } ?>
               <?php } else { ?>
               <li><a href="login.php" class="li_a">ログイン</a></li>
