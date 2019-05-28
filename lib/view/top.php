@@ -131,9 +131,9 @@
                   $cnt == 0;
             	    foreach($rowTop as $topMaterial){ ?>
                     <?php $cnt++; ?>
-                        <tr>
+                        <tr class="ml_tr">
                     			<td class="material">
-                            <img src="<?php ph($topMaterial["picture"]); ?>" width="150px" height="150px">
+                            <img src="<?php ph($topMaterial["picture"]); ?>" width="150px" height="">
                           </td>
                           <td class="material">
                             <?php

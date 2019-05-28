@@ -42,7 +42,7 @@
               <?php print "<h3>".h($sth_material["material_name"])."(".h($sth_material["material_name"]).")</h3>"; ?>
             </div>
             <div id="material_img"> <!--画像表示-->
-              <img src="<?php ph($sth_material["picture"]); ?>" name="" width="300px" height="300px">
+              <img src="<?php ph($sth_material["picture"]); ?>" name="" width="250px" height="">
             </div>
             <div id="material_text"> <!--詳細コメント表示-->
               <p id="material_overview">
