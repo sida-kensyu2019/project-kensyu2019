@@ -100,8 +100,8 @@
             <!--検索ボックス-->
               <form action="select_material.php" method="post" id="search">
                 <table id="table_search">
-                <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>
-                <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"></th></tr>
+                <tr><th>美術品名</th><th><input type="text" size="40" name ="material_name" class="search_box"></th></tr>
+                <tr><th>作者名</th><th><input type="text" size="40" name ="author_name" class="search_box"></th></tr>
                 <tr><th>ジャンル</th>
                   <th>
                   <select name="genre_id" id="select_genre">
@@ -110,12 +110,12 @@
                       <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
                     <?php } ?>
                   </select>
-                  </th>
+                </th>
                 </tr>
-                <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
+                <tr><th>制作年</th><th><input type="text" size="30" name ="material_year" class="search_box"></th></tr>
               </table>
-            <input type="submit" value="検索">
-            <input type="reset" value="リセット">
+            <input type="submit" value="検索" class="search_button">
+            <input type="reset" value="リセット" class="search_button">
           </form>
             <!-- 美術品TOP20 -->
             <table id="table_top">
@@ -153,7 +153,8 @@
                       } ?>
             <?php } ?>
             </table>
-            <a href="#search">条件を絞り込む</a>
+            <br>
+            <a href="#search" class="blue_button">条件を絞り込む</a>
           </div>
           </article>
         </body>
