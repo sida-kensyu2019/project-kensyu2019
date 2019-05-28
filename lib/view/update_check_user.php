@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -41,4 +42,5 @@
 <a href="update_user.php">
 <input type="button" value="キャンセル">
 </a>
+</div>
 </html>
