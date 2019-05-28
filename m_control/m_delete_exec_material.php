@@ -12,7 +12,7 @@
 
     //評価テーブルの削除関数呼び出し
     require_once("../lib/function/db_grade.php");
-    $sth=delete_grade($dbh, $_GET["material_id"]);
+    $sth=delete_grade_by_material($dbh, $_GET["material_id"]);
 
     //美術品テーブルの削除関数呼び出し
     require_once("../lib/function/db_material.php");
