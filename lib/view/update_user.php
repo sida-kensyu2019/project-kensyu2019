@@ -69,12 +69,12 @@
     <input type="hidden" name="mail_address" value="<?php ph($sth["mail_address"]); ?>">
   </table>
   <div class="right">
-    <input type="submit" value="変更">
-    <input type="reset" value="クリア">
+    <input type="submit" value="変更" class="blue_button">
+    <input type="reset" value="クリア" class="blue_button">
   </div>
 </form>
 <br>
-<a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">マイページに戻る</a>
+<a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" class="blue_button">マイページに戻る</a>
 <br>
 <br>
 </div>
