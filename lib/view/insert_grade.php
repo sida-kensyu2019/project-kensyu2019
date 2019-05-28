@@ -47,6 +47,7 @@
     <br>
 
 評価コメント<br>
+<span class="error"><?php print $msg; ?></span>
 <textarea cols="100" rows="10" name="comment"></textarea><br>
 
 <!-- 評価を登録 -->
