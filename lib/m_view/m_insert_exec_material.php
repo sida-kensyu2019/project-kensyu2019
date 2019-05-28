@@ -36,7 +36,7 @@
   <tr><th>ジャンル</th><th><?php ph($_POST["genre_id"]) ?></th></tr>
   <tr><th>制作年</th><th><?php ph($_POST["material_name"]) ?></th></tr>
   <tr><th>写真</th><th><?php ph($_POST["picture"]) ?></th></tr>
-  <tr><th>説明</th><th><?php print nl2br(h($_POST["caption"])); ?></th></tr>
+  <tr><th>説明</th><td><?php print nl2br(h($_POST["caption"])); ?></td></tr>
 </table><br>
 <br>
 <br>
