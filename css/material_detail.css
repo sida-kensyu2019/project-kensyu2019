@@ -47,9 +47,17 @@ ul li:hover{
 h2{
   text-align: center;
 }
+.left{
+  text-align: left;
+  margin-left: 20px;
+}
 #material_name{
   border: thin none black;
   text-align: center;
+  background-color: #8ad8b2;
+  border-radius: 5px;
+  margin: 0px 20px 0px;
+
 }
 #material_img{
   float: left;
@@ -66,6 +74,7 @@ h2{
   margin-bottom: 10px;
   border: thin none black;
   height: 298px;
+  text-align: left;
 }
 .material_control{
   clear: both;
@@ -73,11 +82,12 @@ h2{
 .right{
   text-align: right;
   border: thin none black;
+  margin-right: 20px;
 }
 .grade{
   margin-top: 10px;
   clear: both;
-  border: thin solid black;
+  border: thin none black;
   text-align: center;
   padding-bottom: 0px;
   background-color: yellow;
@@ -104,12 +114,13 @@ h2{
 }
 .comment{
   border: thin none black;
-  width: 760px;
+  width: 840px;
   margin: 0px auto 5px;
   clear: both;
   min-height: 100px;
   text-align: left;
   background-color: #FFFFFF;
+  padding: 10px
 }
 .grade_date{
   text-align: left;
