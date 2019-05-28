@@ -22,7 +22,7 @@ if (empty($_POST)) {
     // require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
     require_once("lib/function/db_job.php");
     $sth=get_job($dbh);
-    $msg = "すべて入力してください";
+    $msg = "<span class=\"error\">※不正入力です※<span>";
 
     require_once("lib/view/insert_user.php");
   } else {

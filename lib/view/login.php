@@ -29,19 +29,29 @@
         <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" class="li_a">マイページ</a></li>
       <?php } else { ?>
       <li><a href="login.php" class="li_a">ログイン</a></li>
-      <li><a href="insert_user.php" class="li_a">新規登録</a></li>
+      <li><a href="insert_user.php" class="li_a">新規会員登録</a></li>
       <?php } ?>
     </ul>
   </nav>
 </header>
-  <form action="login.php" method="post">
-    <?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?><br>
-    メールアドレス:
-      <input type="text" name="mail_address"><br>
-    パスワード:
-      <input type="password" name="password"><br>
-      <input type="submit" value="ログイン"><br>
+  <h2>ログイン</h2>
+  <form action="login.php" method="post" id="form_update">
+    <span class="error"><?php ph($errorMessage, ENT_QUOTES); ?></span>
+    <br>
+    <table id="table_search">
+      <tr>
+        <th>メールアドレス</th>
+          <td><input type="text" name="mail_address" class="update_user"></td>
+      </tr>
+      <tr>
+        <th>パスワード</th>
+          <td><input type="password" name="password" class="update_user"></td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="ログイン" class="right">
   </form>
+  <br>
 </div>
 </body>
 </html>
