@@ -7,6 +7,7 @@
 <title>新規入力確認画面</title>
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -51,5 +52,6 @@
 <input type="submit" value="登録">
 <input type="button" value="修正" onclick="history.back();">
 </form>
+</div>
 </body>
 </html>

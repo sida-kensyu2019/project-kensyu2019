@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -33,7 +34,6 @@
     </ul>
   </nav>
 </header>
-
   <form action="login.php" method="post">
     メールアドレス:
       <input type="text" name="mail_address"><br>
@@ -42,5 +42,6 @@
   <?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?>
       <input type="submit" value="ログイン"><br>
   </form>
+</div>
 </body>
 </html>

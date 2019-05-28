@@ -18,6 +18,7 @@
     <title>ユーザマイページ</title>
   </head>
   <body>
+    <div class="back">
     <header>
       <nav>
         <img src="image/titlelogo.png" height="90px">
@@ -115,6 +116,8 @@
     <a href="delete_user.php">退会する</a>
 
     <?php } ?>
+
+  </div>
 
   </body>
 </html>

@@ -18,6 +18,7 @@
             <script href="pass"></script>
         </head>
         <body>
+          <div class="back">
         <header>
           <nav>
             <img src="image/titlelogo.png" height="90px">
@@ -33,6 +34,7 @@
             </ul>
           </nav>
         </header>
+
 
             <h2>美術品詳細</h2>
 
@@ -138,6 +140,8 @@
                 } ?>
               <br>
             <?php } ?>
+
+          </div>
 
         </body>
     </html>

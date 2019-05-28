@@ -13,6 +13,7 @@
             <script src=""></script>
         </head>
         <body>
+          <div class="back">
         <header>
           <nav>
             <img src="image/titlelogo.png" height="90px">
@@ -102,7 +103,7 @@
                 <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"></th></tr>
                 <tr><th>ジャンル</th>
                   <th>
-                  <select name="genre_id">
+                  <select name="genre_id" id="select_genre">
                     <option value="" selected disabled>選択してください</option>
                     <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
                       <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
@@ -150,6 +151,7 @@
             <?php } ?>
             </table>
             <a href="#search">条件を絞り込む</a>
+          </div>
           </article>
         </body>
     </html>

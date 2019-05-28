@@ -7,6 +7,7 @@
 <title>ユーザ情報変更完了画面</title>
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -32,4 +33,5 @@
 <a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
 <input type="button" value="マイページに戻る">
 </a>
+</div>
 </html>

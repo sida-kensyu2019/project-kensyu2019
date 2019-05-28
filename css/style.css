@@ -1,11 +1,14 @@
-body{
+
+
+header{
+  position: static;
+}
+.back{
   text-align: center;
   width: 800px;
   border: thin none black;
   margin: 0 auto;
-}
-header{
-  position: static;
+  background-color: #ffffff;
 }
 
 ul li {
