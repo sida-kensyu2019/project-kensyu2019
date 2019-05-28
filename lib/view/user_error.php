@@ -24,7 +24,7 @@
           </nav>
         </header>
     このメールアドレスはすでに使用されているので、使用できません。<br><br>
-    <a href="../../insert_user.php">新規登録画面</a><br>
+    <a href="../../insert_user.php" class="blue_button">新規登録画面</a><br>
   </div>
   </body>
 </html>
