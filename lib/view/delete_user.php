@@ -10,7 +10,7 @@
   <div class="back">
 <header>
   <nav>
-    <h1>愛パワー美術館</h1>
+    <img src="image/titlelogo.png" height="90px">
     <ul>
       <li><a href="top.php" class="li_a">トップページ</a></li>
       <?php if (login_check()) { ?>
@@ -26,7 +26,7 @@
 <h1>退会画面</h1>
 <br>
 <br>
-<table>
+<table id="table_search">
   <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
 </table><br>
 <br>
@@ -36,12 +36,11 @@
 <form action="delete_exec_user.php" method="post">
   <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
   <input type="submit" value="退会">
+  <a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>"></a>
+  <input type="button" value="キャンセル" onclick="window.history.back();">
 </form>
 
-
-<a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
-<input type="button" value="キャンセル">
-</a>
+<br>
 </div>
 </body>
 </html>

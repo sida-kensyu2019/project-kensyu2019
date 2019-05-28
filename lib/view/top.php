@@ -50,7 +50,8 @@
             <div id="calendar">
               <table id="table_calendar">
                   <caption>
-                     休館日カレンダー
+                     休館日カレンダー<br>
+                     <?php print date("n"); ?>月
                   </caption>
                   <tr>
                      <th class="th">日</th>
@@ -121,7 +122,7 @@
               <caption><h2>評価が高い作品TOP20</h2></caption>
               <tr>
                 <th class="material_th" width="150px">画像</th>
-                <th class="material_th">星</th>
+                <th class="material_th"><img src="image/topstar.png" height="25px"></th>
                 <th class="material_th" width="160px">作品名<br>作者名</th>
                 <th class="material_th">評価TOPコメント</th>
                 <th class="material_th" width="60px">詳細へ</th>

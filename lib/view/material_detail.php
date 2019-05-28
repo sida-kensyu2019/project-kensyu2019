@@ -36,7 +36,7 @@
         </header>
 
 
-            <h2>美術品詳細</h2>
+            <h2>　</h2>
 
             <div id="material_name"> <!--美術品名表示-->
               <?php print "<h3>".h($sth_material["material_name"])."(".h($sth_material["material_name"]).")</h3>"; ?>

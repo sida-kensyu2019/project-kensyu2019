@@ -191,6 +191,7 @@ div.titleImg {
 }
 .right{
   text-align: right;
+  margin-right: 20px;
 }
 #form_update{
   width: 500px;
@@ -198,4 +199,5 @@ div.titleImg {
 }
 .error{
   color: red;
+  font-weight: bold;
 }
