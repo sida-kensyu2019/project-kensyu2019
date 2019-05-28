@@ -32,7 +32,7 @@
         </nav>
       </header>
 <br>
-<h1>管理美術品編集画面</h1>
+<h1>美術品編集</h1>
 <form action="m_update_material.php?material_id=<?php ph($row["material_id"]);?>" method="post">
 <table>
 <tr><td>美術品名</td><td><input type="text" name="material_name" value="<?php ph($row["material_name"]);?>"></td></tr>

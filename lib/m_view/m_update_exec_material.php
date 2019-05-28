@@ -21,6 +21,8 @@
         </nav>
       </header>
 <br>
+<h1>編集完了</h1>
+<br>
 <br>
     <table>
       <tr><th>美術品名</th><th><?php ph($_POST["material_name"]) ?></th></tr>

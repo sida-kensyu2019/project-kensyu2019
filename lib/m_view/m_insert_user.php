@@ -21,7 +21,7 @@
         </nav>
       </header>
     <br>
-    <h1>新規管理者登録画面</h1>
+    <h1>新規管理者登録</h1>
     <form action="../m_control/m_insert_user.php" method="post">
       <table>
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
