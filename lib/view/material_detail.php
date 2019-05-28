@@ -70,6 +70,8 @@
                   評価を書き込む
                 </a>
               </p>
+            <?php } else { ?>
+              ログインすると、評価の書き込みができます。
             <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>
