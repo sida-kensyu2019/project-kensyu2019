@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -32,4 +33,5 @@
 <a href="top.php">
 <input type="button" value="美術館トップに戻る" onclick="window.location.href='top.php';">
 </a>
+</div>
 </html>
