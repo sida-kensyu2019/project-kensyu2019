@@ -39,6 +39,7 @@
     </tr>
 </table>
 <br>
+<?php print $msg; ?>
 <br>
   <input type="submit" value="登録">
   <input type="reset" value="クリア">
@@ -48,7 +49,6 @@
 
 <input type="button" value="ログイン画面" onclick="window.location.href='login.php';">
 
-<?php print $msg; ?>
 </div>
 </body>
 </html>
