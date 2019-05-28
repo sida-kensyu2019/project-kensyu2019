@@ -59,7 +59,7 @@
             <!--↑美術品詳細↑-->
             <br>
             <div  class="right">
-            <input type="button" value="戻る" onclick="history.back();">
+            <input type="button" value="戻る" onclick="history.back();" class="return_button">
             </div>
             <br>
             <!--↓美術品に対する評価↓-->
@@ -75,7 +75,7 @@
             </h3>
             <?php if (login_check()) { ?>
               <p class="right">
-                <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">
+                <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>" class="blue_button">
                   評価を書き込む
                 </a>
               </p>
@@ -146,16 +146,18 @@
                       </div>
                       <div class="material_control">
                       </div>
-                </div>
 
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
                   <div class="delete">
                     <a href="delete_exec_grade.php?grade_id=<?php ph($row2["grade_id"]);?>&material_id=<?php ph($row2["material_id"]);?>"
-                    onclick="return window.confirm('本当に削除しますか？')">削除</a>
+                    onclick="return window.confirm('本当に削除しますか？')" class="blue_button">評価を削除する</a>
+                    <br>
+                    <br>
                   </div>
-                  <?php }
-                } else { ?>
+                <?php } ?>
+              </div>
+            <?php  } else { ?>
                 <div class="goodcnt">
                 <?php ph(isset($row2["cnt"]) ? $row2["cnt"] : "0");?> いいね
                 </div>
