@@ -44,3 +44,11 @@
         header("Location:../top.php");
       }
     }
+
+    function m_access_check_view()
+    {
+      if (!(user_lv_check())) {
+        setcookie("access_error", true, time()+60*60*24*30, "/");
+        header("Location:../../top.php");
+      }
+    }
