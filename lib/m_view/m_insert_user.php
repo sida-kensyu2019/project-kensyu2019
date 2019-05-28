@@ -22,7 +22,6 @@
       </header>
     <br>
     <h1>新規管理者登録</h1>
-    <?php print $msg; ?>
     <form action="../m_control/m_insert_user.php" method="post">
       <table>
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
@@ -40,6 +39,7 @@
       </table>
       <br>
       <div>
+        <?php print $msg; ?><br>
         <input type="submit" value="登録">
         <input type="reset" value="クリア"><br>
       <br>
