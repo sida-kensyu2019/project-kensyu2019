@@ -33,6 +33,7 @@ ul li:hover{
 
 .li_a{
   font-weight: bold;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -72,7 +73,7 @@ h2{
 .material_img_size{
   max-width: 240px;
   max-height: 240px;
-  margin: 0px auto 0px; 
+  margin: 0px auto 0px;
 }
 
 #material_text{
