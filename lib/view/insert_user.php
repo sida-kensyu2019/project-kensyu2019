@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <h1>愛パワー美術館</h1>
@@ -48,5 +49,6 @@
 <input type="button" value="ログイン画面" onclick="window.location.href='login.php';">
 
 <?php print $msg; ?>
+</div>
 </body>
 </html>
