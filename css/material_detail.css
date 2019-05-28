@@ -1,11 +1,19 @@
 body{
-  width: 800px;
-  border: thin none black;
-  margin: 0 auto;
+  background: linear-gradient(-225deg, #afd4ff 0%, #f3efff 50%, #ffb2e6 100%);
 }
+
 header{
   position: static;
   text-align: center;
+}
+
+.back{
+  text-align: center;
+  width: 900px;
+  border: thin none black;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: #ffffff;
 }
 
 ul li {
