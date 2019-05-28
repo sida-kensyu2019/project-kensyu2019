@@ -28,13 +28,13 @@
         <tr><th>パスワード</th><th><input type="password" size="30" name ="password"></th></tr>
         <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
         <tr><th>職業</th>
-          <th>
+          <td>
           <select name="job_id">
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
               <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]); ?></option>
             <?php } ?>
           </select>
-          </th>
+        </td>
         </tr>
       </table>
       <br>
