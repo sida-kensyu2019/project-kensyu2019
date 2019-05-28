@@ -1,7 +1,12 @@
 body{
-  width: 800px;
+  text-align: center;
+  width: 900px;
   border: thin none black;
-  margin: 0 auto;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
 }
 header{
   position: static;
@@ -9,11 +14,12 @@ header{
 
 ul li {
   display: inline-block;  /* リストを横並びにする */
-  width: 100px;
-  margin: 1px;     /* 枠外の余白 */
-  padding: 5px;   /* 枠内の余白 */
-  border: 1px solid; /* メニュー項目の枠線 */
+  width: 150px;
+  margin: 0 0 0 1px;     /* 枠外の余白 */
+  border: 3px solid #8ad8b2; /* メニュー項目の枠線 */
   border-radius: 5px;
+  background-color: #8ad8b2;
+  color: #ffffff;
 }
 
 table{
@@ -30,4 +36,13 @@ table td{
 }
 .left{
   text-align: left;
+}
+.button{
+  background-color: #4669ff;
+  border-bottom: solid 2px #003aff;
+  border-right: solid 2px #003aff;
+  border-radius: 20px;
+  color: #FFF;
+  text-decoration: none;
+  padding: 7px;
 }
