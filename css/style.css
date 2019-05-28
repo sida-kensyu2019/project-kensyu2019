@@ -31,6 +31,7 @@ ul li:hover{
 
 .li_a{
   font-weight: bold;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -117,11 +118,11 @@ ul li:hover{
 }
 .ml_td{
   border: thin solid #CCCCCC;
+  height: 150px;
 }
 
 .ml_tr:nth-child(even) {
 	background: #d8ffee;
-  height: 150px;
 }
 
 div.titleImg {
