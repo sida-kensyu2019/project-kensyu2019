@@ -13,14 +13,15 @@ header{
   border: thin none black;
   margin-left:auto;
   margin-right:auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
   background-color: #ffffff;
 }
 
 ul li {
   display: inline-block;  /* リストを横並びにする */
-  width: 100px;
-  margin: 1px;     /* 枠外の余白 */
-  padding: 8px;   /* 枠内の余白 */
+  width: 150px;
+  margin: 0 0 0 1px;     /* 枠外の余白 */
   border: 3px solid #8ad8b2; /* メニュー項目の枠線 */
   border-radius: 5px;
   background-color: #8ad8b2;
@@ -35,6 +36,8 @@ ul li:hover{
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
+  display: block;
+  padding: 8px;
 }
 
 .li_a:visited {
@@ -94,15 +97,34 @@ h2{
   border: thin none black;
   margin-right: 20px;
 }
+.return_button{
+  background-color: #8ad8b2;
+  border-bottom: solid 2px #66b790;
+  border-right: solid 2px #66b790;
+  border-radius: 20px;
+  color: #FFF;
+  text-decoration: none;
+  padding: 7px 12px;
+  cursor: pointer;
+}
 .grade{
   margin-top: 10px;
   clear: both;
   border: thin none black;
   text-align: center;
-  padding-bottom: 0px;
-  background-color: yellow;
+  padding-bottom 0;
+  background-color: #ccadff;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 0 10px 10px 10px;
+}
+.blue_button{
+    background-color: #4669ff;
+    border-bottom: solid 2px #003aff;
+    border-right: solid 2px #003aff;
+    border-radius: 20px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 7px;
 }
 .user_name{
   float: left;
