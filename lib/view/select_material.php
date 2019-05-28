@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="back">
 <header>
   <nav>
     <img src="image/titlelogo.png" height="90px">
@@ -33,7 +34,6 @@
     </ul>
   </nav>
 </header>
-
 <!-- 検索ボックス -->
     <form action="select_material.php" method="post" id="search">
       <table id="table_search">
@@ -83,6 +83,6 @@
 
 <a href="#table_search">条件を絞り込む</a>
 <!-- ページ上部の検索フォームへのページ内リンク -->
-
+</div>
 </body>
 </html>
