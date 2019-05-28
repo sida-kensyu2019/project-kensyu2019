@@ -166,7 +166,25 @@ div.titleImg {
   width: 243px;
   height: 23px;
 }
+.update_user{
+  width: 235px;
+  height: 15px;
+}
+.update_user2{
+  width: 243px;
+  height: 23px;
+}
+.update_user{
+  width: 243px;
+}
 .img_material{
   max-width: 150px;
   max-height: 150px;
+}
+.right{
+  text-align: right;
+}
+#form_update{
+  width: 500px;
+  margin: 0px auto 0px;
 }
