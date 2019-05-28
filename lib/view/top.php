@@ -104,7 +104,7 @@
                 <tr><th>ジャンル</th>
                   <th>
                   <select name="genre_id" id="select_genre">
-                    <option value="" selected disabled>選択してください</option>
+                  <option value="" selected>すべてのジャンル</option>
                     <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
                       <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
                     <?php } ?>
