@@ -181,7 +181,7 @@ div.titleImg {
   width: 243px;
   height: 23px;
 }
-.update_user{
+.update_user3{
   width: 243px;
 }
 .img_material{
@@ -194,4 +194,7 @@ div.titleImg {
 #form_update{
   width: 500px;
   margin: 0px auto 0px;
+}
+.error{
+  color: red;
 }

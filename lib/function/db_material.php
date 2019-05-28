@@ -11,7 +11,7 @@ function get_material_top($dbh)
         // SQLを構築
         $sql = "SELECT m_material.material_id, m_material.material_name, ";
         $sql .= "m_material.author_name, m_material.picture, AVG(star) ";
-        $sql .= "FROM t_grade INNER JOIN m_material ";
+        $sql .= "FROM t_grade LEFT OUTER JOIN m_material ";
         $sql .= "ON m_material.material_id = t_grade.material_id ";
         $sql .= "GROUP BY material_id ORDER BY AVG(star) DESC;";
         $sth = $dbh->prepare($sql); // SQLを準備

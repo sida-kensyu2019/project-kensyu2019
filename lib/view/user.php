@@ -76,6 +76,7 @@
                 switch($row["star"]){
                   case "0":
                   $starImg = "image/star_0.png";
+                  break;
                   case "1":
                   $starImg = "image/star_1.png";
                   break;
