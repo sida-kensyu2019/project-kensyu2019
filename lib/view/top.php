@@ -50,7 +50,8 @@
             <div id="calendar">
               <table id="table_calendar">
                   <caption>
-                     休館日カレンダー
+                     休館日カレンダー<br>
+                     <?php print date("n"); ?>月
                   </caption>
                   <tr>
                      <th class="th">日</th>
