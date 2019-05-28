@@ -41,13 +41,13 @@
     <!-- アイコン・評価コメント数・いいね数・自己紹介コメント -->
     <table id="user">
       <tr>
-        <td class="user" width="150px">
+        <td width="150px">
           <img src="image/india_main.jpg" width="150px" height="150px">
         </td>
-        <td rowspan="3" class="user"><?php ph($row["profile"]); ?></td>
+        <td rowspan="3" class="left"><?php print nl2br(($row["profile"])); ?></td>
       </tr>
       <tr>
-        <td class="user">
+        <td>
             コメント(<?php ph($gradeCnt); ?>)<br>
             いいね(<?php ph($goodCnt); ?>)
         </td>
@@ -72,9 +72,9 @@
           <tr>
       			<td><a href = "material_detail.php?material_id=<?php ph($row["material_id"]); ?>"> <?php ph($row["material_name"]); ?> </a></td>
       			<td><?php ph($row["author_name"]); ?></td>
-            <td width="60px"><?php //五段階評価それぞれで表示する画像変更
+            <td><?php //五段階評価それぞれで表示する画像変更
                 switch($row["star"]){
-                  case "NULL":
+                  case "0":
                   $starImg = "image/star_0.png";
                   case "1":
                   $starImg = "image/star_1.png";
@@ -94,7 +94,7 @@
                 }
              ?>
             <img src="<?php ph($starImg); ?>" name="star" width="" height="12px" class="star"> <!--評価の星表示--></td>
-      			<td><?php ph($row["comment"]); ?></td>
+      			<td class="left"><?php print nl2br(h($row["comment"])); ?></td>
       		</tr>
           <?php } ?>
       </table>

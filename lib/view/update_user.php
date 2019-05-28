@@ -60,8 +60,7 @@
     <tr>
       <th>プロフィールコメント</th>
       <td>
-        <textarea cols="32" rows="5" name="profile" class="update_user3">
-          <?php ph(isset($sth["profile"]) ? $sth["profile"] : "よろしくお願いします。");?>
+        <textarea cols="32" rows="5" name="profile" class="update_user3"><?php ph(isset($sth["profile"]) ? $sth["profile"] : "よろしくお願いします。");?>
         </textarea>
       </td>
     </tr>

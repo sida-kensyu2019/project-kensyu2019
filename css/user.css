@@ -1,5 +1,4 @@
 body{
-  text-align: center;
   width: 800px;
   border: thin none black;
   margin: 0 auto;
@@ -26,4 +25,9 @@ table{
 table td{
   border: thin solid #CCCCCC;
   background-color: #FFFFFF;
+  max-width: 300px;
+  word-break : break-all;
+}
+.left{
+  text-align: left;
 }
