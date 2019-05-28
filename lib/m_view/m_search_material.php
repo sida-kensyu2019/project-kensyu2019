@@ -10,7 +10,7 @@
       <header>
         <nav>
           <ul>
-            <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
+            <li><a href="../lib/m_view/m_top.php">トップページ</a></li>
             <li><a href="m_select_material.php">美術品一覧</a></li>
             <li><a href="m_select_user.php">管理者一覧</a></li>
             <li><a href="m_select_genre.php">ジャンル一覧</a></li>
@@ -33,7 +33,7 @@
         <tr><th>ジャンル</th>
           <td>
           <select name="genre_id">
-              <option value=""></option>
+            <option value="" selected>すべてのジャンル</option>
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
               <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
             <?php } ?>

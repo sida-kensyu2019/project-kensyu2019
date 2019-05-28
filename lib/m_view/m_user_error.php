@@ -1,3 +1,8 @@
+<?php
+require_once("../init.php");
+//不正なアクセスを無効化
+m_access_check();
+?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
   <head>
@@ -10,7 +15,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="m_top.html">トップページ</a></li>
+          <li><a href="m_top.php">トップページ</a></li>
           <li><a href="../../m_control/m_select_material.php">美術品一覧</a></li>
           <li><a href="../../m_control/m_select_user.php">管理者一覧</a></li>
           <li><a href="../../m_control/m_select_genre.php">ジャンル一覧</a></li>
@@ -28,13 +33,13 @@
     <br>
     <br>
     <div>
-    指定された日付はすでに休館日として登録されています。<br><br>
+    このメールアドレスはすでに使用されているので、使用できません。<br><br>
     <br>
     <br>
     <br>
     <br>
     <br>
-    <a href="../../m_control/m_select_closed.php">休館日一覧</a><br>
-  </div>
+    <a href="../../m_control/m_insert_user.php">新規登録画面</a><br>
+    </div>
   </body>
 </html>

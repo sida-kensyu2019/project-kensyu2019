@@ -44,7 +44,7 @@
         <td width="150px">
           <img src="image/india_main.jpg" width="150px" height="150px">
         </td>
-        <td rowspan="3" class="left"><?php print nl2br(($row["profile"])); ?></td>
+        <td rowspan="3" class="left"><?php print nl2br(h($row["profile"])); ?></td>
       </tr>
       <tr>
         <td>
@@ -76,6 +76,7 @@
                 switch($row["star"]){
                   case "0":
                   $starImg = "image/star_0.png";
+                  break;
                   case "1":
                   $starImg = "image/star_1.png";
                   break;

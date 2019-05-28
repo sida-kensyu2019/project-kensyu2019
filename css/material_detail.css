@@ -144,6 +144,7 @@ h2{
 }
 .goodcnt{
   float: right;
+  margin-right: 20px;
 }
 .good{
   float: right;

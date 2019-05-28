@@ -175,3 +175,23 @@
         $cnt = $ary_cnt["COUNT(*)"];
         return $cnt;
     }
+
+    // データベースのデータを削除する
+    // $id: 削除するデータのid
+    function delete_grade_by_material($dbh, $id)
+    {
+        try {
+            // プレースホルダ付きSQLを構築
+            $sql = "DELETE FROM t_grade ";
+            $sql .= "WHERE material_id=:material_id;";
+            $sth = $dbh->prepare($sql); // SQLを準備
+
+            // プレースホルダに値をバインド
+            $sth->bindValue(":material_id", (int) $id);
+
+            // SQLを発行
+            $sth->execute();
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
+        }
+    }

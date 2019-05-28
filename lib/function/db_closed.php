@@ -50,7 +50,7 @@
             $sth->execute();
 
         } catch (PDOException $e) {
-            header("Location:../lib/m_view/m_closed_error.html");
+            header("Location:../lib/m_view/m_closed_error.php");
             exit();
         }
     }

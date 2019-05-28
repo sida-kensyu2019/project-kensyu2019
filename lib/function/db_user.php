@@ -124,7 +124,7 @@
         return $sth;
 
         } catch (PDOException $e) {
-            header("Location:../lib/m_view/m_user_error.html");
+            header("Location:../lib/m_view/m_user_error.php");
             exit();
         }
   }
