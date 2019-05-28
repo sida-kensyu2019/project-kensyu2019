@@ -35,7 +35,6 @@
 <br>
 <br>
 <br>
-</body>
 <a href="update_exec_user.php">
 <input type="button" value="更新">
 </a>
@@ -43,4 +42,5 @@
 <input type="button" value="キャンセル">
 </a>
 </div>
+</body>
 </html>
