@@ -53,9 +53,9 @@
   <input type="hidden" name="profile" value="<?php ph($_POST["profile"]); ?>">
   <br>
   <div class="right">
-    <input type="submit" value="更新">
+    <input type="submit" value="更新" class="blue_button">
     <a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
-    <input type="button" value="キャンセル">
+    <input type="button" value="キャンセル" class="blue_button">
     </a>
   </div>
 </form>
