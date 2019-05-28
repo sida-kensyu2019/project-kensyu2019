@@ -142,7 +142,9 @@
                           </td>
                     			<td class="material"><?php ph($topMaterial["material_name"]); ?>
                     			<br><?php ph($topMaterial["author_name"]); ?></td>
-                          <td class="material"><span class="comment"><?php ph($topMaterial["comment"]); ?></span></td>
+                          <td class="material">
+                            <p class="comment"><?php print nl2br(h($topMaterial["comment"])); ?></p>
+                          </td>
                           <td class="material"><a href="material_detail.php?material_id=<?php ph($topMaterial["material_id"]); ?>">詳細</a></td>
                     		</tr>
                       <?php if ($cnt == 20){

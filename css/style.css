@@ -99,13 +99,16 @@ ul li:hover{
 }
 .material{
   border: thin solid #CCCCCC;
+  max-width: 300px;
+  word-break : break-all;
+  overflow: hidden;
 }
 .comment{
   display: -webkit-box;
+  text-align: left;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
 }
-
 .material_list{
   border-collapse: separate;
   width: 800px;
@@ -123,6 +126,9 @@ ul li:hover{
 
 .ml_tr:nth-child(even) {
 	background: #d8ffee;
+}
+.ml_tr{
+  height: 150px;
 }
 
 div.titleImg {
