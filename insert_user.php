@@ -14,10 +14,10 @@ if (empty($_POST)) {
   // 内容漏れチェック
   if (empty($_POST["mail_address"]) || empty($_POST["password"])
     || empty($_POST["user_name"]) || empty($_POST["job_id"])
-    || !(filter_var($_POST["mail_address"], FILTER_VALIDATE_EMAIL))
-    || mb_strlen($_POST["mail_address"]) > 50
-    || !(preg_match("/^[a-zA-Z0-9]{6,20}$/", $_POST["password"]))
-    || mb_strlen($_POST["user_name"]) > 50
+    || !(filter_var($_POST["mail_address"], FILTER_VALIDATE_EMAIL)) //正しいメールアドレスが入力されているか確認
+    || mb_strlen($_POST["mail_address"]) > 50 //メールアドレス50文字以内
+    || !(preg_match("/^[a-zA-Z0-9]{6,20}$/", $_POST["password"])) //6文字以上20文字以下
+    || mb_strlen($_POST["user_name"]) > 50 //50文字以内
     ) {
     // require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
     require_once("lib/function/db_job.php");
