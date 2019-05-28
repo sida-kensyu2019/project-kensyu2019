@@ -23,7 +23,7 @@
   </nav>
 </header>
 <h1>新規登録画面</h1>
-<table>
+<table class="insert_user">
   <form action="insert_user.php" method="post">
     <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
     <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
