@@ -63,7 +63,16 @@
             </div>
             <br>
             <!--↓美術品に対する評価↓-->
-            <h3 class="left"><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
+            <h3 class="left">
+              <?php
+              if ($count["COUNT(*)"]) {
+                ph($count["COUNT(*)"]);
+              } else {
+                print "0";
+              }
+               ?>
+              件の評価
+            </h3>
             <?php if (login_check()) { ?>
               <p class="right">
                 <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">
@@ -83,8 +92,9 @@
                   <div class="star">
                     <?php //五段階評価それぞれで表示する画像変更
                         switch($row2["star"]){
-                          case "NULL":
+                          case "0":
                           $starImg = "image/star_0.png";
+                          break;
                           case "1":
                           $starImg = "image/star_1.png";
                           break;
@@ -146,6 +156,9 @@
                   </div>
                   <?php }
                 } else { ?>
+                <div class="goodcnt">
+                <?php ph(isset($row2["cnt"]) ? $row2["cnt"] : "0");?> いいね
+                </div>
                 <div class="material_control"></div>
                 </div>
               <?php } ?>
