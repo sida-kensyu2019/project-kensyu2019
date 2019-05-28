@@ -34,7 +34,7 @@
   </nav>
 </header>
 <h2>美術品評価</h2>
-<form action="insert_grade.php" method="post">
+<form action="insert_grade.php?material_id=<?php ph($_GET["material_id"]); ?>" method="post">
 評価
     <label><input type="radio" name="star" value="0" checked="checked">0</label>
     <label><input type="radio" name="star" value="1">1</label>
