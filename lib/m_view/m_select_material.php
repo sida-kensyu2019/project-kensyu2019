@@ -52,9 +52,10 @@
 		<?php } ?>
 		</table>
 		<br>
+		<br>
 		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">
 		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
 		</div>
-
+		<br>
 </body>
 </html>
