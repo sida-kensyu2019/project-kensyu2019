@@ -33,9 +33,9 @@
      || empty($_POST["genre_id"]) || empty($_POST["material_year"])
      || empty($_POST["picture"]) || empty($_POST["caption"])
      || mb_strlen($_POST["material_name"]) > 50
-     || !preg_match("/^[ぁ-ゞ・＝゛]{1,70}$/u", $_POST["material_kana"])
+     || !preg_match("/^[ぁ-ゞ・＝゛ー]{1,70}$/u", $_POST["material_kana"])
      || mb_strlen($_POST["author_name"]) > 50
-     || !preg_match("/^[ぁ-ゞ・＝゛]{1,70}$/u", $_POST["author_kana"])
+     || !preg_match("/^[ぁ-ゞ・＝゛ー]{1,70}$/u", $_POST["author_kana"])
      || mb_strlen($_POST["material_year"]) > 20 || mb_strlen($_POST["picture"]) > 100
      || mb_strlen($_POST["caption"]) > 200) {
 			// require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
