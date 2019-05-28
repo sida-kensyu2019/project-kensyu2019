@@ -24,8 +24,12 @@
 		<br>
 		<br>
     <h1>美術品一覧</h1>
-
+		<br>
 		<div>
+		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">　
+		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
+		<br>
+		<br>
 		<table border="1">
 			<tr>
 				<th class="d0">画像</th>
@@ -52,9 +56,6 @@
 		<?php } ?>
 		</table>
 		<br>
-		<br>
-		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">
-		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
 		</div>
 		<br>
 </body>

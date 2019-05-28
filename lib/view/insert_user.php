@@ -31,6 +31,7 @@
     <tr><th>職業</th>
       <th>
       <select name="job_id">
+        <option value="" selected disabled>選択してください</option>
         <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
           <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
         <?php } ?>
@@ -39,6 +40,7 @@
     </tr>
 </table>
 <br>
+<?php print $msg; ?>
 <br>
   <input type="submit" value="登録">
   <input type="reset" value="クリア">
@@ -48,7 +50,6 @@
 
 <input type="button" value="ログイン画面" onclick="window.location.href='login.php';">
 
-<?php print $msg; ?>
 </div>
 </body>
 </html>
