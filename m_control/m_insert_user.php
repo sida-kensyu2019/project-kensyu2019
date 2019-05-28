@@ -26,7 +26,7 @@ m_access_check();
         || !(filter_var($_POST["mail_address"], FILTER_VALIDATE_EMAIL))
         || mb_strlen($_POST["mail_address"]) > 50
         || !(preg_match("/^[a-zA-Z0-9]{6,20}$/", $_POST["password"])) //6文字以上20文字以下
-        || !(preg_match("/^[^\x01-\x7E]{1,50}$/", $_POST["user_name"]))
+        || mb_strlen($_POST["user_name"]) > 50
         ) {
         // require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
         require_once("../lib/function/db_job.php");
