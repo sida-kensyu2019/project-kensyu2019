@@ -31,7 +31,18 @@
     <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
     <tr><th>パスワード</th><td><?php ph($_POST["password"]) ?></td></tr>
     <tr><th>表示名</th><td><?php ph($_POST["user_name"]) ?></td></tr>
-    <tr><th>職業</th><td><?php ph($_POST["job_name"]) ?></td></tr>
+    <tr>
+    <th>職業</th>
+    <td>
+    <?php
+    while ($row = $sth_job->fetch(PDO::FETCH_ASSOC)) {
+        if ($row["job_id"] == $_POST["job_id"]) {
+          ph($row["job_name"]);
+        }
+    }
+    ?>
+    </td>
+    </tr>
     <tr><th>プロフィールコメント</th><td><?php ph($_POST["profile"]) ?></td></tr>
   </table><br>
   <input type="hidden" name="mail_address" value="<?php ph($sth["mail_address"]); ?>">
