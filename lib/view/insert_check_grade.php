@@ -76,10 +76,10 @@
 <input type="hidden" value="<?php ph($_POST["grade_date"]); ?>" name="grade_date">
 <input type="hidden" value="<?php ph($_POST["star"]); ?>" name="star">
 <input type="hidden" value="<?php ph($_POST["comment"]); ?>" name="comment">
-<input type="submit" value= "送信">
+<input type="submit" value= "送信" class="blue_button">
 
 <!-- 美術品評価書込画面に戻る -->
-<input type="button" value="訂正" onclick="window.history.back();">
+<input type="button" value="訂正" onclick="window.history.back();" class="blue_button">
 
 </form>
 <br>
