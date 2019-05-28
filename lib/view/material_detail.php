@@ -53,7 +53,7 @@
               <br>
               <p><?php ph($sth_material["caption"]); ?></p>
             </div>
-            <div id="material_control"></div>
+            <div class="material_control"></div>
             <!--↑美術品詳細↑-->
             <br>
             <input type="button" value="戻る" onclick="history.back();">
@@ -74,29 +74,29 @@
                       <a href="user.php?user_id=<?php ph($row2["user_id"]); ?>">
                       <?php ph($row2["user_name"]); ?></a>さんの評価
                   </div>
-                  <?php //五段階評価それぞれで表示する画像変更
-                      switch($row2["star"]){
-                        case "NULL":
-                        $starImg = "image/star_0.png";
-                        case "1":
-                        $starImg = "image/star_1.png";
-                        break;
-                        case "2":
-                        $starImg = "image/star_2.png";
-                        break;
-                        case "3":
-                        $starImg = "image/star_3.png";
-                        break;
-                        case "4":
-                        $starImg = "image/star_4.png";
-                        break;
-                        case "5":
-                        $starImg = "image/star_5.png";
-                        break;
-                      }
-                   ?>
                   <div class="star">
-                     <img src="<?php ph($starImg); ?>" name="star" width="" height="12px">
+                    <?php //五段階評価それぞれで表示する画像変更
+                        switch($row2["star"]){
+                          case "NULL":
+                          $starImg = "image/star_0.png";
+                          case "1":
+                          $starImg = "image/star_1.png";
+                          break;
+                          case "2":
+                          $starImg = "image/star_2.png";
+                          break;
+                          case "3":
+                          $starImg = "image/star_3.png";
+                          break;
+                          case "4":
+                          $starImg = "image/star_4.png";
+                          break;
+                          case "5":
+                          $starImg = "image/star_5.png";
+                          break;
+                        }
+                     ?>
+                     <img src="<?php ph($starImg); ?>" name="star" width="" height="15px">
                      <!--評価の星表示-->
                   </div>
                   <div class="comment"> <!--評価コメント表示-->
@@ -104,9 +104,6 @@
                   </div>
                   <div class="grade_date">
                     <?php ph($row2["grade_date"]); ?>
-                  </div>
-                  <div class="goodcnt">
-                  <?php ph(isset($row2["cnt"]) ? $row2["cnt"] : "0");?> いいね
                   </div>
                   <?php if (login_check()) { ?>
                       <div class="good">
@@ -124,10 +121,17 @@
                           if ($no_good) { ?>
                             <!-- 未いいね -->
                             <input type="image" src="image/nogood.png" width="30" value="未いいね" name="good">
+                          <?php } ?>
                         </form>
                       </div>
-                      <?php } ?>
+
+                      <div class="goodcnt">
+                      <?php ph(isset($row2["cnt"]) ? $row2["cnt"] : "0");?> いいね
+                      </div>
+                      <div class="material_control">
+                      </div>
                 </div>
+
                 <?php
                 if($row2["user_id"] == $_SESSION["user_id"] || user_lv_check()){ ?>
                   <div class="delete">
@@ -136,8 +140,7 @@
                   </div>
                   <?php }
                 } ?>
-              <br>
             <?php } ?>
-
+            <br>
         </body>
     </html>
