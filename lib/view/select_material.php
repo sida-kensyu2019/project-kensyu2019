@@ -42,7 +42,7 @@
         value="<?php ph($_POST["author_name"]); ?>"></th></tr>
       <tr><th>ジャンル</th>
         <th>
-        <select name="genre_id">
+        <select name="genre_id" id="select_genre">
           <option value="" selected disabled>選択してください</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
             <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
