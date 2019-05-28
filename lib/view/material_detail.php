@@ -58,6 +58,8 @@
             <div id="material_control"></div>
             <!--↑美術品詳細↑-->
             <br>
+            <input type="button" value="戻る" onclick="history.back();">
+            <br>
             <!--↓美術品に対する評価↓-->
             <h3><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
             <?php if (login_check()) { ?>
@@ -65,7 +67,6 @@
                 <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">
                   評価を書き込む
                 </a>
-                <input type="button" value="戻る" onclick="history.back();">
               </p>
             <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
