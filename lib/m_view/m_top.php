@@ -1,3 +1,8 @@
+<?php
+require_once("../init.php");
+//不正なアクセスを無効化
+m_access_check();
+?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
   <head>
