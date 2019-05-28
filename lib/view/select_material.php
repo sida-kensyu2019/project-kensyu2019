@@ -75,7 +75,7 @@
 			<td class="ml_td"><?php ph($row_result["author_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["genre_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["material_year"]); ?></td>
-			<td class="ml_td"><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>" target="_blank">詳細</a></td>
+			<td class="ml_td"><a href="material_detail.php?material_id=<?php ph($row_result["material_id"]); ?>">詳細</a></td>
     </tr>
     <?php } ?>
 
