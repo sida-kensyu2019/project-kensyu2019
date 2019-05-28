@@ -141,8 +141,12 @@
                     onclick="return window.confirm('本当に削除しますか？')">削除</a>
                   </div>
                   <?php }
-                } ?>
+                } else { ?>
+                <div class="material_control"></div>
+                </div>
+              <?php } ?>
             <?php } ?>
             <br>
+          </div>
         </body>
     </html>
