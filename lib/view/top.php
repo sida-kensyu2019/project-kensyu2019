@@ -133,7 +133,7 @@
                     <?php $cnt++; ?>
                         <tr class="ml_tr">
                     			<td class="material">
-                            <img src="<?php ph($topMaterial["picture"]); ?>" width="150px" height="">
+                            <img src="<?php ph($topMaterial["picture"]); ?>" class="img_material">
                           </td>
                           <td class="material">
                             <?php

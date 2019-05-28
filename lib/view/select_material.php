@@ -72,7 +72,7 @@
     <?php while ($row_result=$sth_result->fetch(PDO::FETCH_ASSOC)) { ?>
 
     <tr class="ml_tr">
-			<td class="ml_td"><img src="<?php ph($row_result["picture"]); ?>" width="150px" height=""></td>
+			<td class="ml_td"><img src="<?php ph($row_result["picture"]); ?>" class="img_material"></td>
 			<td class="ml_td"><?php ph($row_result["material_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["author_name"]); ?></td>
 			<td class="ml_td"><?php ph($row_result["genre_name"]); ?></td>
