@@ -67,11 +67,14 @@ h2{
   border: thin none black;
 }
 .grade{
-  border: thin none black;
+  margin-top: 10px;
+  clear: both;
+  border: thin solid black;
   text-align: center;
   padding-bottom: 0px;
   background-color: yellow;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 .user_name{
   float: left;
