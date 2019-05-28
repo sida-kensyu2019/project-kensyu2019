@@ -49,8 +49,8 @@
 <input type="hidden" name="password" value="<?php ph($_POST["password"]);?>">
 <input type="hidden" name="user_name" value="<?php ph($_POST["user_name"]);?>">
 <input type="hidden" name="job_id" value="<?php ph($_POST["job_id"]);?>">
-<input type="submit" value="登録">
-<input type="button" value="修正" onclick="history.back();">
+<input type="submit" value="登録" class="blue_button">
+<input type="button" value="修正" onclick="history.back();" class="blue_button">
 </form>
 </div>
 </body>
