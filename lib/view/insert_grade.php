@@ -54,11 +54,11 @@
 <input type="hidden" value="<?php ph($_GET["material_id"]); ?>" name="material_id">
 <input type="hidden" value="<?php ph($_SESSION["user_id"]); ?>" name="user_id">
 <input type="hidden" value="<?php ph(date("Y-m-d H:i:s")); ?>" name="grade_date">
-<input type="submit" value= "登録">
+<input type="submit" value= "登録" class="blue_button">
 
 <!-- 美術品詳細画面に戻る -->
 <input type="button" value="キャンセル"
-       onclick="location.href='material_detail.php?material_id=<?php ph($_GET["material_id"]); ?>'">
+       onclick="location.href='material_detail.php?material_id=<?php ph($_GET["material_id"]); ?>'" class="blue_button">
 
 </form>
 <br>
