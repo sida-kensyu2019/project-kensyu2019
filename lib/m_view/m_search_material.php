@@ -33,7 +33,7 @@
         <tr><th>ジャンル</th>
           <td>
           <select name="genre_id">
-              <option value=""></option>
+            <option value="" selected>すべてのジャンル</option>
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
               <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
             <?php } ?>

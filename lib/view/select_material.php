@@ -37,21 +37,22 @@
     <form action="select_material.php" method="post" id="search">
       <table id="table_search">
       <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"
-        value="<?php ph($_POST["material_name"]); ?>"></th></tr>
+        value="<?php ph(isset($_POST["material_name"]) ? $_POST["material_name"] : "");?>"></th></tr>
       <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"
-        value="<?php ph($_POST["author_name"]); ?>"></th></tr>
+        value="<?php ph(isset($_POST["author_name"]) ? $_POST["author_name"] : "");?>"></th></tr>
       <tr><th>ジャンル</th>
         <th>
         <select name="genre_id" id="select_genre">
-          <option value="" selected disabled>選択してください</option>
+          <option value="">すべてのジャンル</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
-            <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
+            <option <?php if (!(empty($_POST)) and $row["genre_id"]==$_POST["genre_id"]) {print "selected";}?> 
+            value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
           <?php } ?>
         </select>
         </th>
       </tr>
       <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"
-        value="<?php ph($_POST["material_year"]); ?>"></th></tr>
+        value="<?php ph(isset($_POST["material_year"]) ? $_POST["material_year"] : "");?>"></th></tr>
       </table>
       <input type="submit" value="検索">
       <input type="reset" value="リセット">
