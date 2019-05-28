@@ -1,7 +1,7 @@
 <?php
 require_once("../init.php");
 //不正なアクセスを無効化
-m_access_check();
+m_access_check_view();
 ?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
