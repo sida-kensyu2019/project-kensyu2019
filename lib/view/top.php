@@ -113,7 +113,7 @@
                 <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
               </table>
             <input type="submit" value="検索">
-            <input type="reset" value="クリア">
+            <input type="reset" value="リセット">
           </form>
             <!-- 美術品TOP20 -->
             <table id="table_top">
