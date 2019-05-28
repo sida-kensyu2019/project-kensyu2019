@@ -5,6 +5,7 @@
 	  <meta charset="utf-8">
 	  <title>美術品一覧画面</title>
 	  <link rel="stylesheet" href="../css/m_style.css">
+		<script src=""></script>
 	</head>
 	<body>
 	<br>
@@ -50,7 +51,7 @@
 				<td class="d5"><?php ph($row["genre_name"]); ?></td>
 				<td><?php ph($row["material_year"]); ?></td>
 				<td><a href="m_update_material.php?material_id=<?php ph($row["material_id"]);?>">編集</a></td> <!-- 美術品編集画面リンク -->
-				<td><a href="m_delete_exec_material.php?material_id=<?php ph($row["material_id"]);?>">削除</a></td> <!-- 削除完了画面リンク -->
+				<td><a href="m_delete_exec_material.php?material_id=<?php ph($row["material_id"]);?>" onclick="return confirm('該当の美術品に関するデータを全て削除します。よろしいですか？'); ">削除</a></td> <!-- 削除完了画面リンク -->
 				<td><a href="../material_detail.php?material_id=<?php ph($row["material_id"]);?>" target="_blank">詳細</a></td> <!-- 美術品詳細画面リンク、別タブで開く -->
 			</tr>
 		<?php } ?>
