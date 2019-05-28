@@ -55,7 +55,7 @@
             // SQLを発行
             $sth->execute();
         } catch (PDOException $e) {
-            header("Location:../lib/m_view/m_genre_error.html");
+            header("Location:../lib/m_view/m_genre_error.php");
             exit();
         }
     }

@@ -1,3 +1,8 @@
+<?php
+require_once("../init.php");
+//不正なアクセスを無効化
+m_access_check();
+?>
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
   <head>
@@ -10,7 +15,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="m_top.html">トップページ</a></li>
+          <li><a href="m_top.php">トップページ</a></li>
           <li><a href="../../m_control/m_select_material.php">美術品一覧</a></li>
           <li><a href="../../m_control/m_select_user.php">管理者一覧</a></li>
           <li><a href="../../m_control/m_select_genre.php">ジャンル一覧</a></li>
