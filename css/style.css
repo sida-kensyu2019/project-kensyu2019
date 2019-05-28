@@ -149,3 +149,8 @@ div.titleImg {
 .titleImg img:nth-of-type(4) {
     animation-delay: 8s;
 }
+
+#select_genre{
+  width: 243px;
+  height: 24px;
+}
