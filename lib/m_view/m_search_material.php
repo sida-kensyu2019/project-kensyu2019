@@ -46,8 +46,8 @@
       </table>
       <br>
       <div>
-        <input type="submit" name="検索">
-        <input type="reset" name="クリア">
+        <input type="submit" value="検索">
+        <input type="reset" value="クリア">
       </div>
     </form>
 </body>

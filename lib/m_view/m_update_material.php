@@ -52,7 +52,7 @@
 <br>
 <div>
 <input type="hidden" name="material_id" value="<?php ph($row["material_id"]);?>">
-<input type="submit" value="登録"> <input type="reset" value="クリア"><br>
+<input type="submit" value="編集"> <input type="reset" value="クリア"><br>
 <!-- 美術品一覧画面に戻る -->
 <br>
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">
