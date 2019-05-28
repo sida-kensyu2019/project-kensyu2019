@@ -27,7 +27,7 @@
                   <?php } ?>
               <?php } else { ?>
               <li><a href="login.php" class="li_a">ログイン</a></li>
-              <li><a href="insert_user.php" class="li_a">新規登録</a></li>
+              <li><a href="insert_user.php" class="li_a">新規会員登録</a></li>
               <?php } ?>
             </ul>
           </nav>
@@ -118,7 +118,7 @@
           </form>
             <!-- 美術品TOP20 -->
             <table id="table_top">
-              <caption><h2>TOP20</h2></caption>
+              <caption><h2>評価が高い作品TOP20</h2></caption>
               <tr>
                 <th class="material_th" width="150px">画像</th>
                 <th class="material_th">星</th>

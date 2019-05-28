@@ -29,7 +29,7 @@
                 <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" class="li_a">マイページ</a></li>
               <?php } else { ?>
               <li><a href="login.php" class="li_a">ログイン</a></li>
-              <li><a href="insert_user.php" class="li_a">新規登録</a></li>
+              <li><a href="insert_user.php" class="li_a">新規会員登録</a></li>
               <?php } ?>
             </ul>
           </nav>
@@ -70,6 +70,8 @@
                   評価を書き込む
                 </a>
               </p>
+            <?php } else { ?>
+              ログインすると、評価の書き込みができます。
             <?php } ?>
             <?php //評価テーブル・ユーザテーブル内部連結を配列$rowに格納
             while($row2=$sth_grade->fetch(PDO::FETCH_ASSOC)){  ?>

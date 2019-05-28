@@ -35,11 +35,11 @@
   </nav>
 </header>
   <form action="login.php" method="post">
+    <?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?><br>
     メールアドレス:
       <input type="text" name="mail_address"><br>
     パスワード:
       <input type="password" name="password"><br>
-  <?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?><br>
       <input type="submit" value="ログイン"><br>
   </form>
 </div>
