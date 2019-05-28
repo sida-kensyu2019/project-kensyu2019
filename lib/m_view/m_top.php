@@ -42,7 +42,7 @@ m_access_check();
       </table>
         <br>
         <br>
-        <input type="button" value="ログアウト" onclick="location.href='../../logout.php';">
+        <a href="../../logout.php" onclick="return confirm('本当にログアウトしますか？'); ">ログアウト</a>
     </div>
   </body>
 </html>
