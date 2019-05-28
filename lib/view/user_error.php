@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../css/style.css">
   </head>
   <body>
+    <div class="back">
       <header>
           <nav>
             <h1>愛パワー美術館</h1>
@@ -22,8 +23,8 @@
             </ul>
           </nav>
         </header>
-
     このメールアドレスはすでに使用されているので、使用できません。<br><br>
     <a href="../../insert_user.php">新規登録画面</a><br>
+  </div>
   </body>
 </html>
