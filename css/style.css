@@ -71,7 +71,7 @@ ul li:hover{
 }
 #search{
   clear: both;
-  margin: 10px;
+  margin: 10px 70px 0px 70px;
   text-align: center;
   border: thin none blue;
   padding: 10px;
