@@ -20,7 +20,7 @@
   <div class="back">
 <header>
   <nav>
-    <h1>愛パワー美術館</h1>
+    <img src="image/titlelogo.png" height="90px">
     <ul>
       <li><a href="top.php" class="li_a">トップページ</a></li>
       <?php if (login_check()) { ?>
@@ -36,16 +36,16 @@
 <h2>美術品評価</h2>
 <form action="insert_grade.php" method="post">
 評価
-    <input type="radio" name="star" value="0" checked="checked">0
-    <input type="radio" name="star" value="1">1
-    <input type="radio" name="star" value="2">2
-    <input type="radio" name="star" value="3">3
-    <input type="radio" name="star" value="4">4
-    <input type="radio" name="star" value="5">5
+    <label><input type="radio" name="star" value="0" checked="checked">0</label>
+    <label><input type="radio" name="star" value="1">1</label>
+    <label><input type="radio" name="star" value="2">2</label>
+    <label><input type="radio" name="star" value="3">3</label>
+    <label><input type="radio" name="star" value="4">4</label>
+    <label><input type="radio" name="star" value="5">5</label>
     <br>
     <br>
 
-評価の詳細<br>
+評価コメント<br>
 <textarea cols="100" rows="10" name="comment"></textarea><br>
 
 <!-- 評価を登録 -->
@@ -59,6 +59,7 @@
        onclick="location.href='material_detail.php?material_id=<?php ph($_GET["material_id"]); ?>'">
 
 </form>
+<br>
 </div>
 </body>
 </html>
