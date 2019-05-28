@@ -28,6 +28,7 @@
         <input type="text" name="job_name">
         <input type="submit" value="新規追加">
       </form>
+      <?php ph($msg); ?>
     </div>
     <table border=1>
     <br>

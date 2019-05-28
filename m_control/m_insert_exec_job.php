@@ -17,7 +17,22 @@ require_once("../lib/init.php");
 //不正なアクセスを無効化
 m_access_check();
 
-require_once("../lib/function/db_job.php");
-$sth=insert_job($dbh, $_POST);
 
-require_once("m_select_job.php");
+if (empty($_POST)) {
+  require_once("../lib/function/db_job.php");
+  $sth=get_job($dbh);
+  $msg="";
+  require_once("../lib/m_view/m_select_job.php");
+} else {
+    if (mb_strlen($_POST["job_name"]) > 10){
+      require_once("../lib/function/db_job.php");
+      $sth=get_job($dbh);
+      $msg="10文字以内で入力してください";
+      require_once("../lib/m_view/m_select_job.php");
+    } else {
+      require_once("../lib/function/db_job.php");
+      $sth=insert_job($dbh, $_POST);
+      $msg="";
+      require_once("m_select_job.php");
+    }
+}

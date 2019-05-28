@@ -16,9 +16,8 @@ header{
 
 ul li {
   display: inline-block;  /* リストを横並びにする */
-  width: 100px;
-  margin: 1px;     /* 枠外の余白 */
-  padding: 8px;   /* 枠内の余白 */
+  width: 150px;
+  margin: 0 0 0 1px;     /* 枠外の余白 */
   border: 3px solid #8ad8b2; /* メニュー項目の枠線 */
   border-radius: 5px;
   background-color: #8ad8b2;
@@ -33,6 +32,8 @@ ul li:hover{
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
+  display: block;
+  padding: 8px;
 }
 
 .li_a:visited {

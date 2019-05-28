@@ -20,4 +20,5 @@ m_access_check();
 
 require_once("../lib/function/db_job.php");
 $sth=get_job($dbh);
+$msg="";
 require_once("../lib/m_view/m_select_job.php");
