@@ -29,7 +29,7 @@
                 <li><a href="user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" class="li_a">マイページ</a></li>
               <?php } else { ?>
               <li><a href="login.php" class="li_a">ログイン</a></li>
-              <li><a href="insert_user.php" class="li_a">新規登録</a></li>
+              <li><a href="insert_user.php" class="li_a">新規会員登録</a></li>
               <?php } ?>
             </ul>
           </nav>
