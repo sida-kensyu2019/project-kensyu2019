@@ -118,7 +118,7 @@ div.titleImg {
 }
 
 .titleImg img {
-    animation: show 15s infinite; /* 12秒のスライドショーを繰り返し */
+    animation: show 12s infinite; /* 12秒のスライドショーを繰り返し */
     max-width: 100%;
     height: auto;
     opacity: 0;
