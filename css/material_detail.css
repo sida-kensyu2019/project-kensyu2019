@@ -65,13 +65,14 @@ h2{
   height: 250px;
   margin: 10px 10px 10px 20px;
   background-color: #EEEEEE;
+  display: flex;
   align-items: center;
 }
 
 .material_img_size{
   max-width: 240px;
   max-height: 240px;
-  text-align: center;
+  margin: 0px auto 0px; 
 }
 
 #material_text{
