@@ -61,11 +61,19 @@ h2{
 }
 #material_img{
   float: left;
-  width: 300px;
-  margin-right: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 250px;
+  height: 250px;
+  margin: 10px 10px 10px 20px;
+  background-color: #EEEEEE;
+  align-items: center;
 }
+
+.material_img_size{
+  max-width: 240px;
+  max-height: 240px;
+  text-align: center;
+}
+
 #material_text{
   float: left;
   width: 480px;

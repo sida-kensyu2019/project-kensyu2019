@@ -68,6 +68,7 @@ td {
 /* テーブル幅 */
 .d1 {
   width: 200px;
+  text-align: center;
 }
 
 /* テーブル幅 */
@@ -91,9 +92,21 @@ td {
   text-align: center;
 }
 
+.tr{
+  height: 100px;
+}
+.d0{
+  width: 100px;
+}
+
+.td{
+  text-align: center;
+}
+
+
 img.img {
   text-align:center;
   vertical-align:middle;
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
 }

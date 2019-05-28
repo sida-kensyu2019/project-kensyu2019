@@ -28,7 +28,7 @@
 		<div>
 		<table border="1">
 			<tr>
-				<th>画像</th>
+				<th class="d0">画像</th>
 				<th class="d1">美術品名</th>
 				<th class="d1">作者名</th>
 				<th class="d2">ジャンル</th>
@@ -39,8 +39,8 @@
 			</tr>
 			<?php
 			while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
-			<tr>
-				<td><img class="img" src="<?php ph($row["picture"]); ?>"></td>
+			<tr class="tr">
+				<td class="td"><img class="img" src="<?php ph($row["picture"]); ?>"></td>
 				<td><a href="../material_detail.php?material_id=<?php ph($row["material_id"]); ?>" target="_blank"><?php ph($row["material_name"]); ?></a></td>
 				<td><?php ph($row["author_name"]); ?></td>
 				<td class="d5"><?php ph($row["genre_name"]); ?></td>
