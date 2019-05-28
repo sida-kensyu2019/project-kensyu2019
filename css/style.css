@@ -106,20 +106,22 @@ ul li:hover{
 }
 
 .material_list{
-  border-collapse: collapse;
-  border: solid 1px #282b2b;
+  border-collapse: separate;
   width: 800px;
   color: #282b2b;
   margin-left:auto;
   margin-right:auto;
 }
-
+.ml_th{
+  border: thin solid #CCCCCC;
+}
 .ml_td{
-  height:50px;
+  border: thin solid #CCCCCC;
 }
 
 .ml_tr:nth-child(even) {
 	background: #d8ffee;
+  height: 50px;
 }
 
 div.titleImg {
