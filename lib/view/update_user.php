@@ -34,7 +34,8 @@
   </nav>
 </header>
 <h2>ユーザ情報変更画面</h2>
-<form action="update_exec_user.php" method="post" id="form_update">
+<form action="update_user.php?user_id=<?php ph($_GET["user_id"]); ?>" method="post" id="form_update">
+  <?php ph($msg); ?>
   <table id="table_search">
     <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
     <tr><th>パスワード</th>
@@ -65,6 +66,7 @@
       </td>
     </tr>
     <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
+    <input type="hidden" name="mail_address" value="<?php ph($sth["mail_address"]); ?>">
   </table>
   <div class="right">
     <input type="submit" value="変更">

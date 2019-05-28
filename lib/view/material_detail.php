@@ -116,7 +116,7 @@
                      <!--評価の星表示-->
                   </div>
                   <div class="comment"> <!--評価コメント表示-->
-                    <?php ph($row2["comment"]); ?>
+                    <?php print nl2br(h($row2["comment"])); ?>
                   </div>
                   <div class="grade_date">
                     <?php ph($row2["grade_date"]); ?>
