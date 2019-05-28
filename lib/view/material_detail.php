@@ -58,10 +58,12 @@
             <div class="material_control"></div>
             <!--↑美術品詳細↑-->
             <br>
+            <div  class="right">
             <input type="button" value="戻る" onclick="history.back();">
+            </div>
             <br>
             <!--↓美術品に対する評価↓-->
-            <h3><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
+            <h3 class="left"><?php ph($count["COUNT(*)"]); ?>件の評価</h3>
             <?php if (login_check()) { ?>
               <p class="right">
                 <a href="insert_grade.php?material_id=<?php ph($sth_material["material_id"]); ?>">
