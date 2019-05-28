@@ -6,7 +6,11 @@ require_once("lib/init.php");
 // ユーザログイン判定
 if (login_check()) { // ログインユーザ
   // 評価書込画面コントローラ遷移 -> 評価書込画面ビュー出力
-  if (empty($_POST["comment"])) { // 書き込みない場合
+  if (empty($_POST)) {
+    $msg="";
+    require_once("lib/view/insert_grade.php"); // 評価書込画面ビュー出力
+  } elseif (empty($_POST["comment"])) { // 書き込みない場合
+    $msg="コメントを入力してください<br>";
     require_once("lib/view/insert_grade.php"); // 評価書込画面ビュー出力
   } else {  // ある場合
     // 評価書込み確認画面ビュー出力

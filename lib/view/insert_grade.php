@@ -33,7 +33,8 @@
     </ul>
   </nav>
 </header>
-<h2>美術品評価</h2>
+<br>
+<h3>美術品に対する評価を書き込んでください</h3>
 <form action="insert_grade.php?material_id=<?php ph($_GET["material_id"]); ?>" method="post">
 評価
     <label><input type="radio" name="star" value="0" checked="checked">0</label>
@@ -46,6 +47,7 @@
     <br>
 
 評価コメント<br>
+<span class="error"><?php print $msg; ?></span>
 <textarea cols="100" rows="10" name="comment"></textarea><br>
 
 <!-- 評価を登録 -->
