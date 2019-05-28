@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../css/m_style.css">
   </head>
   <body>
+  <br>
       <header>
         <nav>
           <ul>
@@ -22,7 +23,7 @@
 
   <!-- 製作者：井田 -->
     <br>
-    <h1>美術品検索画面</h1>
+    <h1>美術品検索</h1>
     <form action="m_search_material.php" method="post">
       <table>
         <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>

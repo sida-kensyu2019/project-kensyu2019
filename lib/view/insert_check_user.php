@@ -27,7 +27,7 @@
 <br>
 <br>
 
-<table>
+<table class="insert_user">
   <tr><th>メールアドレス</th><th><?php ph($_POST["mail_address"]) ?></th></tr>
   <tr><th>パスワード</th><th><?php ph($_POST["password"]) ?></th></tr>
   <tr><th>表示名</th><th><?php ph($_POST["user_name"]) ?></th></tr>

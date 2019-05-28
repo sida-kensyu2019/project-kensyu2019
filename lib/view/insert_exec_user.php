@@ -25,13 +25,13 @@
 </header>
 <h1>登録完了</h1>
 <br>
-<p>ユーザを登録しました。<p>
+ユーザを登録しました。
 <br>
 <br>
 <br>
-</body>
 <a href="top.php">
 <input type="button" value="美術館トップに戻る" onclick="window.location.href='top.php';">
 </a>
 </div>
+</body>
 </html>

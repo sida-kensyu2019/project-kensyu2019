@@ -37,8 +37,10 @@
 <!-- 検索ボックス -->
     <form action="select_material.php" method="post" id="search">
       <table id="table_search">
-      <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"></th></tr>
-      <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"></th></tr>
+      <tr><th>美術品名</th><th><input type="text" size="30" name ="material_name"
+        value="<?php ph($_POST["material_name"]); ?>"></th></tr>
+      <tr><th>作者名</th><th><input type="text" size="30" name ="author_name"
+        value="<?php ph($_POST["author_name"]); ?>"></th></tr>
       <tr><th>ジャンル</th>
         <th>
         <select name="genre_id">
@@ -49,10 +51,11 @@
         </select>
         </th>
       </tr>
-      <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"></th></tr>
+      <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"
+        value="<?php ph($_POST["material_year"]); ?>"></th></tr>
       </table>
       <input type="submit" value="検索">
-      <input type="reset" value="クリア">
+      <input type="reset" value="リセット">
     </form>
 
 <!-- 検索結果 -->

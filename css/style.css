@@ -1,13 +1,16 @@
-
+body{
+  background: linear-gradient(-225deg, #afd4ff 0%, #f3efff 50%, #ffb2e6 100%);
+}
 
 header{
   position: static;
 }
 .back{
   text-align: center;
-  width: 800px;
+  width: 900px;
   border: thin none black;
-  margin: 0 auto;
+  margin-left:auto;
+  margin-right:auto;
   background-color: #ffffff;
 }
 
@@ -84,6 +87,10 @@ ul li:hover{
   text-align: center;
   border: thin none black;
   margin:0px auto 0px;
+}
+.insert_user{
+  margin-left:auto;
+  margin-right:auto;
 }
 .material_th{
   border: thin solid #CCCCCC;

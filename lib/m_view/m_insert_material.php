@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="../css/m_style.css">
 </head>
 <body>
+<br>
       <header>
         <nav>
           <ul>
@@ -46,7 +47,7 @@
       // }
   ?>
 <br>
-<h1>管理美術品登録画面</h1>
+<h1>美術品登録</h1>
 <form action="m_insert_material.php" method="post">
 <table>
 <tr><th>美術品名</th><td><input type="text" name="material_name"></td></tr>
