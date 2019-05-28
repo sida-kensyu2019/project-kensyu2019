@@ -32,20 +32,6 @@
         </nav>
       </header>
 
-  <?php
-      // require_once("../init.php");
-      //
-      // try {
-      //     // SQLを構築
-      //     $sql = "SELECT * FROM eye_power_db.m_material";
-      //     $sth = $dbh->prepare($sql); // SQLを準備
-      //
-      //     // SQLを発行
-      //     $sth->execute();
-      // } catch (PDOException $e) {
-      //     exit("SQL発行エラー：{$e->getMessage()}");
-      // }
-  ?>
 <br>
 <h1>美術品登録</h1>
 <form action="m_insert_material.php" method="post">
