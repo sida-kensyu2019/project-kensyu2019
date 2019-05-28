@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/m_style.css">
   </head>
   <body>
+  <br>
       <header>
         <nav>
           <ul>
@@ -19,7 +20,8 @@
           </ul>
         </nav>
       </header>
-
+<br>
+<br>
     <table>
       <tr><th>美術品名</th><th><?php ph($_POST["material_name"]) ?></th></tr>
       <tr><th>美術品名読み</th><th><?php ph($_POST["material_kana"]) ?></th></tr>
@@ -30,7 +32,9 @@
       <tr><th>写真</th><th><?php ph($_POST["picture"]) ?></th></tr>
       <tr><th>説明</th><th><?php ph($_POST["caption"]) ?></th></tr>
     </table><br>
-    <p>上記の内容で美術品詳細の編集が完了しました。</p><br>
-    <a href="m_select_material.php">美術品一覧画面へ</a>
+    <div>
+      <p>上記の内容で美術品詳細の編集が完了しました。</p><br>
+      <a href="m_select_material.php">美術品一覧画面へ</a>
+    </div>
   </body>
 </html>

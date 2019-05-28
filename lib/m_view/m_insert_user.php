@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/m_style.css">
   </head>
   <body>
+  <br>
       <header>
         <nav>
           <ul>
@@ -21,9 +22,8 @@
       </header>
     <br>
     <h1>新規管理者登録画面</h1>
-    <?php print $msg; ?>
-    <table>
-      <form action="../m_control/m_insert_user.php" method="post">
+    <form action="../m_control/m_insert_user.php" method="post">
+      <table>
         <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
         <tr><th>パスワード</th><th><input type="password" size="30" name ="password"></th></tr>
         <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
@@ -36,13 +36,15 @@
           </select>
           </th>
         </tr>
-        <br>
-        <tr><th>
-          <input type="submit" value="登録">
-          <input type="reset" value="クリア">
-      </th></tr>
-      </form>
-    </table>
-    <a href="m_select_user.php">管理者一覧画面に戻る</a>
+      </table>
+      <br>
+      <div>
+        <input type="submit" value="登録">
+        <input type="reset" value="クリア"><br>
+      <br>
+      <br>
+        <input type="button" value="管理者一覧に戻る" onclick="location.href='m_select_user.php'">
+      </div>
+    </form>
   </body>
 </html>

@@ -7,11 +7,12 @@
 	  <link rel="stylesheet" href="../css/m_style.css">
 	</head>
 	<body>
+	<br>
 		<header>
         <nav>
           <ul>
             <li><a href="../lib/m_view/m_top.html">トップページ</a></li>
-            <li><a href="m_select_material.php">美術品一覧</a></li>
+            <li><a class="current" href="m_select_material.php">美術品一覧</a></li>
             <li><a href="m_select_user.php">管理者一覧</a></li>
             <li><a href="m_select_genre.php">ジャンル一覧</a></li>
             <li><a href="m_select_job.php">職種一覧</a></li>
