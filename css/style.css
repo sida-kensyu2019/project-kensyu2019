@@ -121,7 +121,7 @@ ul li:hover{
 
 .ml_tr:nth-child(even) {
 	background: #d8ffee;
-  height: 50px;
+  height: 150px;
 }
 
 div.titleImg {
@@ -165,4 +165,8 @@ div.titleImg {
 #select_genre{
   width: 243px;
   height: 23px;
+}
+.img_material{
+  max-width: 150px;
+  max-height: 150px;
 }
