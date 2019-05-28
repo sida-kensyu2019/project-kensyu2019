@@ -5,7 +5,6 @@ require_once("lib/init.php");
 
 // 変更されたユーザの情報が送信されたものを
 // データベースに登録するためのコントローラ
-
 // 確認画面から飛んできた$_POSTを処理するモデルを出力
 require_once("lib/function/db_user.php");
 
