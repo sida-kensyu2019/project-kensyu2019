@@ -14,5 +14,6 @@
 	//検索結果表示用
 	$sth_result = get_material($dbh);
 
+
 	//美術品一覧画面ビュー出力
 	require_once("lib/view/select_material.php");

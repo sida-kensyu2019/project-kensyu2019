@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="../css/m_style.css">
 </head>
 <body>
+<br>
       <header>
         <nav>
           <ul>
@@ -20,8 +21,8 @@
           </ul>
         </nav>
       </header>
-
-<h1>美術品登録完了</h1>
+<br>
+<h1>登録完了</h1>
 <br>
 <br>
 <?php
@@ -43,9 +44,7 @@
 <div>
 <p>上記の内容で美術品の登録が完了しました。<p>
 <br>
-<a href="m_insert_material.php">
-<input type="button" value="美術品登録に戻る">
-</a>
+<a href="../m_control/m_insert_material.php">美術品登録に戻る</a>
 </div>
 </body>
 </html>
