@@ -38,8 +38,8 @@
       </tr>
       <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
       <tr>
-        <td><?php ph($row["job_id"]);?></td>
-        <td><?php ph($row["job_name"]);?></td>
+        <td class="d5"><?php ph($row["job_id"]);?></td>
+        <td class="d4"><?php ph($row["job_name"]);?></td>
         <td><a href="m_delete_exec_job.php?job_id=<?php ph($row["job_id"]);?>">削除</a></td>
       </tr>
       <?php } ?>

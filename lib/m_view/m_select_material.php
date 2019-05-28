@@ -28,7 +28,7 @@
 		<div>
 		<table border="1">
 			<tr>
-				<th class="d4">画像</th>
+				<th>画像</th>
 				<th class="d1">美術品名</th>
 				<th class="d1">作者名</th>
 				<th class="d2">ジャンル</th>
@@ -40,10 +40,10 @@
 			<?php
 			while($row=$sth->fetch(PDO::FETCH_ASSOC)){ ?>
 			<tr>
-				<td><?php ph($row["picture"]); ?></td>
+				<td><img class="img" src="<?php ph($row["picture"]); ?>"></td>
 				<td><a href="../material_detail.php?material_id=<?php ph($row["material_id"]); ?>" target="_blank"><?php ph($row["material_name"]); ?></a></td>
 				<td><?php ph($row["author_name"]); ?></td>
-				<td><?php ph($row["genre_name"]); ?></td>
+				<td class="d5"><?php ph($row["genre_name"]); ?></td>
 				<td><?php ph($row["material_year"]); ?></td>
 				<td><a href="m_update_material.php?material_id=<?php ph($row["material_id"]);?>">編集</a></td> <!-- 美術品編集画面リンク -->
 				<td><a href="m_delete_exec_material.php?material_id=<?php ph($row["material_id"]);?>">削除</a></td> <!-- 削除完了画面リンク -->
@@ -52,9 +52,10 @@
 		<?php } ?>
 		</table>
 		<br>
+		<br>
 		<input type="button" value="条件を絞り込む" onclick="location.href='m_search_material.php'">
 		<input type="button" value="新規追加" onclick="location.href='m_insert_material.php'">
 		</div>
-
+		<br>
 </body>
 </html>
