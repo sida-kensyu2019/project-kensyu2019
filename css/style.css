@@ -11,6 +11,8 @@ header{
   border: thin none black;
   margin-left:auto;
   margin-right:auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
   background-color: #ffffff;
 }
 
@@ -89,6 +91,18 @@ ul li:hover{
   text-align: center;
   border: thin none black;
   margin:0px auto 0px;
+}
+
+.search_button{
+  border-radius:0 2px 2px 0;
+  background:#7fbfff;
+  border:none;
+  color:#ffffff;/
+  font-size:16px;
+  cursor: pointer;
+}
+.search_button:hover{
+color:#666;
 }
 .insert_user{
   margin-left:auto;
@@ -200,4 +214,13 @@ div.titleImg {
 .error{
   color: red;
   font-weight: bold;
+}
+.blue_button{
+    background-color: #4669ff;
+    border-bottom: solid 2px #003aff;
+    border-right: solid 2px #003aff;
+    border-radius: 20px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 7px;
 }
