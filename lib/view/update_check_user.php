@@ -10,7 +10,7 @@
   <div class="back">
 <header>
   <nav>
-    <h1>愛パワー美術館</h1>
+    <img src="image/titlelogo.png" height="90px">
     <ul>
       <li><a href="top.php" class="li_a">トップページ</a></li>
       <?php if (login_check()) { ?>
@@ -23,31 +23,32 @@
     </ul>
   </nav>
 </header>
-<h1>入力確認</h1>
+<h1>以下の内容に変更しますか？</h1>
 <br>
 <br>
-<form action="update_exec_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" method="post">
-<table>
-  <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
-  <tr><th>パスワード</th><td><?php ph($_POST["password"]) ?></td></tr>
-  <tr><th>表示名</th><td><?php ph($_POST["user_name"]) ?></td></tr>
-  <tr><th>職業</th><td><?php ph($_POST["job_id"]) ?></td></tr>
-  <tr><th>プロフィールコメント</th><td><?php ph($_POST["profile"]) ?></td></tr>
-</table><br>
-<input type="hidden" name="mail_address" value="<?php ph($sth["mail_address"]); ?>">
-<input type="hidden" name="password" value="<?php ph($_POST["password"]); ?>">
-<input type="hidden" name="job_id" value="<?php ph($_POST["job_id"]); ?>">
-<input type="hidden" name="user_name" value="<?php ph($_POST["user_name"]); ?>">
-<input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
-<input type="hidden" name="profile" value="<?php ph($_POST["profile"]); ?>">
-<br>
-<br>
-<br>
-<input type="submit" value="更新">
+<form action="update_exec_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>" method="post" id="form_update">
+  <table id="table_search">
+    <tr><th>メールアドレス</th><td><?php ph($sth["mail_address"]) ?></td></tr>
+    <tr><th>パスワード</th><td><?php ph($_POST["password"]) ?></td></tr>
+    <tr><th>表示名</th><td><?php ph($_POST["user_name"]) ?></td></tr>
+    <tr><th>職業</th><td><?php ph($_POST["job_name"]) ?></td></tr>
+    <tr><th>プロフィールコメント</th><td><?php ph($_POST["profile"]) ?></td></tr>
+  </table><br>
+  <input type="hidden" name="mail_address" value="<?php ph($sth["mail_address"]); ?>">
+  <input type="hidden" name="password" value="<?php ph($_POST["password"]); ?>">
+  <input type="hidden" name="job_id" value="<?php ph($_POST["job_id"]); ?>">
+  <input type="hidden" name="user_name" value="<?php ph($_POST["user_name"]); ?>">
+  <input type="hidden" name="user_id" value="<?php ph($_SESSION["user_id"]); ?>">
+  <input type="hidden" name="profile" value="<?php ph($_POST["profile"]); ?>">
+  <br>
+  <div class="right">
+    <input type="submit" value="更新">
+    <a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
+    <input type="button" value="キャンセル">
+    </a>
+  </div>
 </form>
-<a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]); ?>">
-<input type="button" value="キャンセル">
-</a>
+<br>
 </div>
 </body>
 </html>
