@@ -51,13 +51,16 @@
 </table>
 <br>
 <div>
-<?php print $msg; ?><br>
+<span class="error"><?php print $msg; ?></span>
+<br>
+<br>
 <input type="submit" value= "登録"> <input type="reset" value="クリア"><br>
 <input type="hidden" name="genre_name">
 <br>
 <!-- 美術品一覧画面に戻る -->
 <input type="button" value="登録中止" onclick="location.href='m_select_material.php'">
 </div>
+<br>
 </form>
 </body>
 </html>

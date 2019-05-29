@@ -40,7 +40,9 @@
       </table>
       <br>
       <div>
-        <?php print $msg; ?><br>
+        <span class="error"><?php print $msg; ?></span>
+      <br>
+      <br>
         <input type="submit" value="登録">
         <input type="reset" value="クリア"><br>
       <br>
