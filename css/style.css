@@ -68,6 +68,14 @@ ul li:hover{
   background-color: #EEEEEE;
   width: 50px;
 }
+.th_sun {
+  background-color: #ffd1d1;
+  width: 50px;
+}
+.th_sat {
+  background-color: #dadded;
+  width: 50px;
+}
 .td{
   height: 35px;
   padding-top: 0px;

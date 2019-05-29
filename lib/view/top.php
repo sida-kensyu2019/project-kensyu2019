@@ -54,13 +54,13 @@
                      <?php print date("n"); ?>月
                   </caption>
                   <tr>
-                     <th class="th">日</th>
+                     <th class="th_sun">日</th>
                      <th class="th">月</th>
                      <th class="th">火</th>
                      <th class="th">水</th>
                      <th class="th">木</th>
                      <th class="th">金</th>
-                     <th class="th">土</th>
+                     <th class="th_sat">土</th>
                   </tr>
                   <tr>
                      <?php
