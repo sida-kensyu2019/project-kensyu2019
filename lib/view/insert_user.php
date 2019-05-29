@@ -27,22 +27,24 @@
     <table class="insert_user">
       <tr>
         <th>メールアドレス</th>
-        <th><input type="text" size="30" name ="mail_address" class="update_user3"></th>
+        <th><input type="text" size="30" name ="mail_address" value="<?php if(!empty($_POST["mail_address"])){ph($_POST["mail_address"]);} ?>" class="update_user3"></th>
       </tr>
       <tr>
         <th>パスワード</th>
-        <th><input type="text" size="30" name ="password" class="update_user3"></th>
+        <th><input type="text" size="30" name ="password" value="<?php if(!empty($_POST["password"])){ph($_POST["password"]);} ?>" class="update_user3" value=""></th>
       </tr>
       <tr>
         <th>表示名</th>
-        <th><input type="text" size="30" name ="user_name" class="update_user3"></th>
+        <th><input type="text" size="30" name ="user_name" value="<?php if(!empty($_POST["user_name"])){ph($_POST["user_name"]);} ?>" class="update_user3"></th>
       </tr>
       <tr><th>職業</th>
         <th>
         <select name="job_id" id="select_genre">
           <option value="" selected disabled>選択してください</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
-            <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
+            <option <?php if(!empty($_POST["job_id"]) and $row["job_id"] == $_POST["job_id"]) {print "selected";} else {print "";} ?>
+              value="<?php ph($row["job_id"]); ?>">
+              <?php ph($row["job_name"]); ?></option>
           <?php } ?>
         </select>
         </th>
