@@ -225,3 +225,7 @@ div.titleImg {
   padding: 7px 12px;
   cursor: pointer;
 }
+
+.left {
+  text-align: left;
+}

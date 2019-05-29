@@ -103,16 +103,16 @@
                 <tr><th>美術品名</th><th><input type="text" size="40" name ="material_name" class="search_box"></th></tr>
                 <tr><th>作者名</th><th><input type="text" size="40" name ="author_name" class="search_box"></th></tr>
                 <tr><th>ジャンル</th>
-                  <th>
+                  <td class="left">
                   <select name="genre_id" id="select_genre">
                   <option value="" selected>すべてのジャンル</option>
                     <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
                       <option value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
                     <?php } ?>
                   </select>
-                </th>
+                </td>
                 </tr>
-                <tr><th>制作年</th><th><input type="text" size="30" name ="material_year" class="search_box"></th></tr>
+                <tr><th>制作年</th><td class="left"><input type="text" size="30" name ="material_year" class="search_box"></td></tr>
               </table>
             <input type="submit" value="検索" class="search_button">
             <input type="reset" value="リセット" class="search_button">
