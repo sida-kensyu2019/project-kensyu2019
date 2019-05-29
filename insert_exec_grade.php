@@ -3,6 +3,12 @@
 // 美術品評価登録処理
 require_once("lib/init.php");
 
+if ($_POST["star"] > 5 or $_POST["star"] < 0) {
+    setcookie("access_error", true, time()+60*60*24*30, "/");
+    header("Location:top.php");
+    exit();
+}
+
 // 美術品の評価書き込んで送信されたものを
 // データベースに登録するためのコントローラ
 

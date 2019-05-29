@@ -14,6 +14,11 @@ if (login_check()) { // ログインユーザ
     require_once("lib/view/insert_grade.php"); // 評価書込画面ビュー出力
   } else {  // ある場合
     // 評価書込み確認画面ビュー出力
+    if ($_POST["star"] > 5 or $_POST["star"] < 0) {
+      setcookie("access_error", true, time()+60*60*24*30, "/");
+      header("Location:top.php");
+      exit();
+    }
     require_once("lib/view/insert_check_grade.php");
   }
 } else { // 非ログインユーザ
