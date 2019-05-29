@@ -32,7 +32,7 @@ if ($_GET["user_id"] == $_SESSION["user_id"]) {
       || empty($_POST["user_name"]) || empty($_POST["job_id"])
       || !(preg_match("/^[a-zA-Z0-9]{6,20}$/", $_POST["password"])) //6文字以上20文字以下
       || mb_strlen($_POST["user_name"]) > 50 //50文字以内
-      || mb_strlen($_POST["profile"]) > 50 //5000文字以内
+      || mb_strlen($_POST["profile"]) > 5000 //5000文字以内
       ) {
 
       //入力NG
