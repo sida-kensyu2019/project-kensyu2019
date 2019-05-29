@@ -40,9 +40,11 @@
       <tr><th>職業</th>
         <th>
         <select name="job_id" id="select_genre">
-          <option value="<?php if(!empty($_POST["job_id"])){ph($_POST["job_id"]);} else {ph("");} ?>" selected disabled>選択してください</option>
+          <option value="" selected disabled>選択してください</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
-            <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]) ?></option>
+            <option <?php if(!empty($_POST["job_id"]) and $row["job_id"] == $_POST["job_id"]) {print "selected";} else {print "";} ?>
+              value="<?php ph($row["job_id"]); ?>">
+              <?php ph($row["job_name"]); ?></option>
           <?php } ?>
         </select>
         </th>
