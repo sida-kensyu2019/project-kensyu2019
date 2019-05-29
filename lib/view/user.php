@@ -54,7 +54,7 @@
       </tr>
     </table>
       <!-- ユーザ本人がアクセスした場合のみ表示 -->
-    <?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
+    <?php if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] == $_GET["user_id"] ) { ?>
       <div  class="right">
         <a href="update_user.php?user_id=<?php ph($_SESSION["user_id"]) ?>" class="button">ユーザ情報を変更する</a><br>
       </div>
@@ -102,7 +102,7 @@
           <?php } ?>
       </table>
 
-    <?php if ($_SESSION["user_lv"] == 1) { ?>
+    <?php if (isset($_SESSION["user_lv"]) && $_SESSION["user_lv"] == 1) { ?>
 
     <!-- 管理者がアクセスした場合のみ表示 -->
     <input type="button" value="ユーザ削除"
@@ -110,7 +110,7 @@
 
     <?php } ?>
 
-    <?php if ($_SESSION["user_id"] == $_GET["user_id"] ) { ?>
+    <?php if (isset($_SESSION["user_id"]) && $_SESSION["user_id"] == $_GET["user_id"] ) { ?>
 
     <!-- ユーザ本人がアクセスした場合のみ表示 -->
     <form action="delete_user.php" method="post">
