@@ -10,6 +10,9 @@
 
   // 美術品詳細データをデータベースから取得
   $sth_material = get_material_by_id($dbh, $_GET["material_id"]);
+  if (empty($sth_material)) {
+    require_once("material_not_found.php");
+  } else {
 
   //該当美術品IDの評価件数を取得
   require_once("lib/function/db_grade.php");
@@ -24,6 +27,7 @@
     $sth_good=get_good_by_user($dbh, $_SESSION["user_id"]);
     $row_goodList=$sth_good->fetchall(PDO::FETCH_ASSOC);
   }
-  
+
   // 美術品詳細画面ビュー出力
   require_once("lib/view/material_detail.php");
+  }
