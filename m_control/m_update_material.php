@@ -42,13 +42,13 @@
 		 {
 			// require_once(".js"); // 入力エラー表示、JavaScriptがないためコメントアウト
 
-			$msg = "すべての項目を入力してください";
+			$msg = "すべての項目を正しく入力してください";
 			require_once("../lib/m_view/m_update_material.php");
 		} else {
 
 			// 入力OK
 			//データベースに管理ユーザを追加
-			
+
 			require_once("../lib/function/db_material.php");
 			update_material($dbh, $_POST);
 			require_once("../lib/m_view/m_update_exec_material.php");

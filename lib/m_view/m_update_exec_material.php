@@ -24,19 +24,23 @@
 <h1>編集完了</h1>
 <br>
 <br>
-    <table>
-      <tr><th>美術品名</th><th><?php ph($_POST["material_name"]) ?></th></tr>
-      <tr><th>美術品名読み</th><th><?php ph($_POST["material_kana"]) ?></th></tr>
-      <tr><th>作者名</th><th><?php ph($_POST["author_name"]) ?></th></tr>
-      <tr><th>作者名読み</th><th><?php ph($_POST["author_kana"]) ?></th></tr>
-      <tr><th>ジャンル</th><th><?php ph($_POST["genre_id"]) ?></th></tr>
-      <tr><th>制作年</th><th><?php ph($_POST["material_year"]) ?></th></tr>
-      <tr><th>写真</th><th><?php ph($_POST["picture"]) ?></th></tr>
-      <tr><th>説明</th><th><?php ph($_POST["caption"]) ?></th></tr>
-    </table><br>
-    <div>
-      <p>上記の内容で美術品詳細の編集が完了しました。</p><br>
-      <a href="m_select_material.php">美術品一覧画面へ</a>
-    </div>
-  </body>
+<table class="u_table">
+  <tr><th class="th">美術品名</th><th><?php ph($_POST["material_name"]) ?></th></tr>
+  <tr><th>美術品名読み</th><th><?php ph($_POST["material_kana"]) ?></th></tr>
+  <tr><th>作者名</th><th><?php ph($_POST["author_name"]) ?></th></tr>
+  <tr><th>作者名読み</th><th><?php ph($_POST["author_kana"]) ?></th></tr>
+  <tr><th>ジャンル</th><th><?php ph($_POST["genre_id"]) ?></th></tr>
+  <tr><th>制作年</th><th><?php ph($_POST["material_name"]) ?></th></tr>
+  <tr><th>写真</th><th><?php ph($_POST["picture"]) ?></th></tr>
+  <tr><th>説明</th><td><?php print nl2br(h($_POST["caption"])); ?></td></tr>
+</table><br>
+<br>
+<br>
+<br>
+<div>
+<p>上記の内容で美術品の編集が完了しました。<p>
+<br>
+<a href="m_select_material.php">美術品一覧画面へ</a>
+</div>
+</body>
 </html>

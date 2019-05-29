@@ -51,7 +51,8 @@
 </table>
 
 <div>
-  <?php print $msg; ?>
+<span class="error"><?php print $msg; ?></span>
+<br>
 <br>
 <input type="hidden" name="material_id" value="<?php ph($row["material_id"]);?>">
 <input type="submit" value="編集"> <input type="reset" value="クリア"><br>
@@ -59,6 +60,7 @@
 <br>
 <input type="button" value="編集中止" onclick="location.href='m_select_material.php'">
 </div>
+<br>
 </form>
 </body>
 </html>

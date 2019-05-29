@@ -44,7 +44,10 @@
   </form>
   <?php if (empty($_POST)) {
     print "";
-  } else { print $msg;} ?>
+  } else { ?><span class="error"><?php print $msg; ?></span>
+  <?php } ?>
+
+
   <br>
   <table border=1>
     <tr><th class="d4">休館日</th><th></th></tr>

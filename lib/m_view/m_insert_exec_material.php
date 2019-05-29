@@ -25,11 +25,8 @@
 <h1>登録完了</h1>
 <br>
 <br>
-<?php
-//require_once("../init.php");
-?>
-<table>
-  <tr><th>美術品名</th><th><?php ph($_POST["material_name"]) ?></th></tr>
+<table class="u_table">
+  <tr><th class="th">美術品名</th><th><?php ph($_POST["material_name"]) ?></th></tr>
   <tr><th>美術品名読み</th><th><?php ph($_POST["material_kana"]) ?></th></tr>
   <tr><th>作者名</th><th><?php ph($_POST["author_name"]) ?></th></tr>
   <tr><th>作者名読み</th><th><?php ph($_POST["author_kana"]) ?></th></tr>
