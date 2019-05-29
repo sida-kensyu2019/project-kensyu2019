@@ -41,7 +41,7 @@
       <tr><th>作者名</th><th><input type="text" size="40" name ="author_name"
         value="<?php ph(isset($_POST["author_name"]) ? $_POST["author_name"] : "");?>"></th></tr>
       <tr><th>ジャンル</th>
-        <th>
+        <td class="left">
         <select name="genre_id" id="select_genre">
           <option value="">すべてのジャンル</option>
           <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -49,10 +49,10 @@
             value="<?php ph($row["genre_id"]); ?>"><?php ph($row["genre_name"]) ?></option>
           <?php } ?>
         </select>
-        </th>
+        </td>
       </tr>
-      <tr><th>制作年</th><th><input type="text" size="30" name ="material_year"
-        value="<?php ph(isset($_POST["material_year"]) ? $_POST["material_year"] : "");?>"></th></tr>
+      <tr><th>制作年</th><td class="left"><input type="text" size="30" name ="material_year"
+        value="<?php ph(isset($_POST["material_year"]) ? $_POST["material_year"] : "");?>"></td></tr>
       </table>
       <input type="submit" value="検索" class="search_button">
       <input type="reset" value="リセット" class="search_button">
