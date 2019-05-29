@@ -3,6 +3,12 @@
 // ユーザ情報変更画面
 require_once("lib/init.php");
 
+if (login_check()) {
+  //ユーザマイページでセッションが切れた場合のエラー対処
+  setcookie("access_error", true, time()+60*60*24*30, "/");
+  header("Location:top.php");
+}
+
 // ユーザIDとユーザページのIDがが同じかどうか
 if ($_GET["user_id"] == $_SESSION["user_id"]) {
 
@@ -47,5 +53,7 @@ if ($_GET["user_id"] == $_SESSION["user_id"]) {
     }
   }
 } else {
+  //エラーメッセージ表示
+  setcookie("access_error", true, time()+60*60*24*30, "/");
   header("location:top.php");
 }
