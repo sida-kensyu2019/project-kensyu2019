@@ -25,9 +25,18 @@
 <h1>会員登録</h1>
   <form action="insert_user.php" method="post" id="form_update">
     <table class="insert_user">
-      <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
-      <tr><th>パスワード</th><th><input type="text" size="30" name ="password"></th></tr>
-      <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
+      <tr>
+        <th>メールアドレス</th>
+        <th><input type="text" size="30" name ="mail_address" class="update_user3"></th>
+      </tr>
+      <tr>
+        <th>パスワード</th>
+        <th><input type="text" size="30" name ="password" class="update_user3"></th>
+      </tr>
+      <tr>
+        <th>表示名</th>
+        <th><input type="text" size="30" name ="user_name" class="update_user3"></th>
+      </tr>
       <tr><th>職業</th>
         <th>
         <select name="job_id" id="select_genre">
