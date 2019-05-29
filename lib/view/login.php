@@ -49,7 +49,7 @@
       </tr>
     </table>
     <br>
-    <input type="submit" value="ログイン" class="right">
+    <input type="submit" value="ログイン" class="right blue_button">
   </form>
   <br>
 </div>
