@@ -24,15 +24,16 @@
     <h1>新規管理者登録</h1>
     <form action="../m_control/m_insert_user.php" method="post">
       <table>
-        <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address"></th></tr>
-        <tr><th>パスワード</th><th><input type="password" size="30" name ="password"></th></tr>
-        <tr><th>表示名</th><th><input type="text" size="30" name ="user_name"></th></tr>
+        <tr><th>メールアドレス</th><th><input type="text" size="30" name ="mail_address" value="<?php if(!empty($_POST["mail_address"])){ph($_POST["mail_address"]);} ?>"></th></tr>
+        <tr><th>パスワード</th><th><input type="password" size="30" name ="password" value="<?php if(!empty($_POST["password"])){ph($_POST["password"]);} ?>"></th></tr>
+        <tr><th>表示名</th><th><input type="text" size="30" name ="user_name" value="<?php if(!empty($_POST["user_name"])){ph($_POST["user_name"]);} ?>"></th></tr>
         <tr><th>職業</th>
           <td>
           <select name="job_id">
             <option value="" selected disabled>選択してください</option>
             <?php while ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
-              <option value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]); ?></option>
+              <option <?php if(!empty($_POST["job_id"]) and $row["job_id"] == $_POST["job_id"]) {print "selected";} else {print "";} ?>
+                value="<?php ph($row["job_id"]); ?>"><?php ph($row["job_name"]); ?></option>
             <?php } ?>
           </select>
         </td>

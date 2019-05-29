@@ -9,7 +9,7 @@ if (login_check()) { // ログインユーザ
   if (empty($_POST)) {
     $msg="";
     require_once("lib/view/insert_grade.php"); // 評価書込画面ビュー出力
-  } elseif (empty($_POST["comment"])) { // 書き込みない場合
+  } elseif (empty($_POST["comment"]) || mb_strlen($_POST["comment"]) > 5000) { // 書き込みない場合
     $msg="コメントを入力してください<br>";
     require_once("lib/view/insert_grade.php"); // 評価書込画面ビュー出力
   } else {  // ある場合

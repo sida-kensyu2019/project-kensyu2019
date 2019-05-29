@@ -28,8 +28,8 @@ m_access_check();
      || mb_strlen($_POST["author_name"]) > 50 //50文字以内
      || !preg_match("/^[ぁ-ゞ・＝゛ー～？！＆（、）]{1,70}$/u", $_POST["author_kana"]) //ひらがな全角、・、＝、゛、ー、～、？、！、＆、（、）、1～70文字
      || mb_strlen($_POST["material_year"]) > 20 //20文字以内
-		 || mb_strlen($_POST["picture"]) > 100 //100文字以内
-     || mb_strlen($_POST["caption"]) > 200) //200文字以内
+		 || mb_strlen($_POST["picture"]) > 500 //500文字以内
+     || mb_strlen($_POST["caption"]) > 2000) //2000文字以内
      {
 
        // 入力NG
