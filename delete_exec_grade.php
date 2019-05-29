@@ -3,6 +3,12 @@
 // 評価削除完了画面コントローラ
 
 	require_once("lib/init.php");
+	if (!(login_check())) {
+		//美術品詳細画面でセッションが切れた場合のエラー対処
+		setcookie("access_error", true, time()+60*60*24*30, "/");
+		header("Location:top.php");
+		exit();
+	}
 
 	//評価に対するいいねをデータベースから削除する
 	require_once("lib/function/db_good.php");

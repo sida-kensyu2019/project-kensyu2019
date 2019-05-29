@@ -3,10 +3,11 @@
 // ユーザ情報変更画面
 require_once("lib/init.php");
 
-if (login_check()) {
+if (!(login_check())) {
   //ユーザマイページでセッションが切れた場合のエラー対処
   setcookie("access_error", true, time()+60*60*24*30, "/");
   header("Location:top.php");
+  exit();
 }
 
 // ユーザIDとユーザページのIDがが同じかどうか

@@ -6,6 +6,13 @@
 
 	require_once("lib/init.php");
 
+	if (!(login_check())) {
+		//ユーザ退会画面でセッションが切れた場合のエラー対処
+		setcookie("access_error", true, time()+60*60*24*30, "/");
+		header("Location:top.php");
+		exit();
+	}
+
 	//ユーザのいいねをデータベースから削除する
 	require_once("lib/function/db_good.php");
 	$sth=delete_good_by_user($dbh, $_POST["user_id"]);

@@ -3,6 +3,13 @@
 // ユーザ情報変更登録処理
 require_once("lib/init.php");
 
+if (!(login_check())) {
+    //ユーザ情報編集入力確認画面でセッションが切れた場合のエラー対処
+    setcookie("access_error", true, time()+60*60*24*30, "/");
+    header("Location:top.php");
+    exit();
+}
+
 // 変更されたユーザの情報が送信されたものを
 // データベースに登録するためのコントローラ
 // 確認画面から飛んできた$_POSTを処理するモデルを出力
