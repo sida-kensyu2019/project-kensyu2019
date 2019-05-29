@@ -73,6 +73,29 @@
 
     // データベースのデータを削除する
     //$id: $_GET
+    function delete_good_by_user_grade($dbh, $id)
+    {
+        try {
+            // プレースホルダ付きSQLを構築
+            $sql = "DELETE FROM t_good ";
+            $sql .= "WHERE grade_id IN ";
+            $sql .= "(SELECT grade_id FROM t_grade ";
+            $sql .= "WHERE user_id = :user_id)";
+            $sth = $dbh->prepare($sql); //SQLを準備
+
+            // プレースホルダに値をバインド
+            $sth->bindValue(":user_id", (int) $id);
+
+            // SQLを発行
+            $sth->execute();
+
+        } catch (PDOException $e) {
+            exit("SQL発行エラー：{$e->getMessage()}");
+        }
+    }
+
+    // データベースのデータを削除する
+    //$id: $_GET
     function delete_good_by_grade($dbh, $id)
     {
         try {

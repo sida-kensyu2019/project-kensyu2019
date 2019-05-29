@@ -17,7 +17,7 @@
 	require_once("lib/function/db_good.php");
 	delete_good_by_user($dbh, $_POST["user_id"]);
 	//ユーザの評価に対するいいねを削除
-	delete_good_by_grade($dbh, $_POST["user_id"]);
+	delete_good_by_user_grade($dbh, $_POST["user_id"]);
 
 	//ユーザの評価をデータベースから削除する
 	require_once("lib/function/db_grade.php");
