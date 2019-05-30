@@ -1,5 +1,6 @@
 <?php
-
+    //エラーメッセージ表示しなくする
+    ini_set('display_errors', 'Off');
 
     //データベースに接続
     $dbh = connectDb();  //ここでPDOインスタンスを変数に持っておく
