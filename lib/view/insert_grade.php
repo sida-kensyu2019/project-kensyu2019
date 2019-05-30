@@ -37,12 +37,12 @@
 <h3>美術品に対する評価を書き込んでください</h3>
 <form action="insert_grade.php?material_id=<?php ph($_GET["material_id"]); ?>" method="post">
 評価
-    <label><input type="radio" name="star" value="0" checked="checked">0</label>
-    <label><input type="radio" name="star" value="1">1</label>
-    <label><input type="radio" name="star" value="2">2</label>
-    <label><input type="radio" name="star" value="3">3</label>
-    <label><input type="radio" name="star" value="4">4</label>
-    <label><input type="radio" name="star" value="5">5</label>
+    <lavel><input type="radio" name="star" value="0" checked="checked"><img src="image/grade.png" width="15px">0 </lavel>
+    <lavel><input type="radio" name="star" value="1"><img src="image/grade.png" width="15px">1 </lavel>
+    <lavel><input type="radio" name="star" value="2"><img src="image/grade.png" width="15px">2 </lavel>
+    <lavel><input type="radio" name="star" value="3"><img src="image/grade.png" width="15px">3 </lavel>
+    <lavel><input type="radio" name="star" value="4"><img src="image/grade.png" width="15px">4 </lavel>
+    <lavel><input type="radio" name="star" value="5"><img src="image/grade.png" width="15px">5</lavel>
     <br>
     <br>
 
