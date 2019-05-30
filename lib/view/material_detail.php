@@ -39,7 +39,7 @@
             <h2>　</h2>
 
             <div id="material_name"> <!--美術品名表示-->
-              <?php print "<h3>".h($sth_material["material_name"])."(".h($sth_material["material_name"]).")</h3>"; ?>
+              <?php print "<h3>".h($sth_material["material_name"])."(".h($sth_material["material_kana"]).")</h3>"; ?>
             </div>
             <div id="material_img"> <!--画像表示-->
               <img src="<?php ph($sth_material["picture"]); ?>" class="material_img_size">
